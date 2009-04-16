@@ -1,0 +1,10 @@
+#ifndef _CONFIG_H
+#define _CONFIG_H
+
+#define PROJECT "@PROJECT_NAME@"
+#define VERSION "@VERSION@"
+#define APIVERSION "@APIVERSION@"
+#define INSTALL_PREFIX "@CMAKE_INSTALL_PREFIX@"
+
+#endif
+

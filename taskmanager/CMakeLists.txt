@@ -1,0 +1,34 @@
+
+link_directories( ${STAGE_LIBRARY_DIRS} )
+
+set_source_files_properties( taskmanager.cpp PROPERTIES COMPILE_FLAGS "${FLTK_CFLAGS}" )
+
+
+#build a shared library
+ADD_LIBRARY(taskmanager MODULE
+  main.cpp
+  taskmanager.cpp
+  ../src/error.c
+  ../src/worktask.cpp
+  ../src/gridmap.cpp
+  ../src/rangefinder.cpp
+  ../src/wavefrontmap.cpp
+  ../src/destination.cpp
+  ../src/ccolor.cpp
+  ../src/mapmarker.cpp
+  ../src/common.cpp
+)
+
+# delete the "lib" prefix from the plugin libraries
+SET_TARGET_PROPERTIES( taskmanager PROPERTIES PREFIX "" )
+
+#need to link to some other libraries ? just add them here
+TARGET_LINK_LIBRARIES(taskmanager
+  ${STAGE_LIBRARIES}
+  ${QT_LIBRARIES}
+)
+
+INSTALL(TARGETS taskmanager
+	RUNTIME DESTINATION bin
+	LIBRARY DESTINATION lib
+)
