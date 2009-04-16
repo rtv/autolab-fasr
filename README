@@ -1,3 +1,10 @@
-Empty skeleton Autolab code plugin project - useful as a base for creating new Stage and Player plugins
+Fast & Frugal Sustain and Resuppply
+Robot controllers and Stage worldfiles
 [Autolab Robot Parts http://autonomy.cs.sfu.ca]
-Copyright 2009 Richard Vaughan
+Copyright 2009 Jens Wawerla, Richard Vaughan
+
+Dependencies
+============
+Stage SVN trunk
+autolab-nd [git://github.com/rtv/autolab-nd.git]
+autolab-wp [git://github.com/rtv/autolab-wp.git]
