@@ -2,23 +2,23 @@
 
 # build a loadable shared library module 
 ADD_LIBRARY(fasrrobot MODULE
-            main.cpp
-            baserobot.cpp
-            looppolicyrobot.cpp
-            staticpolicyrobot.cpp
-            replanpolicyrobot.cpp
-            swcostcompolicyrobot.cpp
-            waitprobpolicyrobot.cpp
-            individualswcostpolicyrobot.cpp
-            broadcast.cpp
-            stagelaser.cpp
-            worktask.cpp
-            destination.cpp
-            charger.cpp
-            visserver.cpp
-            logwriter.cpp
-            robotscheduler.cpp
             ../taskmanager/taskmanager.cpp
+            baserobot.cpp
+            broadcast.cpp
+            charger.cpp
+            destination.cpp
+            individualswcostpolicyrobot.cpp
+            logwriter.cpp
+            looppolicyrobot.cpp
+            main.cpp
+            replanpolicyrobot.cpp
+            robotscheduler.cpp
+            stagelaser.cpp
+            staticpolicyrobot.cpp
+            swcostcompolicyrobot.cpp
+            visserver.cpp
+            waitprobpolicyrobot.cpp
+            worktask.cpp
             )
 
 # delete the "lib" prefix from the plugin libraries

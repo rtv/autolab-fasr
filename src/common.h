@@ -72,18 +72,18 @@ class CPose
      * @param pose to get distance to
      * @return distance [m]
      */
-    float distance( CPose pose );
+    float distance( CPose pose ) const;
     /**
      * Gets the angular difference between this pose and the given pose
      * @return [rad]
      */
-    float angleDifference( CPose pose );
+    float angleDifference( CPose pose ) const;
     /** Overloaded = operator */
     void operator= (const CPose pose );
     /** Overloaded + operator */
-    CPose operator+ (const CPose pose );
+    CPose operator+ (const CPose pose ) const;
     /** Overloaded != operator */
-    bool operator!= (const CPose pose);
+    bool operator!= (const CPose pose) const;
     /** x position [m] */
     float mX;
     /** y position [m] */

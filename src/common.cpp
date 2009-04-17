@@ -68,18 +68,14 @@ void CPose::operator= (const CPose pose )
   mYaw = pose.mYaw;
 }
 //---------------------------------------------------------------------------
-CPose CPose::operator+ (const CPose pose )
+CPose CPose::operator+ (const CPose pose ) const
 {
-  CPose newPose;
-
-  newPose.mX = mX + pose.mX;
-  newPose.mY = mY + pose.mY;
-  newPose.mYaw = mYaw + pose.mYaw;
-
-  return newPose;
+  return CPose( mX + pose.mX,
+					 mY + pose.mY,
+					 NORMALIZE_ANGLE( mYaw + pose.mYaw ) );  
 }
 //---------------------------------------------------------------------------
-bool CPose::operator!= (const CPose pose)
+bool CPose::operator!= (const CPose pose) const
 {
   if (mX != pose.mX)
     return true;
@@ -91,12 +87,12 @@ bool CPose::operator!= (const CPose pose)
   return false;
 }
 //---------------------------------------------------------------------------
-float CPose::distance( CPose pose )
+float CPose::distance( CPose pose ) const
 {
   return sqrt( pow2(pose.mX - mX) + pow2(pose.mY - mY) );
 }
 //---------------------------------------------------------------------------
-float CPose::angleDifference( CPose pose )
+float CPose::angleDifference( CPose pose ) const
 {
   return NORMALIZE_ANGLE( mYaw - pose.mYaw );
 }
