@@ -1,3 +1,3 @@
-/Users/vaughan/Stage-3.0/lib/fasrrobot.so
-/Users/vaughan/Stage-3.0/lib/fasrsource.so
-/Users/vaughan/Stage-3.0/lib/taskmanager.so
+/Users/vaughan/arp/lib/fasrrobot.so
+/Users/vaughan/arp/lib/fasrsource.so
+/Users/vaughan/arp/lib/taskmanager.so

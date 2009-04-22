@@ -6,6 +6,7 @@ ADD_LIBRARY(fasrrobot MODULE
             baserobot.cpp
             broadcast.cpp
             charger.cpp
+				common.cpp
             destination.cpp
             individualswcostpolicyrobot.cpp
             logwriter.cpp

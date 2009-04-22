@@ -249,6 +249,30 @@ charger.cpp.s:
 	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/charger.cpp.s
 .PHONY : charger.cpp.s
 
+common.o: common.cpp.o
+.PHONY : common.o
+
+# target to build an object file
+common.cpp.o:
+	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/common.cpp.o
+.PHONY : common.cpp.o
+
+common.i: common.cpp.i
+.PHONY : common.i
+
+# target to preprocess a source file
+common.cpp.i:
+	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/common.cpp.i
+.PHONY : common.cpp.i
+
+common.s: common.cpp.s
+.PHONY : common.s
+
+# target to generate assembly for a file
+common.cpp.s:
+	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/common.cpp.s
+.PHONY : common.cpp.s
+
 destination.o: destination.cpp.o
 .PHONY : destination.o
 
@@ -586,6 +610,9 @@ help:
 	@echo "... charger.o"
 	@echo "... charger.i"
 	@echo "... charger.s"
+	@echo "... common.o"
+	@echo "... common.i"
+	@echo "... common.s"
 	@echo "... destination.o"
 	@echo "... destination.i"
 	@echo "... destination.s"
