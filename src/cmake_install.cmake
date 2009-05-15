@@ -1,8 +1,8 @@
-# Install script for directory: /Users/vaughan/fasrRobot/src
+# Install script for directory: /home/jwawerla/projects/autolab-fasr/src
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/Users/vaughan/arp")
+  SET(CMAKE_INSTALL_PREFIX "/usr/local")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -27,12 +27,24 @@ IF(NOT CMAKE_INSTALL_COMPONENT)
   ENDIF(COMPONENT)
 ENDIF(NOT CMAKE_INSTALL_COMPONENT)
 
+# Install shared libraries without execute permission?
+IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
+  SET(CMAKE_INSTALL_SO_NO_EXE "0")
+ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
+
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" MATCHES "^(Unspecified)$")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE MODULE FILES "/Users/vaughan/fasrRobot/src/fasrrobot.so")
-  IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/fasrrobot.so")
+  IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/autolab-fasr.so")
+    FILE(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/autolab-fasr.so"
+         RPATH "")
+  ENDIF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/autolab-fasr.so")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE MODULE FILES "/home/jwawerla/projects/autolab-fasr/src/autolab-fasr.so")
+  IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/autolab-fasr.so")
+    FILE(RPATH_REMOVE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/autolab-fasr.so")
     IF(CMAKE_INSTALL_DO_STRIP)
-      EXECUTE_PROCESS(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/fasrrobot.so")
+      EXECUTE_PROCESS(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/autolab-fasr.so")
     ENDIF(CMAKE_INSTALL_DO_STRIP)
-  ENDIF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/fasrrobot.so")
+  ENDIF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/autolab-fasr.so")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" MATCHES "^(Unspecified)$")
 

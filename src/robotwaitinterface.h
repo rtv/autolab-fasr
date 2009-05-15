@@ -27,7 +27,7 @@
 #ifndef ROBOT_WAIT_INTERFACE_H
 #define ROBOT_WAIT_INTERFACE_H
 
-#include "common.h"
+#include "pose2d.h"
 
 class IRobotWaitInterface
 {
@@ -43,7 +43,7 @@ class IRobotWaitInterface
      * Gets the curren position of the robot
      * @return robot position
      */
-    virtual CPose getPosition() = 0;
+    virtual Rapi::CPose2d getPosition() = 0;
 
   protected:
     /** Default constructor */

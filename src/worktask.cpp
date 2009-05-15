@@ -83,6 +83,9 @@ CWorkTask::CWorkTask ( Stg::Model* stgSource,
   mTaskId = taskId;
   taskId = taskId + 1;
 
+  assert( stgSource );
+  assert( stgSink );
+
   mStgSource = stgSource;
   mStgSink = stgSink;
 
@@ -101,7 +104,6 @@ CWorkTask::CWorkTask ( Stg::Model* stgSource,
   mRewardRateFilt = 0.0;
   mTaskDurationFilt = 0.0;
   mTravelDurationFilt = 0.0;
-
 }
 //-----------------------------------------------------------------------------
 CWorkTask::~CWorkTask()

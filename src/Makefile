@@ -30,19 +30,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/local/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /opt/local/bin/cmake -E remove -f
+RM = /usr/bin/cmake -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /opt/local/bin/ccmake
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/vaughan/fasrRobot
+CMAKE_SOURCE_DIR = /home/jwawerla/projects/autolab-fasr
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/vaughan/fasrRobot
+CMAKE_BINARY_DIR = /home/jwawerla/projects/autolab-fasr
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -50,7 +50,7 @@ CMAKE_BINARY_DIR = /Users/vaughan/fasrRobot
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	cd /Users/vaughan/fasrRobot/src && /opt/local/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -60,19 +60,19 @@ edit_cache/fast: edit_cache
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	cd /Users/vaughan/fasrRobot/src && /opt/local/bin/cmake -P cmake_install.cmake
+	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	cd /Users/vaughan/fasrRobot/src && /opt/local/bin/cmake -P cmake_install.cmake
+	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	cd /Users/vaughan/fasrRobot/src && /opt/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
@@ -82,7 +82,7 @@ install/local/fast: install/local
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	cd /Users/vaughan/fasrRobot/src && /opt/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
@@ -101,7 +101,7 @@ list_install_components/fast: list_install_components
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	cd /Users/vaughan/fasrRobot/src && /opt/local/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -110,14 +110,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/vaughan/fasrRobot && $(CMAKE_COMMAND) -E cmake_progress_start /Users/vaughan/fasrRobot/CMakeFiles /Users/vaughan/fasrRobot/src/CMakeFiles/progress.make
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vaughan/fasrRobot/CMakeFiles 0
+	cd /home/jwawerla/projects/autolab-fasr && $(CMAKE_COMMAND) -E cmake_progress_start /home/jwawerla/projects/autolab-fasr/CMakeFiles /home/jwawerla/projects/autolab-fasr/src/CMakeFiles/progress.make
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jwawerla/projects/autolab-fasr/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -126,87 +126,87 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/vaughan/fasrRobot && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/jwawerla/projects/autolab-fasr && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/fasrrobot.dir/rule:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/fasrrobot.dir/rule
-.PHONY : src/CMakeFiles/fasrrobot.dir/rule
+src/CMakeFiles/autolab-fasr.dir/rule:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/autolab-fasr.dir/rule
+.PHONY : src/CMakeFiles/autolab-fasr.dir/rule
 
 # Convenience name for target.
-fasrrobot: src/CMakeFiles/fasrrobot.dir/rule
-.PHONY : fasrrobot
+autolab-fasr: src/CMakeFiles/autolab-fasr.dir/rule
+.PHONY : autolab-fasr
 
 # fast build rule for target.
-fasrrobot/fast:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/build
-.PHONY : fasrrobot/fast
+autolab-fasr/fast:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/build
+.PHONY : autolab-fasr/fast
 
-__/taskmanager/taskmanager.o: __/taskmanager/taskmanager.cpp.o
-.PHONY : __/taskmanager/taskmanager.o
-
-# target to build an object file
-__/taskmanager/taskmanager.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/__/taskmanager/taskmanager.cpp.o
-.PHONY : __/taskmanager/taskmanager.cpp.o
-
-__/taskmanager/taskmanager.i: __/taskmanager/taskmanager.cpp.i
-.PHONY : __/taskmanager/taskmanager.i
-
-# target to preprocess a source file
-__/taskmanager/taskmanager.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/__/taskmanager/taskmanager.cpp.i
-.PHONY : __/taskmanager/taskmanager.cpp.i
-
-__/taskmanager/taskmanager.s: __/taskmanager/taskmanager.cpp.s
-.PHONY : __/taskmanager/taskmanager.s
-
-# target to generate assembly for a file
-__/taskmanager/taskmanager.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/__/taskmanager/taskmanager.cpp.s
-.PHONY : __/taskmanager/taskmanager.cpp.s
-
-baserobot.o: baserobot.cpp.o
-.PHONY : baserobot.o
+__/taskManager/taskmanager.o: __/taskManager/taskmanager.cpp.o
+.PHONY : __/taskManager/taskmanager.o
 
 # target to build an object file
-baserobot.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/baserobot.cpp.o
-.PHONY : baserobot.cpp.o
+__/taskManager/taskmanager.cpp.o:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o
+.PHONY : __/taskManager/taskmanager.cpp.o
 
-baserobot.i: baserobot.cpp.i
-.PHONY : baserobot.i
+__/taskManager/taskmanager.i: __/taskManager/taskmanager.cpp.i
+.PHONY : __/taskManager/taskmanager.i
 
 # target to preprocess a source file
-baserobot.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/baserobot.cpp.i
-.PHONY : baserobot.cpp.i
+__/taskManager/taskmanager.cpp.i:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.i
+.PHONY : __/taskManager/taskmanager.cpp.i
 
-baserobot.s: baserobot.cpp.s
-.PHONY : baserobot.s
+__/taskManager/taskmanager.s: __/taskManager/taskmanager.cpp.s
+.PHONY : __/taskManager/taskmanager.s
 
 # target to generate assembly for a file
-baserobot.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/baserobot.cpp.s
-.PHONY : baserobot.cpp.s
+__/taskManager/taskmanager.cpp.s:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.s
+.PHONY : __/taskManager/taskmanager.cpp.s
+
+baserobotctrl.o: baserobotctrl.cpp.o
+.PHONY : baserobotctrl.o
+
+# target to build an object file
+baserobotctrl.cpp.o:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o
+.PHONY : baserobotctrl.cpp.o
+
+baserobotctrl.i: baserobotctrl.cpp.i
+.PHONY : baserobotctrl.i
+
+# target to preprocess a source file
+baserobotctrl.cpp.i:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.i
+.PHONY : baserobotctrl.cpp.i
+
+baserobotctrl.s: baserobotctrl.cpp.s
+.PHONY : baserobotctrl.s
+
+# target to generate assembly for a file
+baserobotctrl.cpp.s:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.s
+.PHONY : baserobotctrl.cpp.s
 
 broadcast.o: broadcast.cpp.o
 .PHONY : broadcast.o
 
 # target to build an object file
 broadcast.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/broadcast.cpp.o
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o
 .PHONY : broadcast.cpp.o
 
 broadcast.i: broadcast.cpp.i
@@ -214,7 +214,7 @@ broadcast.i: broadcast.cpp.i
 
 # target to preprocess a source file
 broadcast.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/broadcast.cpp.i
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.i
 .PHONY : broadcast.cpp.i
 
 broadcast.s: broadcast.cpp.s
@@ -222,7 +222,7 @@ broadcast.s: broadcast.cpp.s
 
 # target to generate assembly for a file
 broadcast.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/broadcast.cpp.s
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.s
 .PHONY : broadcast.cpp.s
 
 charger.o: charger.cpp.o
@@ -230,7 +230,7 @@ charger.o: charger.cpp.o
 
 # target to build an object file
 charger.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/charger.cpp.o
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/charger.cpp.o
 .PHONY : charger.cpp.o
 
 charger.i: charger.cpp.i
@@ -238,7 +238,7 @@ charger.i: charger.cpp.i
 
 # target to preprocess a source file
 charger.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/charger.cpp.i
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/charger.cpp.i
 .PHONY : charger.cpp.i
 
 charger.s: charger.cpp.s
@@ -246,39 +246,15 @@ charger.s: charger.cpp.s
 
 # target to generate assembly for a file
 charger.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/charger.cpp.s
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/charger.cpp.s
 .PHONY : charger.cpp.s
-
-common.o: common.cpp.o
-.PHONY : common.o
-
-# target to build an object file
-common.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/common.cpp.o
-.PHONY : common.cpp.o
-
-common.i: common.cpp.i
-.PHONY : common.i
-
-# target to preprocess a source file
-common.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/common.cpp.i
-.PHONY : common.cpp.i
-
-common.s: common.cpp.s
-.PHONY : common.s
-
-# target to generate assembly for a file
-common.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/common.cpp.s
-.PHONY : common.cpp.s
 
 destination.o: destination.cpp.o
 .PHONY : destination.o
 
 # target to build an object file
 destination.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/destination.cpp.o
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/destination.cpp.o
 .PHONY : destination.cpp.o
 
 destination.i: destination.cpp.i
@@ -286,7 +262,7 @@ destination.i: destination.cpp.i
 
 # target to preprocess a source file
 destination.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/destination.cpp.i
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/destination.cpp.i
 .PHONY : destination.cpp.i
 
 destination.s: destination.cpp.s
@@ -294,39 +270,15 @@ destination.s: destination.cpp.s
 
 # target to generate assembly for a file
 destination.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/destination.cpp.s
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/destination.cpp.s
 .PHONY : destination.cpp.s
-
-individualswcostpolicyrobot.o: individualswcostpolicyrobot.cpp.o
-.PHONY : individualswcostpolicyrobot.o
-
-# target to build an object file
-individualswcostpolicyrobot.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/individualswcostpolicyrobot.cpp.o
-.PHONY : individualswcostpolicyrobot.cpp.o
-
-individualswcostpolicyrobot.i: individualswcostpolicyrobot.cpp.i
-.PHONY : individualswcostpolicyrobot.i
-
-# target to preprocess a source file
-individualswcostpolicyrobot.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/individualswcostpolicyrobot.cpp.i
-.PHONY : individualswcostpolicyrobot.cpp.i
-
-individualswcostpolicyrobot.s: individualswcostpolicyrobot.cpp.s
-.PHONY : individualswcostpolicyrobot.s
-
-# target to generate assembly for a file
-individualswcostpolicyrobot.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/individualswcostpolicyrobot.cpp.s
-.PHONY : individualswcostpolicyrobot.cpp.s
 
 logwriter.o: logwriter.cpp.o
 .PHONY : logwriter.o
 
 # target to build an object file
 logwriter.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/logwriter.cpp.o
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/logwriter.cpp.o
 .PHONY : logwriter.cpp.o
 
 logwriter.i: logwriter.cpp.i
@@ -334,7 +286,7 @@ logwriter.i: logwriter.cpp.i
 
 # target to preprocess a source file
 logwriter.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/logwriter.cpp.i
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/logwriter.cpp.i
 .PHONY : logwriter.cpp.i
 
 logwriter.s: logwriter.cpp.s
@@ -342,39 +294,39 @@ logwriter.s: logwriter.cpp.s
 
 # target to generate assembly for a file
 logwriter.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/logwriter.cpp.s
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/logwriter.cpp.s
 .PHONY : logwriter.cpp.s
 
-looppolicyrobot.o: looppolicyrobot.cpp.o
-.PHONY : looppolicyrobot.o
+looppolicyrobotctrl.o: looppolicyrobotctrl.cpp.o
+.PHONY : looppolicyrobotctrl.o
 
 # target to build an object file
-looppolicyrobot.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/looppolicyrobot.cpp.o
-.PHONY : looppolicyrobot.cpp.o
+looppolicyrobotctrl.cpp.o:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o
+.PHONY : looppolicyrobotctrl.cpp.o
 
-looppolicyrobot.i: looppolicyrobot.cpp.i
-.PHONY : looppolicyrobot.i
+looppolicyrobotctrl.i: looppolicyrobotctrl.cpp.i
+.PHONY : looppolicyrobotctrl.i
 
 # target to preprocess a source file
-looppolicyrobot.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/looppolicyrobot.cpp.i
-.PHONY : looppolicyrobot.cpp.i
+looppolicyrobotctrl.cpp.i:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.i
+.PHONY : looppolicyrobotctrl.cpp.i
 
-looppolicyrobot.s: looppolicyrobot.cpp.s
-.PHONY : looppolicyrobot.s
+looppolicyrobotctrl.s: looppolicyrobotctrl.cpp.s
+.PHONY : looppolicyrobotctrl.s
 
 # target to generate assembly for a file
-looppolicyrobot.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/looppolicyrobot.cpp.s
-.PHONY : looppolicyrobot.cpp.s
+looppolicyrobotctrl.cpp.s:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.s
+.PHONY : looppolicyrobotctrl.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/main.cpp.o
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -382,7 +334,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/main.cpp.i
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -390,39 +342,39 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/main.cpp.s
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-replanpolicyrobot.o: replanpolicyrobot.cpp.o
-.PHONY : replanpolicyrobot.o
+replanpolicyrobotctrl.o: replanpolicyrobotctrl.cpp.o
+.PHONY : replanpolicyrobotctrl.o
 
 # target to build an object file
-replanpolicyrobot.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/replanpolicyrobot.cpp.o
-.PHONY : replanpolicyrobot.cpp.o
+replanpolicyrobotctrl.cpp.o:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o
+.PHONY : replanpolicyrobotctrl.cpp.o
 
-replanpolicyrobot.i: replanpolicyrobot.cpp.i
-.PHONY : replanpolicyrobot.i
+replanpolicyrobotctrl.i: replanpolicyrobotctrl.cpp.i
+.PHONY : replanpolicyrobotctrl.i
 
 # target to preprocess a source file
-replanpolicyrobot.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/replanpolicyrobot.cpp.i
-.PHONY : replanpolicyrobot.cpp.i
+replanpolicyrobotctrl.cpp.i:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.i
+.PHONY : replanpolicyrobotctrl.cpp.i
 
-replanpolicyrobot.s: replanpolicyrobot.cpp.s
-.PHONY : replanpolicyrobot.s
+replanpolicyrobotctrl.s: replanpolicyrobotctrl.cpp.s
+.PHONY : replanpolicyrobotctrl.s
 
 # target to generate assembly for a file
-replanpolicyrobot.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/replanpolicyrobot.cpp.s
-.PHONY : replanpolicyrobot.cpp.s
+replanpolicyrobotctrl.cpp.s:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.s
+.PHONY : replanpolicyrobotctrl.cpp.s
 
 robotscheduler.o: robotscheduler.cpp.o
 .PHONY : robotscheduler.o
 
 # target to build an object file
 robotscheduler.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/robotscheduler.cpp.o
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o
 .PHONY : robotscheduler.cpp.o
 
 robotscheduler.i: robotscheduler.cpp.i
@@ -430,7 +382,7 @@ robotscheduler.i: robotscheduler.cpp.i
 
 # target to preprocess a source file
 robotscheduler.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/robotscheduler.cpp.i
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.i
 .PHONY : robotscheduler.cpp.i
 
 robotscheduler.s: robotscheduler.cpp.s
@@ -438,135 +390,63 @@ robotscheduler.s: robotscheduler.cpp.s
 
 # target to generate assembly for a file
 robotscheduler.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/robotscheduler.cpp.s
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.s
 .PHONY : robotscheduler.cpp.s
 
-stagelaser.o: stagelaser.cpp.o
-.PHONY : stagelaser.o
+staticpolicyrobotctrl.o: staticpolicyrobotctrl.cpp.o
+.PHONY : staticpolicyrobotctrl.o
 
 # target to build an object file
-stagelaser.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/stagelaser.cpp.o
-.PHONY : stagelaser.cpp.o
+staticpolicyrobotctrl.cpp.o:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o
+.PHONY : staticpolicyrobotctrl.cpp.o
 
-stagelaser.i: stagelaser.cpp.i
-.PHONY : stagelaser.i
+staticpolicyrobotctrl.i: staticpolicyrobotctrl.cpp.i
+.PHONY : staticpolicyrobotctrl.i
 
 # target to preprocess a source file
-stagelaser.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/stagelaser.cpp.i
-.PHONY : stagelaser.cpp.i
+staticpolicyrobotctrl.cpp.i:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.i
+.PHONY : staticpolicyrobotctrl.cpp.i
 
-stagelaser.s: stagelaser.cpp.s
-.PHONY : stagelaser.s
+staticpolicyrobotctrl.s: staticpolicyrobotctrl.cpp.s
+.PHONY : staticpolicyrobotctrl.s
 
 # target to generate assembly for a file
-stagelaser.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/stagelaser.cpp.s
-.PHONY : stagelaser.cpp.s
+staticpolicyrobotctrl.cpp.s:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.s
+.PHONY : staticpolicyrobotctrl.cpp.s
 
-staticpolicyrobot.o: staticpolicyrobot.cpp.o
-.PHONY : staticpolicyrobot.o
+waitprobpolicyrobotctrl.o: waitprobpolicyrobotctrl.cpp.o
+.PHONY : waitprobpolicyrobotctrl.o
 
 # target to build an object file
-staticpolicyrobot.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/staticpolicyrobot.cpp.o
-.PHONY : staticpolicyrobot.cpp.o
+waitprobpolicyrobotctrl.cpp.o:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o
+.PHONY : waitprobpolicyrobotctrl.cpp.o
 
-staticpolicyrobot.i: staticpolicyrobot.cpp.i
-.PHONY : staticpolicyrobot.i
-
-# target to preprocess a source file
-staticpolicyrobot.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/staticpolicyrobot.cpp.i
-.PHONY : staticpolicyrobot.cpp.i
-
-staticpolicyrobot.s: staticpolicyrobot.cpp.s
-.PHONY : staticpolicyrobot.s
-
-# target to generate assembly for a file
-staticpolicyrobot.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/staticpolicyrobot.cpp.s
-.PHONY : staticpolicyrobot.cpp.s
-
-swcostcompolicyrobot.o: swcostcompolicyrobot.cpp.o
-.PHONY : swcostcompolicyrobot.o
-
-# target to build an object file
-swcostcompolicyrobot.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/swcostcompolicyrobot.cpp.o
-.PHONY : swcostcompolicyrobot.cpp.o
-
-swcostcompolicyrobot.i: swcostcompolicyrobot.cpp.i
-.PHONY : swcostcompolicyrobot.i
+waitprobpolicyrobotctrl.i: waitprobpolicyrobotctrl.cpp.i
+.PHONY : waitprobpolicyrobotctrl.i
 
 # target to preprocess a source file
-swcostcompolicyrobot.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/swcostcompolicyrobot.cpp.i
-.PHONY : swcostcompolicyrobot.cpp.i
+waitprobpolicyrobotctrl.cpp.i:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.i
+.PHONY : waitprobpolicyrobotctrl.cpp.i
 
-swcostcompolicyrobot.s: swcostcompolicyrobot.cpp.s
-.PHONY : swcostcompolicyrobot.s
-
-# target to generate assembly for a file
-swcostcompolicyrobot.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/swcostcompolicyrobot.cpp.s
-.PHONY : swcostcompolicyrobot.cpp.s
-
-visserver.o: visserver.cpp.o
-.PHONY : visserver.o
-
-# target to build an object file
-visserver.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/visserver.cpp.o
-.PHONY : visserver.cpp.o
-
-visserver.i: visserver.cpp.i
-.PHONY : visserver.i
-
-# target to preprocess a source file
-visserver.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/visserver.cpp.i
-.PHONY : visserver.cpp.i
-
-visserver.s: visserver.cpp.s
-.PHONY : visserver.s
+waitprobpolicyrobotctrl.s: waitprobpolicyrobotctrl.cpp.s
+.PHONY : waitprobpolicyrobotctrl.s
 
 # target to generate assembly for a file
-visserver.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/visserver.cpp.s
-.PHONY : visserver.cpp.s
-
-waitprobpolicyrobot.o: waitprobpolicyrobot.cpp.o
-.PHONY : waitprobpolicyrobot.o
-
-# target to build an object file
-waitprobpolicyrobot.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/waitprobpolicyrobot.cpp.o
-.PHONY : waitprobpolicyrobot.cpp.o
-
-waitprobpolicyrobot.i: waitprobpolicyrobot.cpp.i
-.PHONY : waitprobpolicyrobot.i
-
-# target to preprocess a source file
-waitprobpolicyrobot.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/waitprobpolicyrobot.cpp.i
-.PHONY : waitprobpolicyrobot.cpp.i
-
-waitprobpolicyrobot.s: waitprobpolicyrobot.cpp.s
-.PHONY : waitprobpolicyrobot.s
-
-# target to generate assembly for a file
-waitprobpolicyrobot.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/waitprobpolicyrobot.cpp.s
-.PHONY : waitprobpolicyrobot.cpp.s
+waitprobpolicyrobotctrl.cpp.s:
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.s
+.PHONY : waitprobpolicyrobotctrl.cpp.s
 
 worktask.o: worktask.cpp.o
 .PHONY : worktask.o
 
 # target to build an object file
 worktask.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/worktask.cpp.o
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o
 .PHONY : worktask.cpp.o
 
 worktask.i: worktask.cpp.i
@@ -574,7 +454,7 @@ worktask.i: worktask.cpp.i
 
 # target to preprocess a source file
 worktask.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/worktask.cpp.i
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/worktask.cpp.i
 .PHONY : worktask.cpp.i
 
 worktask.s: worktask.cpp.s
@@ -582,7 +462,7 @@ worktask.s: worktask.cpp.s
 
 # target to generate assembly for a file
 worktask.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f src/CMakeFiles/fasrrobot.dir/build.make src/CMakeFiles/fasrrobot.dir/worktask.cpp.s
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/worktask.cpp.s
 .PHONY : worktask.cpp.s
 
 # Help Target
@@ -591,64 +471,49 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... autolab-fasr"
 	@echo "... edit_cache"
-	@echo "... fasrrobot"
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... __/taskmanager/taskmanager.o"
-	@echo "... __/taskmanager/taskmanager.i"
-	@echo "... __/taskmanager/taskmanager.s"
-	@echo "... baserobot.o"
-	@echo "... baserobot.i"
-	@echo "... baserobot.s"
+	@echo "... __/taskManager/taskmanager.o"
+	@echo "... __/taskManager/taskmanager.i"
+	@echo "... __/taskManager/taskmanager.s"
+	@echo "... baserobotctrl.o"
+	@echo "... baserobotctrl.i"
+	@echo "... baserobotctrl.s"
 	@echo "... broadcast.o"
 	@echo "... broadcast.i"
 	@echo "... broadcast.s"
 	@echo "... charger.o"
 	@echo "... charger.i"
 	@echo "... charger.s"
-	@echo "... common.o"
-	@echo "... common.i"
-	@echo "... common.s"
 	@echo "... destination.o"
 	@echo "... destination.i"
 	@echo "... destination.s"
-	@echo "... individualswcostpolicyrobot.o"
-	@echo "... individualswcostpolicyrobot.i"
-	@echo "... individualswcostpolicyrobot.s"
 	@echo "... logwriter.o"
 	@echo "... logwriter.i"
 	@echo "... logwriter.s"
-	@echo "... looppolicyrobot.o"
-	@echo "... looppolicyrobot.i"
-	@echo "... looppolicyrobot.s"
+	@echo "... looppolicyrobotctrl.o"
+	@echo "... looppolicyrobotctrl.i"
+	@echo "... looppolicyrobotctrl.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... replanpolicyrobot.o"
-	@echo "... replanpolicyrobot.i"
-	@echo "... replanpolicyrobot.s"
+	@echo "... replanpolicyrobotctrl.o"
+	@echo "... replanpolicyrobotctrl.i"
+	@echo "... replanpolicyrobotctrl.s"
 	@echo "... robotscheduler.o"
 	@echo "... robotscheduler.i"
 	@echo "... robotscheduler.s"
-	@echo "... stagelaser.o"
-	@echo "... stagelaser.i"
-	@echo "... stagelaser.s"
-	@echo "... staticpolicyrobot.o"
-	@echo "... staticpolicyrobot.i"
-	@echo "... staticpolicyrobot.s"
-	@echo "... swcostcompolicyrobot.o"
-	@echo "... swcostcompolicyrobot.i"
-	@echo "... swcostcompolicyrobot.s"
-	@echo "... visserver.o"
-	@echo "... visserver.i"
-	@echo "... visserver.s"
-	@echo "... waitprobpolicyrobot.o"
-	@echo "... waitprobpolicyrobot.i"
-	@echo "... waitprobpolicyrobot.s"
+	@echo "... staticpolicyrobotctrl.o"
+	@echo "... staticpolicyrobotctrl.i"
+	@echo "... staticpolicyrobotctrl.s"
+	@echo "... waitprobpolicyrobotctrl.o"
+	@echo "... waitprobpolicyrobotctrl.i"
+	@echo "... waitprobpolicyrobotctrl.s"
 	@echo "... worktask.o"
 	@echo "... worktask.i"
 	@echo "... worktask.s"
@@ -663,6 +528,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/vaughan/fasrRobot && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/jwawerla/projects/autolab-fasr && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

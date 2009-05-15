@@ -21,6 +21,9 @@
  *
  ******************************************************************************
  * $Log: logwriter.h,v $
+ * Revision 1.5  2009-04-25 16:08:24  jwawerla
+ * *** empty log message ***
+ *
  * Revision 1.4  2009-04-03 15:10:02  jwawerla
  * *** empty log message ***
  *
@@ -206,6 +209,7 @@ class CLogWriter
     unsigned short m_callCount;
     /** Matlab comment symbole */
     char m_matlabComment;
+
 };
 
 #endif // LOGWRITER_H

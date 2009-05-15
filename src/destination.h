@@ -49,9 +49,8 @@
 
 #include <glib.h>
 #include <assert.h>
-#include <stage.hh>
 #include <list>
-#include "error.h"
+#include "RapiStage"
 #include "robotwaitinterface.h"
 
 
@@ -61,6 +60,8 @@ const float WAITING_SPACING = 1.0;
 const float CLOSENESS_THRESHOLD = 1.5;
 /** Upper limit on the distance to call it "near" [m] */
 const float MAX_CLOSENESS_DISTANCE = 4.0;
+
+using namespace Rapi;
 
 /**
  * A destination like a source, sink etc.
@@ -94,12 +95,12 @@ class CDestination {
      * Gets the coordinates of location
      * @return point of desination
      */
-    tPoint2d getLocation();
+    CPoint2d getLocation();
     /**
      * Set location
      *  @param point location [m][m]
      */
-    void setLocation(tPoint2d point);
+    void setLocation(CPoint2d point);
     /**
      * Set location
      * @param x [m]
@@ -120,19 +121,19 @@ class CDestination {
      * @param robot that requests its position
      * @return waiting location and rank
      */
-    int getWaitingPosition(IRobotWaitInterface* robot, CPose &pos);
+    int getWaitingPosition(IRobotWaitInterface* robot, CPose2d &pos);
     /**
      * Checks if the robot is near the destination
      * @param pose to check
      * @return true if near, false otherwise
      */
-    bool isNear( CPose pose );
+    bool isNear( CPose2d pose );
     /**
      * Gets the distance to the location from a given position
      * @param pose to get distance to
      * @return distance [m]
      */
-    float getDistance( CPose pose );
+    float getDistance( CPose2d pose );
     /**
      * Causes a robot to leave the waiting queue by removing the robot from
      * waiting queue
@@ -143,7 +144,7 @@ class CDestination {
      * Gets the pose of the destination
      * @return pose
      */
-    CPose getPose();
+    CPose2d getPose();
     /**
      * Gets the name of the destination
      * @return name
@@ -168,7 +169,7 @@ class CDestination {
     /** Name of destination */
     char mName[20];
     /** Location */
-    tPoint2d mLocation;
+    CPoint2d mLocation;
     /** Access mutex */
     GMutex* mAccessMutex;
     /** Waiting queue for robots */

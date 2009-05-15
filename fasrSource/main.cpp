@@ -21,7 +21,7 @@
 #include <stdlib.h>
 
 #include "stage.hh"
-#include "error.h"
+#include "printerror.h"
 #include "fasrsource.h"
 
 

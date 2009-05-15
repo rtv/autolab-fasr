@@ -58,39 +58,39 @@ class CRobotScheduler
      * Register a robot with the planner
      * @param robot to register
      */
-    void registerRobot( IReplanPolicyRobotInterface* robot);
+    void registerRobot ( IReplanPolicyRobotInterface* robot );
     /**
      * Add a work task to the planner
      * @param task to be added
      */
-    void addWorkTask( IWorkTaskRobotInterface* task );
+    void addWorkTask ( IWorkTaskRobotInterface* task );
     /**
      * Gets the next work task for a given robot
      * @param robot to get task for
      * @return next task for robot
      */
-    IWorkTaskRobotInterface* getWorkTask( IReplanPolicyRobotInterface* robot );
+    IWorkTaskRobotInterface* getWorkTask ( IReplanPolicyRobotInterface* robot );
     /**
      * Notifies the planner that a given robot is now charging
      * @param robot that is charging
      */
-    void robotIsCharging( IReplanPolicyRobotInterface* robot );
+    void robotIsCharging ( IReplanPolicyRobotInterface* robot );
 
   protected:
 
-   typedef struct {
-     IWorkTaskRobotInterface* task;
-     unsigned short optNumOfWorkers;
-     std::list<IReplanPolicyRobotInterface*> robotsAssignedList;
-   } tTaskData;
+    typedef struct {
+      IWorkTaskRobotInterface* task;
+      unsigned short optNumOfWorkers;
+      std::list<IReplanPolicyRobotInterface*> robotsAssignedList;
+    } tTaskData;
 
   private:
-   /** Vector of all robots */
-   std::vector<IReplanPolicyRobotInterface*> mRobotVector;
-   /** List of free robots */
-   std::list<IReplanPolicyRobotInterface*> mFreeRobotList;
-   /** List of all tasks */
-   std::vector<tTaskData> mTaskVector;
+    /** Vector of all robots */
+    std::vector<IReplanPolicyRobotInterface*> mRobotVector;
+    /** List of free robots */
+    std::list<IReplanPolicyRobotInterface*> mFreeRobotList;
+    /** List of all tasks */
+    std::vector<tTaskData> mTaskVector;
 
 };
 

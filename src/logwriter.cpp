@@ -21,6 +21,9 @@
  *
  ******************************************************************************
  * $Log: logwriter.cpp,v $
+ * Revision 1.5  2009-04-25 16:08:24  jwawerla
+ * *** empty log message ***
+ *
  * Revision 1.4  2009-04-03 15:10:02  jwawerla
  * *** empty log message ***
  *
@@ -171,7 +174,7 @@ int CLogWriter::print ( float timestamp )
 //-----------------------------------------------------------------------------
 int CLogWriter::print ( float timestamp, float interval )
 {
-  if ( interval > (timestamp - m_lastPrintTimestamp)   ) {
+  if ( interval > ( timestamp - m_lastPrintTimestamp ) ) {
     return 1; // nothing to print this time
   }
   m_lastPrintTimestamp = timestamp;
@@ -195,6 +198,7 @@ int CLogWriter::printLine ( float timestamp )
   int intData = 0;
   long longData = 0;
   char charData = 0;
+  //char lastEntryFilename[50];
   char timeStr[50];
   char colData[COL_SIZE];
   char colFormData[m_columnWidth+1];

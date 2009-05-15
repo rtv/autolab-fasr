@@ -30,19 +30,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/local/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /opt/local/bin/cmake -E remove -f
+RM = /usr/bin/cmake -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /opt/local/bin/ccmake
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/vaughan/fasrRobot
+CMAKE_SOURCE_DIR = /home/jwawerla/projects/autolab-fasr
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/vaughan/fasrRobot
+CMAKE_BINARY_DIR = /home/jwawerla/projects/autolab-fasr
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -50,7 +50,7 @@ CMAKE_BINARY_DIR = /Users/vaughan/fasrRobot
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	cd /Users/vaughan/fasrRobot/fasrSource && /opt/local/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	cd /home/jwawerla/projects/autolab-fasr/fasrSource && /usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -60,19 +60,19 @@ edit_cache/fast: edit_cache
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	cd /Users/vaughan/fasrRobot/fasrSource && /opt/local/bin/cmake -P cmake_install.cmake
+	cd /home/jwawerla/projects/autolab-fasr/fasrSource && /usr/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	cd /Users/vaughan/fasrRobot/fasrSource && /opt/local/bin/cmake -P cmake_install.cmake
+	cd /home/jwawerla/projects/autolab-fasr/fasrSource && /usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	cd /Users/vaughan/fasrRobot/fasrSource && /opt/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	cd /home/jwawerla/projects/autolab-fasr/fasrSource && /usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
@@ -82,7 +82,7 @@ install/local/fast: install/local
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	cd /Users/vaughan/fasrRobot/fasrSource && /opt/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	cd /home/jwawerla/projects/autolab-fasr/fasrSource && /usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
@@ -101,7 +101,7 @@ list_install_components/fast: list_install_components
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	cd /Users/vaughan/fasrRobot/fasrSource && /opt/local/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	cd /home/jwawerla/projects/autolab-fasr/fasrSource && /usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -110,14 +110,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/vaughan/fasrRobot && $(CMAKE_COMMAND) -E cmake_progress_start /Users/vaughan/fasrRobot/CMakeFiles /Users/vaughan/fasrRobot/fasrSource/CMakeFiles/progress.make
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f CMakeFiles/Makefile2 fasrSource/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vaughan/fasrRobot/CMakeFiles 0
+	cd /home/jwawerla/projects/autolab-fasr && $(CMAKE_COMMAND) -E cmake_progress_start /home/jwawerla/projects/autolab-fasr/CMakeFiles /home/jwawerla/projects/autolab-fasr/fasrSource/CMakeFiles/progress.make
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 fasrSource/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jwawerla/projects/autolab-fasr/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f CMakeFiles/Makefile2 fasrSource/clean
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 fasrSource/clean
 .PHONY : clean
 
 # The main clean target
@@ -126,22 +126,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f CMakeFiles/Makefile2 fasrSource/preinstall
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 fasrSource/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f CMakeFiles/Makefile2 fasrSource/preinstall
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 fasrSource/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/vaughan/fasrRobot && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/jwawerla/projects/autolab-fasr && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 fasrSource/CMakeFiles/fasrsource.dir/rule:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f CMakeFiles/Makefile2 fasrSource/CMakeFiles/fasrsource.dir/rule
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 fasrSource/CMakeFiles/fasrsource.dir/rule
 .PHONY : fasrSource/CMakeFiles/fasrsource.dir/rule
 
 # Convenience name for target.
@@ -150,63 +150,15 @@ fasrsource: fasrSource/CMakeFiles/fasrsource.dir/rule
 
 # fast build rule for target.
 fasrsource/fast:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/build
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/build
 .PHONY : fasrsource/fast
-
-__/src/error.o: __/src/error.c.o
-.PHONY : __/src/error.o
-
-# target to build an object file
-__/src/error.c.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/__/src/error.c.o
-.PHONY : __/src/error.c.o
-
-__/src/error.i: __/src/error.c.i
-.PHONY : __/src/error.i
-
-# target to preprocess a source file
-__/src/error.c.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/__/src/error.c.i
-.PHONY : __/src/error.c.i
-
-__/src/error.s: __/src/error.c.s
-.PHONY : __/src/error.s
-
-# target to generate assembly for a file
-__/src/error.c.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/__/src/error.c.s
-.PHONY : __/src/error.c.s
-
-__/src/utilities.o: __/src/utilities.cpp.o
-.PHONY : __/src/utilities.o
-
-# target to build an object file
-__/src/utilities.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/__/src/utilities.cpp.o
-.PHONY : __/src/utilities.cpp.o
-
-__/src/utilities.i: __/src/utilities.cpp.i
-.PHONY : __/src/utilities.i
-
-# target to preprocess a source file
-__/src/utilities.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/__/src/utilities.cpp.i
-.PHONY : __/src/utilities.cpp.i
-
-__/src/utilities.s: __/src/utilities.cpp.s
-.PHONY : __/src/utilities.s
-
-# target to generate assembly for a file
-__/src/utilities.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/__/src/utilities.cpp.s
-.PHONY : __/src/utilities.cpp.s
 
 fasrsource.o: fasrsource.cpp.o
 .PHONY : fasrsource.o
 
 # target to build an object file
 fasrsource.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/fasrsource.cpp.o
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/fasrsource.cpp.o
 .PHONY : fasrsource.cpp.o
 
 fasrsource.i: fasrsource.cpp.i
@@ -214,7 +166,7 @@ fasrsource.i: fasrsource.cpp.i
 
 # target to preprocess a source file
 fasrsource.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/fasrsource.cpp.i
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/fasrsource.cpp.i
 .PHONY : fasrsource.cpp.i
 
 fasrsource.s: fasrsource.cpp.s
@@ -222,7 +174,7 @@ fasrsource.s: fasrsource.cpp.s
 
 # target to generate assembly for a file
 fasrsource.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/fasrsource.cpp.s
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/fasrsource.cpp.s
 .PHONY : fasrsource.cpp.s
 
 main.o: main.cpp.o
@@ -230,7 +182,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/main.cpp.o
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -238,7 +190,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/main.cpp.i
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -246,7 +198,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /Users/vaughan/fasrRobot && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/main.cpp.s
+	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f fasrSource/CMakeFiles/fasrsource.dir/build.make fasrSource/CMakeFiles/fasrsource.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -262,12 +214,6 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... __/src/error.o"
-	@echo "... __/src/error.i"
-	@echo "... __/src/error.s"
-	@echo "... __/src/utilities.o"
-	@echo "... __/src/utilities.i"
-	@echo "... __/src/utilities.s"
 	@echo "... fasrsource.o"
 	@echo "... fasrsource.i"
 	@echo "... fasrsource.s"
@@ -285,6 +231,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/vaughan/fasrRobot && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/jwawerla/projects/autolab-fasr && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

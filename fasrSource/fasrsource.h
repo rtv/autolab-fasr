@@ -38,7 +38,7 @@
 
 #include <stage.hh>
 #include <list>
-#include "error.h"
+#include "printerror.h"
 #include "utilities.h"
 
 /**

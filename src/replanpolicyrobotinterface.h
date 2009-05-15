@@ -32,7 +32,7 @@
 #ifndef REPLANPOLICYROBOT_INTERFACE_H
 #define REPLANPOLICYROBOT_INTERFACE_H
 
-#include "baserobot.h"
+#include "baserobotctrl.h"
 
 /**
  * Implements a replanning policy, this robot replans the optimal task
@@ -68,11 +68,6 @@ class IReplanPolicyRobotInterface
      * @param map wave front map of the world used for navigation
      */
     IReplanPolicyRobotInterface() {};
-
-
-  private:
-
-
 };
 
 #endif

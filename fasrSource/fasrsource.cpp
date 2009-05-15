@@ -63,12 +63,12 @@ CFasrSource::CFasrSource ( Stg::Model* mod )
   mLastProducedUnitTimestamp = 0.0;
   mUpdateInterval = 10;
   mTaskTimeline.clear();
-  
+
   mStgModel->AddUpdateCallback ( ( Stg::stg_model_callback_t ) stgUpdate, this );
   strcpy ( mName, mStgModel->Token() );
-  
+
   // get params from Stage model as specified in worldfile
-  
+
   if ( ! mStgModel->GetPropertyStr ( "scriptname", &mScriptName,  NULL ) )
     PRT_WARN0 ( "No script specified " );
   else {
@@ -122,8 +122,7 @@ int CFasrSource::loadScript()
                   source, sink, &taskData.capacity, &taskData.productionRate,
                   &taskData.reward ) != 7 ) {
       PRT_ERR2 ( "While reading script file %s line %d", mScriptName, line );
-    }
-    else {
+    } else {
       if ( strcmp ( mName, source ) == 0 ) {
         addTaskData ( taskData );
       }

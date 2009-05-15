@@ -1,37 +1,51 @@
 
+link_directories( ${STAGE_LIBRARY_DIRS} )
 
-# build a loadable shared library module 
-ADD_LIBRARY(fasrrobot MODULE
-            ../taskmanager/taskmanager.cpp
-            baserobot.cpp
-            broadcast.cpp
-            charger.cpp
-				common.cpp
-            destination.cpp
-            individualswcostpolicyrobot.cpp
-            logwriter.cpp
-            looppolicyrobot.cpp
-            main.cpp
-            replanpolicyrobot.cpp
-            robotscheduler.cpp
-            stagelaser.cpp
-            staticpolicyrobot.cpp
-            swcostcompolicyrobot.cpp
-            visserver.cpp
-            waitprobpolicyrobot.cpp
-            worktask.cpp
-            )
+set_source_files_properties( fasrrobot.cpp PROPERTIES COMPILE_FLAGS "${FLTK_CFLAGS}" )
 
-# delete the "lib" prefix from the plugin libraries
-SET_TARGET_PROPERTIES( fasrrobot PROPERTIES PREFIX "" )
 
-TARGET_LINK_LIBRARIES( fasrrobot
-  ${ND_LIBRARIES}
-  ${WP_LIBRARIES}
-  ${STAGE_LIBRARIES}
-  ${OPENGL_LIBRARIES}
+MESSAGE( ${INDENT} "Checking for OpenGL" )
+find_package( OpenGL REQUIRED )
+IF( NOT OPENGL_GLU_FOUND )
+  MESSAGE( FATAL_ERROR "OpenGL GLU not found, aborting" )
+ENDIF( NOT OPENGL_GLU_FOUND )
+MESSAGE( STATUS ${INDENT} "OpenGL GLU found at ${OPENGL_INCLUDE_DIR}" )
+MESSAGE( STATUS "    OPENGL_INCLUDE_DIR = ${OPENGL_INCLUDE_DIR}")
+MESSAGE( STATUS "    OPENGL_glu_LIBRARY = ${OPENGL_glu_LIBRARY}")
+
+
+#build a shared library
+ADD_LIBRARY(autolab-fasr MODULE
+  main.cpp
+  baserobotctrl.cpp
+  staticpolicyrobotctrl.cpp
+  looppolicyrobotctrl.cpp
+  waitprobpolicyrobotctrl.cpp
+  replanpolicyrobotctrl.cpp
+  robotscheduler.cpp
+  logwriter.cpp
+  destination.cpp
+  worktask.cpp
+  charger.cpp
+  broadcast.cpp
+  ../taskManager/taskmanager.cpp
 )
 
-INSTALL(TARGETS fasrrobot
-	LIBRARY DESTINATION lib
+# delete the "lib" prefix from the plugin libraries
+SET_TARGET_PROPERTIES( autolab-fasr PROPERTIES PREFIX "" )
+
+#need to link to some other libraries ? just add them here
+TARGET_LINK_LIBRARIES( autolab-fasr
+  ${STAGE_LIBRARIES}
+  ${OPENGL_LIBRARIES}
+  ${RAPI_LIBRARIES}
+  ${RAPI_GUI_LIBRARIES}
+  ${QT_LIBRARIES}
+  ${ND_LIBRARIES}
+  ${WP_LIBRARIES}
+)
+
+INSTALL(TARGETS autolab-fasr
+  RUNTIME DESTINATION bin
+  LIBRARY DESTINATION lib
 )
