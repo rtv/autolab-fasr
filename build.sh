@@ -18,7 +18,7 @@ mkdir -p ${DEPENDENS_SRC_DIR}
 # get ND
 echo -e ${RED}Fetching autolab-nd ${EC}
 cd ${DEPENDENS_SRC_DIR}
-git clone git://github.com/rtv/autolab-nd.git
+git clone git@github.com:rtv/autolab-nd.git
 cd ${DEPENDENS_SRC_DIR}/autolab-nd
 
 echo -e ${RED}Reverting autolab-nd to the correct commit version ${EC}
@@ -28,7 +28,7 @@ echo -e ${RED}Reverting autolab-nd to the correct commit version ${EC}
 # get WP
 echo -e ${RED}Fetching autolab-wp ${EC}
 cd ${DEPENDENS_SRC_DIR}
-git clone git://github.com/rtv/autolab-wp.git
+git clone git@github.com:rtv/autolab-wp.git
 cd ${DEPENDENS_SRC_DIR}/autolab-wp
 
 echo -e ${RED}Reverting autolab-wp to the correct commit version ${EC}
@@ -38,7 +38,7 @@ echo -e ${RED}Reverting autolab-wp to the correct commit version ${EC}
 # get RAPI
 echo -e ${RED}Fetching autolab-rapi ${EC}
 cd ${DEPENDENS_SRC_DIR}
-git clone git://github.com/jwawerla/autolab-rapi.git
+git clone git@github.com:jwawerla/autolab-rapi.git
 cd ${DEPENDENS_SRC_DIR}/autolab-rapi
 
 echo -e ${RED}Reverting autolab-rapi to the correct commit version ${EC}
