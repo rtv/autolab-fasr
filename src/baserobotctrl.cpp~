@@ -399,7 +399,7 @@ bool ABaseRobotCtrl::chargingPolicy ( float dt )
   distFromHereToSource = mWaveFrontMap->calculatePlanFrom ( mRobotPose );
 
   mWaveFrontMap->calculateWaveFront ( mCurrentWorkTask->mSink->getLocation(),
-                                      CWaveFrontMap::MAP_DATA_ONLY );
+                                      CWaveFrontMap::USE_MAP_ONLY );
   distFromSourceToSink = mWaveFrontMap->calculatePlanFrom (
                              mCurrentWorkTask->mSource->getLocation() );
 
@@ -428,7 +428,7 @@ bool ABaseRobotCtrl::actionDock()
                         NORMALIZE_ANGLE ( mLastChargingStation.bearing + mRobotPose.mYaw ) );
       mCurrentWaypoint = mRobotPose + point;
       mNd->setGoal ( mCurrentWaypoint.getPose() );
-      mNd->update ( mSimTime, mRobotPose );
+      mNd->update ( mSimTime, mRobotPose, mRobotVelocity );
       mDrivetrain->setVelocityCmd ( mNd->getRecommendedVelocity() );
     }
     else
@@ -787,6 +787,7 @@ void ABaseRobotCtrl::updateData ( float dt )
 
   // get latest position
   mRobotPose = mDrivetrain->getOdometry()->getPose();
+  mRobotVelocity = mDrivetrain->getVelocity();
   mCargoLoad = mDrivetrain->getStageModel()->GetFlagCount();
   mSimTime = mRobot->getCurrentTime();
   fiducialUpdate ();

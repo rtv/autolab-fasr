@@ -428,7 +428,7 @@ bool ABaseRobotCtrl::actionDock()
                         NORMALIZE_ANGLE ( mLastChargingStation.bearing + mRobotPose.mYaw ) );
       mCurrentWaypoint = mRobotPose + point;
       mNd->setGoal ( mCurrentWaypoint.getPose() );
-      mNd->update ( mSimTime, mRobotPose );
+      mNd->update ( mSimTime, mRobotPose, mRobotVelocity );
       mDrivetrain->setVelocityCmd ( mNd->getRecommendedVelocity() );
     }
     else
@@ -576,7 +576,7 @@ bool ABaseRobotCtrl::actionPickupLoad()
     mNd->setEpsilonDistance ( 0.3 );
     mNd->setEpsilonAngle ( D2R ( 180.0 ) );
     mNd->setGoal ( mCurrentWorkTask->mSource->getPose() );
-    mNd->update ( mSimTime, mRobotPose );
+    mNd->update ( mSimTime, mRobotPose, mRobotVelocity );
     mDrivetrain->setVelocityCmd ( mNd->getRecommendedVelocity() );
   }
 
@@ -615,7 +615,7 @@ bool ABaseRobotCtrl::actionDeliverLoad()
     mNd->setEpsilonDistance ( 0.3 );
     mNd->setEpsilonAngle ( D2R ( 180.0 ) );
     mNd->setGoal ( mCurrentWorkTask->mSink->getPose() );
-    mNd->update ( mSimTime, mRobotPose );
+    mNd->update ( mSimTime, mRobotPose, mRobotVelocity );
     mDrivetrain->setVelocityCmd ( mNd->getRecommendedVelocity() );
   }
 
@@ -713,7 +713,7 @@ bool ABaseRobotCtrl::actionFollowWayPointList ()
     return false;  // we are still in line and waiting
   }
 
-  mNd->update ( mSimTime, mRobotPose );
+  mNd->update ( mSimTime, mRobotPose, mRobotVelocity );
   mDrivetrain->setVelocityCmd ( mNd->getRecommendedVelocity() );
 
 
@@ -764,7 +764,7 @@ bool ABaseRobotCtrl::actionWaitInQueue ( bool fgEnforceWaitingPosition )
 
   if ( mNd->atGoal() == false )
   {
-    mNd->update ( mSimTime, mRobotPose );
+    mNd->update ( mSimTime, mRobotPose, mRobotVelocity );
     mDrivetrain->setVelocityCmd ( mNd->getRecommendedVelocity() );
   }
   else
@@ -787,6 +787,7 @@ void ABaseRobotCtrl::updateData ( float dt )
 
   // get latest position
   mRobotPose = mDrivetrain->getOdometry()->getPose();
+  mRobotVelocity = mDrivetrain->getVelocity();
   mCargoLoad = mDrivetrain->getStageModel()->GetFlagCount();
   mSimTime = mRobot->getCurrentTime();
   fiducialUpdate ();

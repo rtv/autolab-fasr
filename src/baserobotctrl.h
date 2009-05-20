@@ -289,6 +289,8 @@ class ABaseRobotCtrl : public ARobotCtrl, public IRobotWaitInterface
     CNd* mNd;
     /** Robot pose */
     CPose2d mRobotPose;
+    /** Velocity of robot */
+    CVelocity2d mRobotVelocity;
     /** ID of robot */
     int mRobotId;
     /** Cargo bay capacity of robot [#flags] */

@@ -9,9 +9,9 @@ src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: ./src/logwrite
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: ./src/robotwaitinterface.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: ./src/worktask.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: ./src/worktaskrobotinterface.h
-src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: taskManager/taskmanager.cpp
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: taskManager/taskmanager.h
+src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: /usr/include/glib-2.0/glib.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: /usr/include/glib-2.0/glib/galloca.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: /usr/include/glib-2.0/glib/garray.h
@@ -123,7 +123,6 @@ src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-wp-0.1/wavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-wp-0.1/wavefrontmapvis.h
 
-src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: src/baserobotctrl.cpp
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: src/baserobotctrl.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: src/broadcast.h
@@ -132,6 +131,7 @@ src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: src/destination.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: src/logwriter.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: src/robotwaitinterface.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: src/worktaskrobotinterface.h
+src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: /usr/include/glib-2.0/glib.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: /usr/include/glib-2.0/glib/galloca.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: /usr/include/glib-2.0/glib/garray.h
@@ -243,12 +243,12 @@ src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-wp-0.
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-wp-0.1/wavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-wp-0.1/wavefrontmapvis.h
 
-src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: src/broadcast.cpp
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: src/broadcast.h
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: src/destination.h
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: src/robotwaitinterface.h
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: src/worktaskrobotinterface.h
+src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: /usr/include/glib-2.0/glib.h
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: /usr/include/glib-2.0/glib/galloca.h
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: /usr/include/glib-2.0/glib/garray.h
@@ -345,11 +345,11 @@ src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-stag
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-stage-0.1/stagesonar.h
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
 
-src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: src/charger.cpp
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: src/charger.h
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: src/destination.h
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: src/robotwaitinterface.h
+src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: /usr/include/glib-2.0/glib.h
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: /usr/include/glib-2.0/glib/galloca.h
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: /usr/include/glib-2.0/glib/garray.h
@@ -446,10 +446,10 @@ src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-stage-
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-stage-0.1/stagesonar.h
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
 
-src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: src/destination.cpp
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: src/destination.h
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: src/robotwaitinterface.h
+src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: /usr/include/glib-2.0/glib.h
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: /usr/include/glib-2.0/glib/galloca.h
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: /usr/include/glib-2.0/glib/garray.h
@@ -549,7 +549,6 @@ src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: local/include/autolab-rapi-st
 src/CMakeFiles/autolab-fasr.dir/logwriter.cpp.o: src/logwriter.cpp
 src/CMakeFiles/autolab-fasr.dir/logwriter.cpp.o: src/logwriter.h
 
-src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: src/baserobotctrl.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: src/broadcast.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: src/charger.h
@@ -559,6 +558,7 @@ src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: src/looppolicyrobotct
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: src/looppolicyrobotctrl.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: src/robotwaitinterface.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: src/worktaskrobotinterface.h
+src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib/galloca.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib/garray.h
@@ -672,7 +672,6 @@ src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab
 
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: ./src/worktask.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: ./taskManager/taskmanager.h
-src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: src/baserobotctrl.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: src/broadcast.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: src/charger.h
@@ -683,6 +682,7 @@ src/CMakeFiles/autolab-fasr.dir/main.cpp.o: src/main.cpp
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: src/robotwaitinterface.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: src/staticpolicyrobotctrl.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: src/worktaskrobotinterface.h
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/glib-2.0/glib.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/glib-2.0/glib/galloca.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/glib-2.0/glib/garray.h
@@ -739,7 +739,6 @@ src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/glib-2.0/glib/gunicode.
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/glib-2.0/glib/gurifuncs.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/glib-2.0/glib/gutils.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/glib-2.0/glib/gwin32.h
-src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/Gentoo/gentoo-qconfig.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/Qt3Support/q3cstring.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/Qt3Support/q3valuelist.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtCore/QIODevice
@@ -1139,7 +1138,6 @@ src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-wp-0.1/stagegr
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-wp-0.1/wavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-wp-0.1/wavefrontmapvis.h
 
-src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: src/baserobotctrl.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: src/broadcast.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: src/charger.h
@@ -1152,6 +1150,7 @@ src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: src/robotscheduler.
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: src/robotwaitinterface.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: src/worktask.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: src/worktaskrobotinterface.h
+src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib/galloca.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib/garray.h
@@ -1263,7 +1262,6 @@ src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autol
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/wavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/wavefrontmapvis.h
 
-src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: src/baserobotctrl.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: src/broadcast.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: src/charger.h
@@ -1275,6 +1273,7 @@ src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: src/robotscheduler.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: src/robotwaitinterface.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: src/worktask.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: src/worktaskrobotinterface.h
+src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: /usr/include/glib-2.0/glib.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: /usr/include/glib-2.0/glib/galloca.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: /usr/include/glib-2.0/glib/garray.h
@@ -1386,7 +1385,6 @@ src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-wp-0
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-wp-0.1/wavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-wp-0.1/wavefrontmapvis.h
 
-src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: src/baserobotctrl.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: src/broadcast.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: src/charger.h
@@ -1396,6 +1394,7 @@ src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: src/robotwaitinterf
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: src/staticpolicyrobotctrl.cpp
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: src/staticpolicyrobotctrl.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: src/worktaskrobotinterface.h
+src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib/galloca.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib/garray.h
@@ -1507,7 +1506,6 @@ src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autol
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/wavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/wavefrontmapvis.h
 
-src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: src/baserobotctrl.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: src/broadcast.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: src/charger.h
@@ -1517,6 +1515,7 @@ src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: src/robotwaitinte
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: src/waitprobpolicyrobotctrl.cpp
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: src/waitprobpolicyrobotctrl.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: src/worktaskrobotinterface.h
+src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib/galloca.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib/garray.h
@@ -1628,12 +1627,12 @@ src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/aut
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/wavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/wavefrontmapvis.h
 
-src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: src/destination.h
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: src/robotwaitinterface.h
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: src/worktask.cpp
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: src/worktask.h
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: src/worktaskrobotinterface.h
+src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: /usr/include/glib-2.0/glib.h
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: /usr/include/glib-2.0/glib/galloca.h
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: /usr/include/glib-2.0/glib/garray.h

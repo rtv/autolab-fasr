@@ -1,4 +1,4 @@
-# Install script for directory: /home/jwawerla/projects/autolab-fasr/taskManager
+# Install script for directory: /home/jwawerla/autolab-fasr/taskManager
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -29,7 +29,7 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT)
 
 # Install shared libraries without execute permission?
 IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  SET(CMAKE_INSTALL_SO_NO_EXE "0")
+  SET(CMAKE_INSTALL_SO_NO_EXE "1")
 ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" MATCHES "^(Unspecified)$")
@@ -38,7 +38,7 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" MATCHES "^(Unspec
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/taskmanager.so"
          RPATH "")
   ENDIF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/taskmanager.so")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE MODULE FILES "/home/jwawerla/projects/autolab-fasr/taskManager/taskmanager.so")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE MODULE FILES "/home/jwawerla/autolab-fasr/taskManager/taskmanager.so")
   IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/taskmanager.so")
     FILE(RPATH_REMOVE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/taskmanager.so")

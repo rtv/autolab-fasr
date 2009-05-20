@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jwawerla/projects/autolab-fasr
+CMAKE_SOURCE_DIR = /home/jwawerla/autolab-fasr
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jwawerla/projects/autolab-fasr
+CMAKE_BINARY_DIR = /home/jwawerla/autolab-fasr
 
 # Include any dependencies generated for this target.
 include taskManager/CMakeFiles/taskmanager.dir/depend.make
@@ -51,17 +51,17 @@ include taskManager/CMakeFiles/taskmanager.dir/flags.make
 
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: taskManager/CMakeFiles/taskmanager.dir/flags.make
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: taskManager/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/projects/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object taskManager/CMakeFiles/taskmanager.dir/main.cpp.o"
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/taskmanager.dir/main.cpp.o -c /home/jwawerla/projects/autolab-fasr/taskManager/main.cpp
+	cd /home/jwawerla/autolab-fasr/taskManager && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/taskmanager.dir/main.cpp.o -c /home/jwawerla/autolab-fasr/taskManager/main.cpp
 
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/taskmanager.dir/main.cpp.i"
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/projects/autolab-fasr/taskManager/main.cpp > CMakeFiles/taskmanager.dir/main.cpp.i
+	cd /home/jwawerla/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/autolab-fasr/taskManager/main.cpp > CMakeFiles/taskmanager.dir/main.cpp.i
 
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/taskmanager.dir/main.cpp.s"
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/projects/autolab-fasr/taskManager/main.cpp -o CMakeFiles/taskmanager.dir/main.cpp.s
+	cd /home/jwawerla/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/autolab-fasr/taskManager/main.cpp -o CMakeFiles/taskmanager.dir/main.cpp.s
 
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o.requires:
 .PHONY : taskManager/CMakeFiles/taskmanager.dir/main.cpp.o.requires
@@ -75,17 +75,17 @@ taskManager/CMakeFiles/taskmanager.dir/main.cpp.o.provides.build: taskManager/CM
 
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: taskManager/CMakeFiles/taskmanager.dir/flags.make
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: taskManager/taskmanager.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/projects/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o"
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/taskmanager.dir/taskmanager.cpp.o -c /home/jwawerla/projects/autolab-fasr/taskManager/taskmanager.cpp
+	cd /home/jwawerla/autolab-fasr/taskManager && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/taskmanager.dir/taskmanager.cpp.o -c /home/jwawerla/autolab-fasr/taskManager/taskmanager.cpp
 
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/taskmanager.dir/taskmanager.cpp.i"
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/projects/autolab-fasr/taskManager/taskmanager.cpp > CMakeFiles/taskmanager.dir/taskmanager.cpp.i
+	cd /home/jwawerla/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/autolab-fasr/taskManager/taskmanager.cpp > CMakeFiles/taskmanager.dir/taskmanager.cpp.i
 
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/taskmanager.dir/taskmanager.cpp.s"
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/projects/autolab-fasr/taskManager/taskmanager.cpp -o CMakeFiles/taskmanager.dir/taskmanager.cpp.s
+	cd /home/jwawerla/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/autolab-fasr/taskManager/taskmanager.cpp -o CMakeFiles/taskmanager.dir/taskmanager.cpp.s
 
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o.requires:
 .PHONY : taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o.requires
@@ -99,17 +99,17 @@ taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o.provides.build: taskMan
 
 taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: taskManager/CMakeFiles/taskmanager.dir/flags.make
 taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: src/worktask.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/projects/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o"
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o -c /home/jwawerla/projects/autolab-fasr/src/worktask.cpp
+	cd /home/jwawerla/autolab-fasr/taskManager && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o -c /home/jwawerla/autolab-fasr/src/worktask.cpp
 
 taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/taskmanager.dir/__/src/worktask.cpp.i"
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/projects/autolab-fasr/src/worktask.cpp > CMakeFiles/taskmanager.dir/__/src/worktask.cpp.i
+	cd /home/jwawerla/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/autolab-fasr/src/worktask.cpp > CMakeFiles/taskmanager.dir/__/src/worktask.cpp.i
 
 taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/taskmanager.dir/__/src/worktask.cpp.s"
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/projects/autolab-fasr/src/worktask.cpp -o CMakeFiles/taskmanager.dir/__/src/worktask.cpp.s
+	cd /home/jwawerla/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/autolab-fasr/src/worktask.cpp -o CMakeFiles/taskmanager.dir/__/src/worktask.cpp.s
 
 taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o.requires:
 .PHONY : taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o.requires
@@ -123,17 +123,17 @@ taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o.provides.build: tas
 
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: taskManager/CMakeFiles/taskmanager.dir/flags.make
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: src/destination.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/projects/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o"
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/taskmanager.dir/__/src/destination.cpp.o -c /home/jwawerla/projects/autolab-fasr/src/destination.cpp
+	cd /home/jwawerla/autolab-fasr/taskManager && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/taskmanager.dir/__/src/destination.cpp.o -c /home/jwawerla/autolab-fasr/src/destination.cpp
 
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/taskmanager.dir/__/src/destination.cpp.i"
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/projects/autolab-fasr/src/destination.cpp > CMakeFiles/taskmanager.dir/__/src/destination.cpp.i
+	cd /home/jwawerla/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/autolab-fasr/src/destination.cpp > CMakeFiles/taskmanager.dir/__/src/destination.cpp.i
 
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/taskmanager.dir/__/src/destination.cpp.s"
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/projects/autolab-fasr/src/destination.cpp -o CMakeFiles/taskmanager.dir/__/src/destination.cpp.s
+	cd /home/jwawerla/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/autolab-fasr/src/destination.cpp -o CMakeFiles/taskmanager.dir/__/src/destination.cpp.s
 
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o.requires:
 .PHONY : taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o.requires
@@ -162,7 +162,7 @@ taskManager/taskmanager.so: taskManager/CMakeFiles/taskmanager.dir/__/src/destin
 taskManager/taskmanager.so: taskManager/CMakeFiles/taskmanager.dir/build.make
 taskManager/taskmanager.so: taskManager/CMakeFiles/taskmanager.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared module taskmanager.so"
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/taskmanager.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/jwawerla/autolab-fasr/taskManager && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/taskmanager.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 taskManager/CMakeFiles/taskmanager.dir/build: taskManager/taskmanager.so
@@ -175,10 +175,10 @@ taskManager/CMakeFiles/taskmanager.dir/requires: taskManager/CMakeFiles/taskmana
 .PHONY : taskManager/CMakeFiles/taskmanager.dir/requires
 
 taskManager/CMakeFiles/taskmanager.dir/clean:
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && $(CMAKE_COMMAND) -P CMakeFiles/taskmanager.dir/cmake_clean.cmake
+	cd /home/jwawerla/autolab-fasr/taskManager && $(CMAKE_COMMAND) -P CMakeFiles/taskmanager.dir/cmake_clean.cmake
 .PHONY : taskManager/CMakeFiles/taskmanager.dir/clean
 
 taskManager/CMakeFiles/taskmanager.dir/depend:
-	cd /home/jwawerla/projects/autolab-fasr && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jwawerla/projects/autolab-fasr /home/jwawerla/projects/autolab-fasr/taskManager /home/jwawerla/projects/autolab-fasr /home/jwawerla/projects/autolab-fasr/taskManager /home/jwawerla/projects/autolab-fasr/taskManager/CMakeFiles/taskmanager.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jwawerla/autolab-fasr && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jwawerla/autolab-fasr /home/jwawerla/autolab-fasr/taskManager /home/jwawerla/autolab-fasr /home/jwawerla/autolab-fasr/taskManager /home/jwawerla/autolab-fasr/taskManager/CMakeFiles/taskmanager.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : taskManager/CMakeFiles/taskmanager.dir/depend
 

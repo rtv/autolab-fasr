@@ -10,9 +10,9 @@ src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o
  ./src/robotwaitinterface.h
  ./src/worktask.h
  ./src/worktaskrobotinterface.h
+ /home/jwawerla/autolab-fasr/taskManager/taskmanager.cpp
+ /home/jwawerla/autolab-fasr/taskManager/taskmanager.h
  /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
- /home/jwawerla/projects/autolab-fasr/taskManager/taskmanager.cpp
- /home/jwawerla/projects/autolab-fasr/taskManager/taskmanager.h
  /usr/include/glib-2.0/glib.h
  /usr/include/glib-2.0/glib/galloca.h
  /usr/include/glib-2.0/glib/garray.h
@@ -124,15 +124,15 @@ src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o
  local/include/autolab-wp-0.1/wavefrontmap.h
  local/include/autolab-wp-0.1/wavefrontmapvis.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o
+ /home/jwawerla/autolab-fasr/src/baserobotctrl.cpp
+ /home/jwawerla/autolab-fasr/src/baserobotctrl.h
+ /home/jwawerla/autolab-fasr/src/broadcast.h
+ /home/jwawerla/autolab-fasr/src/charger.h
+ /home/jwawerla/autolab-fasr/src/destination.h
+ /home/jwawerla/autolab-fasr/src/logwriter.h
+ /home/jwawerla/autolab-fasr/src/robotwaitinterface.h
+ /home/jwawerla/autolab-fasr/src/worktaskrobotinterface.h
  /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
- /home/jwawerla/projects/autolab-fasr/src/baserobotctrl.cpp
- /home/jwawerla/projects/autolab-fasr/src/baserobotctrl.h
- /home/jwawerla/projects/autolab-fasr/src/broadcast.h
- /home/jwawerla/projects/autolab-fasr/src/charger.h
- /home/jwawerla/projects/autolab-fasr/src/destination.h
- /home/jwawerla/projects/autolab-fasr/src/logwriter.h
- /home/jwawerla/projects/autolab-fasr/src/robotwaitinterface.h
- /home/jwawerla/projects/autolab-fasr/src/worktaskrobotinterface.h
  /usr/include/glib-2.0/glib.h
  /usr/include/glib-2.0/glib/galloca.h
  /usr/include/glib-2.0/glib/garray.h
@@ -244,12 +244,12 @@ src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o
  local/include/autolab-wp-0.1/wavefrontmap.h
  local/include/autolab-wp-0.1/wavefrontmapvis.h
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o
+ /home/jwawerla/autolab-fasr/src/broadcast.cpp
+ /home/jwawerla/autolab-fasr/src/broadcast.h
+ /home/jwawerla/autolab-fasr/src/destination.h
+ /home/jwawerla/autolab-fasr/src/robotwaitinterface.h
+ /home/jwawerla/autolab-fasr/src/worktaskrobotinterface.h
  /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
- /home/jwawerla/projects/autolab-fasr/src/broadcast.cpp
- /home/jwawerla/projects/autolab-fasr/src/broadcast.h
- /home/jwawerla/projects/autolab-fasr/src/destination.h
- /home/jwawerla/projects/autolab-fasr/src/robotwaitinterface.h
- /home/jwawerla/projects/autolab-fasr/src/worktaskrobotinterface.h
  /usr/include/glib-2.0/glib.h
  /usr/include/glib-2.0/glib/galloca.h
  /usr/include/glib-2.0/glib/garray.h
@@ -346,11 +346,11 @@ src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o
  local/include/autolab-rapi-stage-0.1/stagesonar.h
  local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o
+ /home/jwawerla/autolab-fasr/src/charger.cpp
+ /home/jwawerla/autolab-fasr/src/charger.h
+ /home/jwawerla/autolab-fasr/src/destination.h
+ /home/jwawerla/autolab-fasr/src/robotwaitinterface.h
  /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
- /home/jwawerla/projects/autolab-fasr/src/charger.cpp
- /home/jwawerla/projects/autolab-fasr/src/charger.h
- /home/jwawerla/projects/autolab-fasr/src/destination.h
- /home/jwawerla/projects/autolab-fasr/src/robotwaitinterface.h
  /usr/include/glib-2.0/glib.h
  /usr/include/glib-2.0/glib/galloca.h
  /usr/include/glib-2.0/glib/garray.h
@@ -447,10 +447,10 @@ src/CMakeFiles/autolab-fasr.dir/charger.cpp.o
  local/include/autolab-rapi-stage-0.1/stagesonar.h
  local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o
+ /home/jwawerla/autolab-fasr/src/destination.cpp
+ /home/jwawerla/autolab-fasr/src/destination.h
+ /home/jwawerla/autolab-fasr/src/robotwaitinterface.h
  /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
- /home/jwawerla/projects/autolab-fasr/src/destination.cpp
- /home/jwawerla/projects/autolab-fasr/src/destination.h
- /home/jwawerla/projects/autolab-fasr/src/robotwaitinterface.h
  /usr/include/glib-2.0/glib.h
  /usr/include/glib-2.0/glib/galloca.h
  /usr/include/glib-2.0/glib/garray.h
@@ -547,19 +547,19 @@ src/CMakeFiles/autolab-fasr.dir/destination.cpp.o
  local/include/autolab-rapi-stage-0.1/stagesonar.h
  local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
 src/CMakeFiles/autolab-fasr.dir/logwriter.cpp.o
- /home/jwawerla/projects/autolab-fasr/src/logwriter.cpp
- /home/jwawerla/projects/autolab-fasr/src/logwriter.h
+ /home/jwawerla/autolab-fasr/src/logwriter.cpp
+ /home/jwawerla/autolab-fasr/src/logwriter.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o
+ /home/jwawerla/autolab-fasr/src/baserobotctrl.h
+ /home/jwawerla/autolab-fasr/src/broadcast.h
+ /home/jwawerla/autolab-fasr/src/charger.h
+ /home/jwawerla/autolab-fasr/src/destination.h
+ /home/jwawerla/autolab-fasr/src/logwriter.h
+ /home/jwawerla/autolab-fasr/src/looppolicyrobotctrl.cpp
+ /home/jwawerla/autolab-fasr/src/looppolicyrobotctrl.h
+ /home/jwawerla/autolab-fasr/src/robotwaitinterface.h
+ /home/jwawerla/autolab-fasr/src/worktaskrobotinterface.h
  /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
- /home/jwawerla/projects/autolab-fasr/src/baserobotctrl.h
- /home/jwawerla/projects/autolab-fasr/src/broadcast.h
- /home/jwawerla/projects/autolab-fasr/src/charger.h
- /home/jwawerla/projects/autolab-fasr/src/destination.h
- /home/jwawerla/projects/autolab-fasr/src/logwriter.h
- /home/jwawerla/projects/autolab-fasr/src/looppolicyrobotctrl.cpp
- /home/jwawerla/projects/autolab-fasr/src/looppolicyrobotctrl.h
- /home/jwawerla/projects/autolab-fasr/src/robotwaitinterface.h
- /home/jwawerla/projects/autolab-fasr/src/worktaskrobotinterface.h
  /usr/include/glib-2.0/glib.h
  /usr/include/glib-2.0/glib/galloca.h
  /usr/include/glib-2.0/glib/garray.h
@@ -673,17 +673,17 @@ src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o
  ./src/worktask.h
  ./taskManager/taskmanager.h
+ /home/jwawerla/autolab-fasr/src/baserobotctrl.h
+ /home/jwawerla/autolab-fasr/src/broadcast.h
+ /home/jwawerla/autolab-fasr/src/charger.h
+ /home/jwawerla/autolab-fasr/src/destination.h
+ /home/jwawerla/autolab-fasr/src/logwriter.h
+ /home/jwawerla/autolab-fasr/src/looppolicyrobotctrl.h
+ /home/jwawerla/autolab-fasr/src/main.cpp
+ /home/jwawerla/autolab-fasr/src/robotwaitinterface.h
+ /home/jwawerla/autolab-fasr/src/staticpolicyrobotctrl.h
+ /home/jwawerla/autolab-fasr/src/worktaskrobotinterface.h
  /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
- /home/jwawerla/projects/autolab-fasr/src/baserobotctrl.h
- /home/jwawerla/projects/autolab-fasr/src/broadcast.h
- /home/jwawerla/projects/autolab-fasr/src/charger.h
- /home/jwawerla/projects/autolab-fasr/src/destination.h
- /home/jwawerla/projects/autolab-fasr/src/logwriter.h
- /home/jwawerla/projects/autolab-fasr/src/looppolicyrobotctrl.h
- /home/jwawerla/projects/autolab-fasr/src/main.cpp
- /home/jwawerla/projects/autolab-fasr/src/robotwaitinterface.h
- /home/jwawerla/projects/autolab-fasr/src/staticpolicyrobotctrl.h
- /home/jwawerla/projects/autolab-fasr/src/worktaskrobotinterface.h
  /usr/include/glib-2.0/glib.h
  /usr/include/glib-2.0/glib/galloca.h
  /usr/include/glib-2.0/glib/garray.h
@@ -740,7 +740,6 @@ src/CMakeFiles/autolab-fasr.dir/main.cpp.o
  /usr/include/glib-2.0/glib/gurifuncs.h
  /usr/include/glib-2.0/glib/gutils.h
  /usr/include/glib-2.0/glib/gwin32.h
- /usr/include/qt4/Gentoo/gentoo-qconfig.h
  /usr/include/qt4/Qt3Support/q3cstring.h
  /usr/include/qt4/Qt3Support/q3valuelist.h
  /usr/include/qt4/QtCore/QIODevice
@@ -1140,19 +1139,19 @@ src/CMakeFiles/autolab-fasr.dir/main.cpp.o
  local/include/autolab-wp-0.1/wavefrontmap.h
  local/include/autolab-wp-0.1/wavefrontmapvis.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o
+ /home/jwawerla/autolab-fasr/src/baserobotctrl.h
+ /home/jwawerla/autolab-fasr/src/broadcast.h
+ /home/jwawerla/autolab-fasr/src/charger.h
+ /home/jwawerla/autolab-fasr/src/destination.h
+ /home/jwawerla/autolab-fasr/src/logwriter.h
+ /home/jwawerla/autolab-fasr/src/replanpolicyrobotctrl.cpp
+ /home/jwawerla/autolab-fasr/src/replanpolicyrobotctrl.h
+ /home/jwawerla/autolab-fasr/src/replanpolicyrobotinterface.h
+ /home/jwawerla/autolab-fasr/src/robotscheduler.h
+ /home/jwawerla/autolab-fasr/src/robotwaitinterface.h
+ /home/jwawerla/autolab-fasr/src/worktask.h
+ /home/jwawerla/autolab-fasr/src/worktaskrobotinterface.h
  /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
- /home/jwawerla/projects/autolab-fasr/src/baserobotctrl.h
- /home/jwawerla/projects/autolab-fasr/src/broadcast.h
- /home/jwawerla/projects/autolab-fasr/src/charger.h
- /home/jwawerla/projects/autolab-fasr/src/destination.h
- /home/jwawerla/projects/autolab-fasr/src/logwriter.h
- /home/jwawerla/projects/autolab-fasr/src/replanpolicyrobotctrl.cpp
- /home/jwawerla/projects/autolab-fasr/src/replanpolicyrobotctrl.h
- /home/jwawerla/projects/autolab-fasr/src/replanpolicyrobotinterface.h
- /home/jwawerla/projects/autolab-fasr/src/robotscheduler.h
- /home/jwawerla/projects/autolab-fasr/src/robotwaitinterface.h
- /home/jwawerla/projects/autolab-fasr/src/worktask.h
- /home/jwawerla/projects/autolab-fasr/src/worktaskrobotinterface.h
  /usr/include/glib-2.0/glib.h
  /usr/include/glib-2.0/glib/galloca.h
  /usr/include/glib-2.0/glib/garray.h
@@ -1264,18 +1263,18 @@ src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o
  local/include/autolab-wp-0.1/wavefrontmap.h
  local/include/autolab-wp-0.1/wavefrontmapvis.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o
+ /home/jwawerla/autolab-fasr/src/baserobotctrl.h
+ /home/jwawerla/autolab-fasr/src/broadcast.h
+ /home/jwawerla/autolab-fasr/src/charger.h
+ /home/jwawerla/autolab-fasr/src/destination.h
+ /home/jwawerla/autolab-fasr/src/logwriter.h
+ /home/jwawerla/autolab-fasr/src/replanpolicyrobotinterface.h
+ /home/jwawerla/autolab-fasr/src/robotscheduler.cpp
+ /home/jwawerla/autolab-fasr/src/robotscheduler.h
+ /home/jwawerla/autolab-fasr/src/robotwaitinterface.h
+ /home/jwawerla/autolab-fasr/src/worktask.h
+ /home/jwawerla/autolab-fasr/src/worktaskrobotinterface.h
  /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
- /home/jwawerla/projects/autolab-fasr/src/baserobotctrl.h
- /home/jwawerla/projects/autolab-fasr/src/broadcast.h
- /home/jwawerla/projects/autolab-fasr/src/charger.h
- /home/jwawerla/projects/autolab-fasr/src/destination.h
- /home/jwawerla/projects/autolab-fasr/src/logwriter.h
- /home/jwawerla/projects/autolab-fasr/src/replanpolicyrobotinterface.h
- /home/jwawerla/projects/autolab-fasr/src/robotscheduler.cpp
- /home/jwawerla/projects/autolab-fasr/src/robotscheduler.h
- /home/jwawerla/projects/autolab-fasr/src/robotwaitinterface.h
- /home/jwawerla/projects/autolab-fasr/src/worktask.h
- /home/jwawerla/projects/autolab-fasr/src/worktaskrobotinterface.h
  /usr/include/glib-2.0/glib.h
  /usr/include/glib-2.0/glib/galloca.h
  /usr/include/glib-2.0/glib/garray.h
@@ -1387,16 +1386,16 @@ src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o
  local/include/autolab-wp-0.1/wavefrontmap.h
  local/include/autolab-wp-0.1/wavefrontmapvis.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o
+ /home/jwawerla/autolab-fasr/src/baserobotctrl.h
+ /home/jwawerla/autolab-fasr/src/broadcast.h
+ /home/jwawerla/autolab-fasr/src/charger.h
+ /home/jwawerla/autolab-fasr/src/destination.h
+ /home/jwawerla/autolab-fasr/src/logwriter.h
+ /home/jwawerla/autolab-fasr/src/robotwaitinterface.h
+ /home/jwawerla/autolab-fasr/src/staticpolicyrobotctrl.cpp
+ /home/jwawerla/autolab-fasr/src/staticpolicyrobotctrl.h
+ /home/jwawerla/autolab-fasr/src/worktaskrobotinterface.h
  /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
- /home/jwawerla/projects/autolab-fasr/src/baserobotctrl.h
- /home/jwawerla/projects/autolab-fasr/src/broadcast.h
- /home/jwawerla/projects/autolab-fasr/src/charger.h
- /home/jwawerla/projects/autolab-fasr/src/destination.h
- /home/jwawerla/projects/autolab-fasr/src/logwriter.h
- /home/jwawerla/projects/autolab-fasr/src/robotwaitinterface.h
- /home/jwawerla/projects/autolab-fasr/src/staticpolicyrobotctrl.cpp
- /home/jwawerla/projects/autolab-fasr/src/staticpolicyrobotctrl.h
- /home/jwawerla/projects/autolab-fasr/src/worktaskrobotinterface.h
  /usr/include/glib-2.0/glib.h
  /usr/include/glib-2.0/glib/galloca.h
  /usr/include/glib-2.0/glib/garray.h
@@ -1508,16 +1507,16 @@ src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o
  local/include/autolab-wp-0.1/wavefrontmap.h
  local/include/autolab-wp-0.1/wavefrontmapvis.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o
+ /home/jwawerla/autolab-fasr/src/baserobotctrl.h
+ /home/jwawerla/autolab-fasr/src/broadcast.h
+ /home/jwawerla/autolab-fasr/src/charger.h
+ /home/jwawerla/autolab-fasr/src/destination.h
+ /home/jwawerla/autolab-fasr/src/logwriter.h
+ /home/jwawerla/autolab-fasr/src/robotwaitinterface.h
+ /home/jwawerla/autolab-fasr/src/waitprobpolicyrobotctrl.cpp
+ /home/jwawerla/autolab-fasr/src/waitprobpolicyrobotctrl.h
+ /home/jwawerla/autolab-fasr/src/worktaskrobotinterface.h
  /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
- /home/jwawerla/projects/autolab-fasr/src/baserobotctrl.h
- /home/jwawerla/projects/autolab-fasr/src/broadcast.h
- /home/jwawerla/projects/autolab-fasr/src/charger.h
- /home/jwawerla/projects/autolab-fasr/src/destination.h
- /home/jwawerla/projects/autolab-fasr/src/logwriter.h
- /home/jwawerla/projects/autolab-fasr/src/robotwaitinterface.h
- /home/jwawerla/projects/autolab-fasr/src/waitprobpolicyrobotctrl.cpp
- /home/jwawerla/projects/autolab-fasr/src/waitprobpolicyrobotctrl.h
- /home/jwawerla/projects/autolab-fasr/src/worktaskrobotinterface.h
  /usr/include/glib-2.0/glib.h
  /usr/include/glib-2.0/glib/galloca.h
  /usr/include/glib-2.0/glib/garray.h
@@ -1629,12 +1628,12 @@ src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o
  local/include/autolab-wp-0.1/wavefrontmap.h
  local/include/autolab-wp-0.1/wavefrontmapvis.h
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o
+ /home/jwawerla/autolab-fasr/src/destination.h
+ /home/jwawerla/autolab-fasr/src/robotwaitinterface.h
+ /home/jwawerla/autolab-fasr/src/worktask.cpp
+ /home/jwawerla/autolab-fasr/src/worktask.h
+ /home/jwawerla/autolab-fasr/src/worktaskrobotinterface.h
  /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
- /home/jwawerla/projects/autolab-fasr/src/destination.h
- /home/jwawerla/projects/autolab-fasr/src/robotwaitinterface.h
- /home/jwawerla/projects/autolab-fasr/src/worktask.cpp
- /home/jwawerla/projects/autolab-fasr/src/worktask.h
- /home/jwawerla/projects/autolab-fasr/src/worktaskrobotinterface.h
  /usr/include/glib-2.0/glib.h
  /usr/include/glib-2.0/glib/galloca.h
  /usr/include/glib-2.0/glib/garray.h

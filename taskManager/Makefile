@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jwawerla/projects/autolab-fasr
+CMAKE_SOURCE_DIR = /home/jwawerla/autolab-fasr
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jwawerla/projects/autolab-fasr
+CMAKE_BINARY_DIR = /home/jwawerla/autolab-fasr
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -50,7 +50,7 @@ CMAKE_BINARY_DIR = /home/jwawerla/projects/autolab-fasr
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && /usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -60,19 +60,19 @@ edit_cache/fast: edit_cache
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && /usr/bin/cmake -P cmake_install.cmake
+	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && /usr/bin/cmake -P cmake_install.cmake
+	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && /usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
@@ -82,7 +82,7 @@ install/local/fast: install/local
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && /usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
@@ -101,7 +101,7 @@ list_install_components/fast: list_install_components
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	cd /home/jwawerla/projects/autolab-fasr/taskManager && /usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -110,14 +110,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/jwawerla/projects/autolab-fasr && $(CMAKE_COMMAND) -E cmake_progress_start /home/jwawerla/projects/autolab-fasr/CMakeFiles /home/jwawerla/projects/autolab-fasr/taskManager/CMakeFiles/progress.make
-	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 taskManager/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jwawerla/projects/autolab-fasr/CMakeFiles 0
+	cd /home/jwawerla/autolab-fasr && $(CMAKE_COMMAND) -E cmake_progress_start /home/jwawerla/autolab-fasr/CMakeFiles /home/jwawerla/autolab-fasr/taskManager/CMakeFiles/progress.make
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 taskManager/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jwawerla/autolab-fasr/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 taskManager/clean
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 taskManager/clean
 .PHONY : clean
 
 # The main clean target
@@ -126,22 +126,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 taskManager/preinstall
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 taskManager/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 taskManager/preinstall
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 taskManager/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/jwawerla/projects/autolab-fasr && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/jwawerla/autolab-fasr && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 taskManager/CMakeFiles/taskmanager.dir/rule:
-	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 taskManager/CMakeFiles/taskmanager.dir/rule
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f CMakeFiles/Makefile2 taskManager/CMakeFiles/taskmanager.dir/rule
 .PHONY : taskManager/CMakeFiles/taskmanager.dir/rule
 
 # Convenience name for target.
@@ -150,7 +150,7 @@ taskmanager: taskManager/CMakeFiles/taskmanager.dir/rule
 
 # fast build rule for target.
 taskmanager/fast:
-	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/build
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/build
 .PHONY : taskmanager/fast
 
 __/src/destination.o: __/src/destination.cpp.o
@@ -158,7 +158,7 @@ __/src/destination.o: __/src/destination.cpp.o
 
 # target to build an object file
 __/src/destination.cpp.o:
-	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o
 .PHONY : __/src/destination.cpp.o
 
 __/src/destination.i: __/src/destination.cpp.i
@@ -166,7 +166,7 @@ __/src/destination.i: __/src/destination.cpp.i
 
 # target to preprocess a source file
 __/src/destination.cpp.i:
-	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.i
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.i
 .PHONY : __/src/destination.cpp.i
 
 __/src/destination.s: __/src/destination.cpp.s
@@ -174,7 +174,7 @@ __/src/destination.s: __/src/destination.cpp.s
 
 # target to generate assembly for a file
 __/src/destination.cpp.s:
-	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.s
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.s
 .PHONY : __/src/destination.cpp.s
 
 __/src/worktask.o: __/src/worktask.cpp.o
@@ -182,7 +182,7 @@ __/src/worktask.o: __/src/worktask.cpp.o
 
 # target to build an object file
 __/src/worktask.cpp.o:
-	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o
 .PHONY : __/src/worktask.cpp.o
 
 __/src/worktask.i: __/src/worktask.cpp.i
@@ -190,7 +190,7 @@ __/src/worktask.i: __/src/worktask.cpp.i
 
 # target to preprocess a source file
 __/src/worktask.cpp.i:
-	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.i
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.i
 .PHONY : __/src/worktask.cpp.i
 
 __/src/worktask.s: __/src/worktask.cpp.s
@@ -198,7 +198,7 @@ __/src/worktask.s: __/src/worktask.cpp.s
 
 # target to generate assembly for a file
 __/src/worktask.cpp.s:
-	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.s
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.s
 .PHONY : __/src/worktask.cpp.s
 
 main.o: main.cpp.o
@@ -206,7 +206,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/main.cpp.o
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -214,7 +214,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/main.cpp.i
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -222,7 +222,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/main.cpp.s
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 taskmanager.o: taskmanager.cpp.o
@@ -230,7 +230,7 @@ taskmanager.o: taskmanager.cpp.o
 
 # target to build an object file
 taskmanager.cpp.o:
-	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o
 .PHONY : taskmanager.cpp.o
 
 taskmanager.i: taskmanager.cpp.i
@@ -238,7 +238,7 @@ taskmanager.i: taskmanager.cpp.i
 
 # target to preprocess a source file
 taskmanager.cpp.i:
-	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.i
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.i
 .PHONY : taskmanager.cpp.i
 
 taskmanager.s: taskmanager.cpp.s
@@ -246,7 +246,7 @@ taskmanager.s: taskmanager.cpp.s
 
 # target to generate assembly for a file
 taskmanager.cpp.s:
-	cd /home/jwawerla/projects/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.s
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.s
 .PHONY : taskmanager.cpp.s
 
 # Help Target
@@ -285,6 +285,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/jwawerla/projects/autolab-fasr && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/jwawerla/autolab-fasr && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

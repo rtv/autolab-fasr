@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jwawerla/projects/autolab-fasr
+CMAKE_SOURCE_DIR = /home/jwawerla/autolab-fasr
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jwawerla/projects/autolab-fasr
+CMAKE_BINARY_DIR = /home/jwawerla/autolab-fasr
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/autolab-fasr.dir/depend.make
@@ -51,17 +51,17 @@ include src/CMakeFiles/autolab-fasr.dir/flags.make
 
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: src/CMakeFiles/autolab-fasr.dir/flags.make
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: src/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/projects/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/autolab-fasr.dir/main.cpp.o"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/main.cpp.o -c /home/jwawerla/projects/autolab-fasr/src/main.cpp
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/main.cpp.o -c /home/jwawerla/autolab-fasr/src/main.cpp
 
 src/CMakeFiles/autolab-fasr.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/autolab-fasr.dir/main.cpp.i"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/projects/autolab-fasr/src/main.cpp > CMakeFiles/autolab-fasr.dir/main.cpp.i
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/autolab-fasr/src/main.cpp > CMakeFiles/autolab-fasr.dir/main.cpp.i
 
 src/CMakeFiles/autolab-fasr.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/autolab-fasr.dir/main.cpp.s"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/projects/autolab-fasr/src/main.cpp -o CMakeFiles/autolab-fasr.dir/main.cpp.s
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/autolab-fasr/src/main.cpp -o CMakeFiles/autolab-fasr.dir/main.cpp.s
 
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o.requires:
 .PHONY : src/CMakeFiles/autolab-fasr.dir/main.cpp.o.requires
@@ -75,17 +75,17 @@ src/CMakeFiles/autolab-fasr.dir/main.cpp.o.provides.build: src/CMakeFiles/autola
 
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: src/CMakeFiles/autolab-fasr.dir/flags.make
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: src/baserobotctrl.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/projects/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o -c /home/jwawerla/projects/autolab-fasr/src/baserobotctrl.cpp
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o -c /home/jwawerla/autolab-fasr/src/baserobotctrl.cpp
 
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.i"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/projects/autolab-fasr/src/baserobotctrl.cpp > CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.i
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/autolab-fasr/src/baserobotctrl.cpp > CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.i
 
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.s"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/projects/autolab-fasr/src/baserobotctrl.cpp -o CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.s
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/autolab-fasr/src/baserobotctrl.cpp -o CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.s
 
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o.requires:
 .PHONY : src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o.requires
@@ -99,17 +99,17 @@ src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o.provides.build: src/CMakeFil
 
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: src/CMakeFiles/autolab-fasr.dir/flags.make
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: src/staticpolicyrobotctrl.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/projects/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o -c /home/jwawerla/projects/autolab-fasr/src/staticpolicyrobotctrl.cpp
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o -c /home/jwawerla/autolab-fasr/src/staticpolicyrobotctrl.cpp
 
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.i"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/projects/autolab-fasr/src/staticpolicyrobotctrl.cpp > CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.i
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/autolab-fasr/src/staticpolicyrobotctrl.cpp > CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.i
 
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.s"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/projects/autolab-fasr/src/staticpolicyrobotctrl.cpp -o CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.s
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/autolab-fasr/src/staticpolicyrobotctrl.cpp -o CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.s
 
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o.requires:
 .PHONY : src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o.requires
@@ -123,17 +123,17 @@ src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o.provides.build: src/
 
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: src/CMakeFiles/autolab-fasr.dir/flags.make
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: src/looppolicyrobotctrl.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/projects/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o -c /home/jwawerla/projects/autolab-fasr/src/looppolicyrobotctrl.cpp
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o -c /home/jwawerla/autolab-fasr/src/looppolicyrobotctrl.cpp
 
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.i"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/projects/autolab-fasr/src/looppolicyrobotctrl.cpp > CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.i
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/autolab-fasr/src/looppolicyrobotctrl.cpp > CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.i
 
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.s"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/projects/autolab-fasr/src/looppolicyrobotctrl.cpp -o CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.s
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/autolab-fasr/src/looppolicyrobotctrl.cpp -o CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.s
 
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o.requires:
 .PHONY : src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o.requires
@@ -147,17 +147,17 @@ src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o.provides.build: src/CM
 
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: src/CMakeFiles/autolab-fasr.dir/flags.make
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: src/waitprobpolicyrobotctrl.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/projects/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o -c /home/jwawerla/projects/autolab-fasr/src/waitprobpolicyrobotctrl.cpp
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o -c /home/jwawerla/autolab-fasr/src/waitprobpolicyrobotctrl.cpp
 
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.i"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/projects/autolab-fasr/src/waitprobpolicyrobotctrl.cpp > CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.i
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/autolab-fasr/src/waitprobpolicyrobotctrl.cpp > CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.i
 
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.s"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/projects/autolab-fasr/src/waitprobpolicyrobotctrl.cpp -o CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.s
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/autolab-fasr/src/waitprobpolicyrobotctrl.cpp -o CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.s
 
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o.requires:
 .PHONY : src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o.requires
@@ -171,17 +171,17 @@ src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o.provides.build: sr
 
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: src/CMakeFiles/autolab-fasr.dir/flags.make
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: src/replanpolicyrobotctrl.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/projects/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o -c /home/jwawerla/projects/autolab-fasr/src/replanpolicyrobotctrl.cpp
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o -c /home/jwawerla/autolab-fasr/src/replanpolicyrobotctrl.cpp
 
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.i"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/projects/autolab-fasr/src/replanpolicyrobotctrl.cpp > CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.i
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/autolab-fasr/src/replanpolicyrobotctrl.cpp > CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.i
 
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.s"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/projects/autolab-fasr/src/replanpolicyrobotctrl.cpp -o CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.s
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/autolab-fasr/src/replanpolicyrobotctrl.cpp -o CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.s
 
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o.requires:
 .PHONY : src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o.requires
@@ -195,17 +195,17 @@ src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o.provides.build: src/
 
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: src/CMakeFiles/autolab-fasr.dir/flags.make
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: src/robotscheduler.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/projects/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o -c /home/jwawerla/projects/autolab-fasr/src/robotscheduler.cpp
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o -c /home/jwawerla/autolab-fasr/src/robotscheduler.cpp
 
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.i"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/projects/autolab-fasr/src/robotscheduler.cpp > CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.i
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/autolab-fasr/src/robotscheduler.cpp > CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.i
 
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.s"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/projects/autolab-fasr/src/robotscheduler.cpp -o CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.s
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/autolab-fasr/src/robotscheduler.cpp -o CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.s
 
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o.requires:
 .PHONY : src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o.requires
@@ -219,17 +219,17 @@ src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o.provides.build: src/CMakeFi
 
 src/CMakeFiles/autolab-fasr.dir/logwriter.cpp.o: src/CMakeFiles/autolab-fasr.dir/flags.make
 src/CMakeFiles/autolab-fasr.dir/logwriter.cpp.o: src/logwriter.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/projects/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/autolab-fasr.dir/logwriter.cpp.o"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/logwriter.cpp.o -c /home/jwawerla/projects/autolab-fasr/src/logwriter.cpp
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/logwriter.cpp.o -c /home/jwawerla/autolab-fasr/src/logwriter.cpp
 
 src/CMakeFiles/autolab-fasr.dir/logwriter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/autolab-fasr.dir/logwriter.cpp.i"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/projects/autolab-fasr/src/logwriter.cpp > CMakeFiles/autolab-fasr.dir/logwriter.cpp.i
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/autolab-fasr/src/logwriter.cpp > CMakeFiles/autolab-fasr.dir/logwriter.cpp.i
 
 src/CMakeFiles/autolab-fasr.dir/logwriter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/autolab-fasr.dir/logwriter.cpp.s"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/projects/autolab-fasr/src/logwriter.cpp -o CMakeFiles/autolab-fasr.dir/logwriter.cpp.s
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/autolab-fasr/src/logwriter.cpp -o CMakeFiles/autolab-fasr.dir/logwriter.cpp.s
 
 src/CMakeFiles/autolab-fasr.dir/logwriter.cpp.o.requires:
 .PHONY : src/CMakeFiles/autolab-fasr.dir/logwriter.cpp.o.requires
@@ -243,17 +243,17 @@ src/CMakeFiles/autolab-fasr.dir/logwriter.cpp.o.provides.build: src/CMakeFiles/a
 
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: src/CMakeFiles/autolab-fasr.dir/flags.make
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: src/destination.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/projects/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/autolab-fasr.dir/destination.cpp.o"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/destination.cpp.o -c /home/jwawerla/projects/autolab-fasr/src/destination.cpp
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/destination.cpp.o -c /home/jwawerla/autolab-fasr/src/destination.cpp
 
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/autolab-fasr.dir/destination.cpp.i"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/projects/autolab-fasr/src/destination.cpp > CMakeFiles/autolab-fasr.dir/destination.cpp.i
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/autolab-fasr/src/destination.cpp > CMakeFiles/autolab-fasr.dir/destination.cpp.i
 
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/autolab-fasr.dir/destination.cpp.s"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/projects/autolab-fasr/src/destination.cpp -o CMakeFiles/autolab-fasr.dir/destination.cpp.s
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/autolab-fasr/src/destination.cpp -o CMakeFiles/autolab-fasr.dir/destination.cpp.s
 
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o.requires:
 .PHONY : src/CMakeFiles/autolab-fasr.dir/destination.cpp.o.requires
@@ -267,17 +267,17 @@ src/CMakeFiles/autolab-fasr.dir/destination.cpp.o.provides.build: src/CMakeFiles
 
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: src/CMakeFiles/autolab-fasr.dir/flags.make
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: src/worktask.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/projects/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/worktask.cpp.o -c /home/jwawerla/projects/autolab-fasr/src/worktask.cpp
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/worktask.cpp.o -c /home/jwawerla/autolab-fasr/src/worktask.cpp
 
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/autolab-fasr.dir/worktask.cpp.i"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/projects/autolab-fasr/src/worktask.cpp > CMakeFiles/autolab-fasr.dir/worktask.cpp.i
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/autolab-fasr/src/worktask.cpp > CMakeFiles/autolab-fasr.dir/worktask.cpp.i
 
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/autolab-fasr.dir/worktask.cpp.s"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/projects/autolab-fasr/src/worktask.cpp -o CMakeFiles/autolab-fasr.dir/worktask.cpp.s
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/autolab-fasr/src/worktask.cpp -o CMakeFiles/autolab-fasr.dir/worktask.cpp.s
 
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o.requires:
 .PHONY : src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o.requires
@@ -291,17 +291,17 @@ src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o.provides.build: src/CMakeFiles/au
 
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: src/CMakeFiles/autolab-fasr.dir/flags.make
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: src/charger.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/projects/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/autolab-fasr.dir/charger.cpp.o"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/charger.cpp.o -c /home/jwawerla/projects/autolab-fasr/src/charger.cpp
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/charger.cpp.o -c /home/jwawerla/autolab-fasr/src/charger.cpp
 
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/autolab-fasr.dir/charger.cpp.i"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/projects/autolab-fasr/src/charger.cpp > CMakeFiles/autolab-fasr.dir/charger.cpp.i
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/autolab-fasr/src/charger.cpp > CMakeFiles/autolab-fasr.dir/charger.cpp.i
 
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/autolab-fasr.dir/charger.cpp.s"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/projects/autolab-fasr/src/charger.cpp -o CMakeFiles/autolab-fasr.dir/charger.cpp.s
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/autolab-fasr/src/charger.cpp -o CMakeFiles/autolab-fasr.dir/charger.cpp.s
 
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o.requires:
 .PHONY : src/CMakeFiles/autolab-fasr.dir/charger.cpp.o.requires
@@ -315,17 +315,17 @@ src/CMakeFiles/autolab-fasr.dir/charger.cpp.o.provides.build: src/CMakeFiles/aut
 
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: src/CMakeFiles/autolab-fasr.dir/flags.make
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: src/broadcast.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/projects/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/broadcast.cpp.o -c /home/jwawerla/projects/autolab-fasr/src/broadcast.cpp
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/broadcast.cpp.o -c /home/jwawerla/autolab-fasr/src/broadcast.cpp
 
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/autolab-fasr.dir/broadcast.cpp.i"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/projects/autolab-fasr/src/broadcast.cpp > CMakeFiles/autolab-fasr.dir/broadcast.cpp.i
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/autolab-fasr/src/broadcast.cpp > CMakeFiles/autolab-fasr.dir/broadcast.cpp.i
 
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/autolab-fasr.dir/broadcast.cpp.s"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/projects/autolab-fasr/src/broadcast.cpp -o CMakeFiles/autolab-fasr.dir/broadcast.cpp.s
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/autolab-fasr/src/broadcast.cpp -o CMakeFiles/autolab-fasr.dir/broadcast.cpp.s
 
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o.requires:
 .PHONY : src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o.requires
@@ -339,17 +339,17 @@ src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o.provides.build: src/CMakeFiles/a
 
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: src/CMakeFiles/autolab-fasr.dir/flags.make
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: taskManager/taskmanager.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/projects/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_13)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o -c /home/jwawerla/projects/autolab-fasr/taskManager/taskmanager.cpp
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o -c /home/jwawerla/autolab-fasr/taskManager/taskmanager.cpp
 
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.i"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/projects/autolab-fasr/taskManager/taskmanager.cpp > CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.i
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/autolab-fasr/taskManager/taskmanager.cpp > CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.i
 
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.s"
-	cd /home/jwawerla/projects/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/projects/autolab-fasr/taskManager/taskmanager.cpp -o CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.s
+	cd /home/jwawerla/autolab-fasr/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/autolab-fasr/taskManager/taskmanager.cpp -o CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.s
 
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o.requires:
 .PHONY : src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o.requires
@@ -399,40 +399,18 @@ src/autolab-fasr.so: /usr/lib/libSM.so
 src/autolab-fasr.so: /usr/lib/libICE.so
 src/autolab-fasr.so: /usr/lib/libX11.so
 src/autolab-fasr.so: /usr/lib/libXext.so
-src/autolab-fasr.so: /usr/lib/qt4/libQtGui.so
-src/autolab-fasr.so: /usr/lib/libpng.so
-src/autolab-fasr.so: /usr/lib/libSM.so
-src/autolab-fasr.so: /usr/lib/libICE.so
-src/autolab-fasr.so: /usr/lib/libXrender.so
-src/autolab-fasr.so: /usr/lib/libXrandr.so
-src/autolab-fasr.so: /usr/lib/libXcursor.so
-src/autolab-fasr.so: /usr/lib/libXfixes.so
-src/autolab-fasr.so: /usr/lib/libfreetype.so
-src/autolab-fasr.so: /usr/lib/libfontconfig.so
+src/autolab-fasr.so: /usr/lib/libQtGui.so
 src/autolab-fasr.so: /usr/lib/libXext.so
 src/autolab-fasr.so: /usr/lib/libX11.so
 src/autolab-fasr.so: /usr/lib/libm.so
-src/autolab-fasr.so: /usr/lib/qt4/libQtCore.so
-src/autolab-fasr.so: /lib/libz.so
-src/autolab-fasr.so: /usr/lib/librt.so
-src/autolab-fasr.so: /usr/lib/libSM.so
-src/autolab-fasr.so: /usr/lib/libICE.so
-src/autolab-fasr.so: /usr/lib/qt4/libQtGui.so
-src/autolab-fasr.so: /usr/lib/libpng.so
-src/autolab-fasr.so: /usr/lib/libXrender.so
-src/autolab-fasr.so: /usr/lib/libXrandr.so
-src/autolab-fasr.so: /usr/lib/libXcursor.so
-src/autolab-fasr.so: /usr/lib/libXfixes.so
-src/autolab-fasr.so: /usr/lib/libfreetype.so
-src/autolab-fasr.so: /usr/lib/libfontconfig.so
+src/autolab-fasr.so: /usr/lib/libQtCore.so
+src/autolab-fasr.so: /usr/lib/libQtGui.so
 src/autolab-fasr.so: /usr/lib/libm.so
-src/autolab-fasr.so: /usr/lib/qt4/libQtCore.so
-src/autolab-fasr.so: /lib/libz.so
-src/autolab-fasr.so: /usr/lib/librt.so
+src/autolab-fasr.so: /usr/lib/libQtCore.so
 src/autolab-fasr.so: src/CMakeFiles/autolab-fasr.dir/build.make
 src/autolab-fasr.so: src/CMakeFiles/autolab-fasr.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared module autolab-fasr.so"
-	cd /home/jwawerla/projects/autolab-fasr/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/autolab-fasr.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/jwawerla/autolab-fasr/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/autolab-fasr.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/autolab-fasr.dir/build: src/autolab-fasr.so
@@ -454,10 +432,10 @@ src/CMakeFiles/autolab-fasr.dir/requires: src/CMakeFiles/autolab-fasr.dir/__/tas
 .PHONY : src/CMakeFiles/autolab-fasr.dir/requires
 
 src/CMakeFiles/autolab-fasr.dir/clean:
-	cd /home/jwawerla/projects/autolab-fasr/src && $(CMAKE_COMMAND) -P CMakeFiles/autolab-fasr.dir/cmake_clean.cmake
+	cd /home/jwawerla/autolab-fasr/src && $(CMAKE_COMMAND) -P CMakeFiles/autolab-fasr.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/autolab-fasr.dir/clean
 
 src/CMakeFiles/autolab-fasr.dir/depend:
-	cd /home/jwawerla/projects/autolab-fasr && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jwawerla/projects/autolab-fasr /home/jwawerla/projects/autolab-fasr/src /home/jwawerla/projects/autolab-fasr /home/jwawerla/projects/autolab-fasr/src /home/jwawerla/projects/autolab-fasr/src/CMakeFiles/autolab-fasr.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jwawerla/autolab-fasr && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jwawerla/autolab-fasr /home/jwawerla/autolab-fasr/src /home/jwawerla/autolab-fasr /home/jwawerla/autolab-fasr/src /home/jwawerla/autolab-fasr/src/CMakeFiles/autolab-fasr.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/autolab-fasr.dir/depend
 
