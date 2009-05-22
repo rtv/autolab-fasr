@@ -82,14 +82,28 @@
 			<li> <a href="http://git-scm.com/download">git</a>
 			<li> <a href="http://www.cmake.org/cmake/resources/software.html">cmake</a>
 			<li> <a href="http://www.qtsoftware.com/downloads#lgpl">Qt Framework (libraries)</a>
-			<li> <a href="http://playerstage.svn.sourceforge.net/viewvc/playerstage/code/stage/trunk/">Stage 3.1</a>
-		</ul>
+			<li> <a href="http://playerstage.svn.sourceforge.net/viewvc/playerstage/code/stage/trunk/">Stage 3.1</a><br>
+			Make sure that Stage is configured properly and $PKG_CONFIG_PATH variable contains the path to the Stage directory.
+			<li> OpenGL
+		</ul> 
 	</p>
 	<h3>Building and installing</h3>
+	   If you downloaded the project in <a href="http://github.com/rtv/autolab-fasr/zipball/master">zip</a> or
+      <a href="http://github.com/rtv/autolab-fasr/tarball/master">tar</a> formats, unpack the archives. Change into the project directory and execute following
+	commands:
+	<p>
+	   <pre>
+$ ./build_dependencies.sh
+$ source ./setpath.sh  
+$ cmake .
+$ make  </pre>
+	</p>
 	
 	
 	<h3>Testing your installation</h3>
-
+	    From the project directory run
+	  <pre>$ stage ./world/fasr.world</pre>
+		You should see a Stage simulator window with robots moving around.
       
     <div class="footer">
       get the source code on GitHub : <a href="http://github.com/rtv/autolab-fasr">rtv/autolab-fasr</a>
