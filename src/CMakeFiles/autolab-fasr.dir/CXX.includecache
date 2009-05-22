@@ -305,8 +305,6 @@ stdint.h
 -
 assert.h
 -
-math.h
--
 stdlib.h
 -
 stdio.h
@@ -317,11 +315,15 @@ sys/types.h
 -
 sys/time.h
 -
+cmath
+-
 iostream
 -
 vector
 -
 list
+-
+map
 -
 glib.h
 -
@@ -3734,15 +3736,31 @@ limits.h
 float.h
 -
 
-local/include/autolab-nd-0.1/nd.h
+local/include/autolab-nd-0.1/geometria.h
+math.h
+-
 nd_alg.h
 local/include/autolab-nd-0.1/nd_alg.h
+
+local/include/autolab-nd-0.1/nd.h
+string.h
+-
+nd_alg.h
+local/include/autolab-nd-0.1/nd_alg.h
+geometria.h
+local/include/autolab-nd-0.1/geometria.h
+nd2_alg.h
+local/include/autolab-nd-0.1/nd2_alg.h
 pose2d.h
 local/include/autolab-nd-0.1/pose2d.h
 velocity2d.h
 local/include/autolab-nd-0.1/velocity2d.h
 rangefinder.h
 local/include/autolab-nd-0.1/rangefinder.h
+
+local/include/autolab-nd-0.1/nd2_alg.h
+geometria.h
+local/include/autolab-nd-0.1/geometria.h
 
 local/include/autolab-nd-0.1/nd_alg.h
 utilities.h
@@ -3861,10 +3879,14 @@ localizer2d.h
 local/include/autolab-rapi-0.1/localizer2d.h
 
 local/include/autolab-rapi-0.1/point2d.h
+string
+-
 
 local/include/autolab-rapi-0.1/pose2d.h
 point2d.h
 local/include/autolab-rapi-0.1/point2d.h
+string
+-
 
 local/include/autolab-rapi-0.1/pose3d.h
 

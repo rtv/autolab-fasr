@@ -69,7 +69,9 @@ src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: /usr/include/g
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: /usr/include/glib-2.0/glib/gutils.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: /usr/include/glib-2.0/glib/gwin32.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: /usr/lib/glib-2.0/include/glibconfig.h
+src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-nd-0.1/geometria.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-nd-0.1/nd.h
+src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/binarysensorarray.h
@@ -189,7 +191,9 @@ src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: /usr/include/glib-2.0/glib/
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: /usr/include/glib-2.0/glib/gutils.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: /usr/include/glib-2.0/glib/gwin32.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: /usr/lib/glib-2.0/include/glibconfig.h
+src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-nd-0.1/geometria.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-nd-0.1/nd.h
+src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/binarysensorarray.h
@@ -616,7 +620,9 @@ src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: /usr/include/glib-2.0
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib/gutils.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib/gwin32.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: /usr/lib/glib-2.0/include/glibconfig.h
+src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/geometria.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd.h
+src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/binarysensorarray.h
@@ -1082,7 +1088,9 @@ src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtGui/qwizard.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtGui/qwmatrix.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtGui/qworkspace.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/lib/glib-2.0/include/glibconfig.h
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-nd-0.1/geometria.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-nd-0.1/nd.h
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/RapiGui
@@ -1208,7 +1216,9 @@ src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: /usr/include/glib-2
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib/gutils.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib/gwin32.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: /usr/lib/glib-2.0/include/glibconfig.h
+src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/geometria.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd.h
+src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/binarysensorarray.h
@@ -1331,7 +1341,9 @@ src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: /usr/include/glib-2.0/glib
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: /usr/include/glib-2.0/glib/gutils.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: /usr/include/glib-2.0/glib/gwin32.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: /usr/lib/glib-2.0/include/glibconfig.h
+src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-nd-0.1/geometria.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-nd-0.1/nd.h
+src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/binarysensorarray.h
@@ -1452,7 +1464,9 @@ src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: /usr/include/glib-2
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib/gutils.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib/gwin32.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: /usr/lib/glib-2.0/include/glibconfig.h
+src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/geometria.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd.h
+src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/binarysensorarray.h
@@ -1573,7 +1587,9 @@ src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: /usr/include/glib
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib/gutils.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: /usr/include/glib-2.0/glib/gwin32.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: /usr/lib/glib-2.0/include/glibconfig.h
+src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/geometria.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd.h
+src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/binarysensorarray.h

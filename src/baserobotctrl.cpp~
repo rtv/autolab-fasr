@@ -11,8 +11,8 @@
 static int robotNumber = 0;
 
 //-----------------------------------------------------------------------------
-ABaseRobotCtrl::ABaseRobotCtrl ( ARobot* robot )
-    : ARobotCtrl ( robot ), IRobotWaitInterface()
+ABaseRobotCtrl::ABaseRobotCtrl( ARobot* robot )
+    : ARobotCtrl( robot ), IRobotWaitInterface()
 {
   CLooseStageRobot* looseRobot;
   Stg::Model* stgModel;
@@ -25,7 +25,7 @@ ABaseRobotCtrl::ABaseRobotCtrl ( ARobot* robot )
 
   //***********************************
   // Member variables, not subject to user configuration
-  mQueueStallRecoverTimer = new CTimer ( mRobot );
+  mQueueStallRecoverTimer = new CTimer( mRobot );
   robotNumber = robotNumber + 1;
   mRobotId = robotNumber;
   mFgChargerDetected = false;
@@ -61,74 +61,74 @@ ABaseRobotCtrl::ABaseRobotCtrl ( ARobot* robot )
 
   //******************************************
   // Log writing
-  mLogWriter->registerVariable ( &mTotalReward, CLogWriter::FLOAT,
-                                 "SumReward", "" );
-  mLogWriter->registerVariable ( &mCountTasksCompleted, CLogWriter::INT,
-                                 "Trips", "" );
-  mLogWriter->registerVariable ( &mTaskId, CLogWriter::INT, "task", "" );
-  mLogWriter->registerVariable ( &mTotalEnergyDissipated, CLogWriter::FLOAT,
-                                 "dissipated", "" );
+  mLogWriter->registerVariable( &mTotalReward, CLogWriter::FLOAT,
+                                "SumReward", "" );
+  mLogWriter->registerVariable( &mCountTasksCompleted, CLogWriter::INT,
+                                "Trips", "" );
+  mLogWriter->registerVariable( &mTaskId, CLogWriter::INT, "task", "" );
+  mLogWriter->registerVariable( &mTotalEnergyDissipated, CLogWriter::FLOAT,
+                                "dissipated", "" );
   //mLogWriter->registerVariable ( &mBatteryEnergyRemaining, CLogWriter::FLOAT,
   //                              "battery", "" );
   //************************************
   // FSM
-  strncpy ( mFsmText[START], "start", 20 );
-  strncpy ( mFsmText[PAUSE], "pause", 20 );
-  strncpy ( mFsmText[GOTO_SINK], "sink", 20 );
-  strncpy ( mFsmText[GOTO_SOURCE], "source", 20 );
-  strncpy ( mFsmText[GOTO_CHARGER], "charger", 20 );
-  strncpy ( mFsmText[DOCK], "dock", 20 );
-  strncpy ( mFsmText[UNDOCK], "undock", 20 );
-  strncpy ( mFsmText[CHARGE], "refuel", 20 );
-  strncpy ( mFsmText[PICKUP_LOAD], "pickup", 20 );
-  strncpy ( mFsmText[DELIVER_LOAD], "deliver", 20 );
-  strncpy ( mFsmText[WAITING_AT_SOURCE], "waiting", 20 );
-  strncpy ( mFsmText[WAITING_AT_SINK], "waiting", 20 );
-  strncpy ( mFsmText[WAITING_AT_CHARGER], "waiting", 20 );
-  strncpy ( mFsmText[RECOVER], "recover", 20 );
-  strncpy ( mFsmText[GOTO_DEPOT], "depot", 20 );
-  strncpy ( mFsmText[UNALLOCATED], "unallocated", 20 );
+  strncpy( mFsmText[START], "start", 20 );
+  strncpy( mFsmText[PAUSE], "pause", 20 );
+  strncpy( mFsmText[GOTO_SINK], "sink", 20 );
+  strncpy( mFsmText[GOTO_SOURCE], "source", 20 );
+  strncpy( mFsmText[GOTO_CHARGER], "charger", 20 );
+  strncpy( mFsmText[DOCK], "dock", 20 );
+  strncpy( mFsmText[UNDOCK], "undock", 20 );
+  strncpy( mFsmText[CHARGE], "refuel", 20 );
+  strncpy( mFsmText[PICKUP_LOAD], "pickup", 20 );
+  strncpy( mFsmText[DELIVER_LOAD], "deliver", 20 );
+  strncpy( mFsmText[WAITING_AT_SOURCE], "waiting", 20 );
+  strncpy( mFsmText[WAITING_AT_SINK], "waiting", 20 );
+  strncpy( mFsmText[WAITING_AT_CHARGER], "waiting", 20 );
+  strncpy( mFsmText[RECOVER], "recover", 20 );
+  strncpy( mFsmText[GOTO_DEPOT], "depot", 20 );
+  strncpy( mFsmText[UNALLOCATED], "unallocated", 20 );
 
   looseRobot = ( CLooseStageRobot* ) mRobot;
-  looseRobot->findDevice ( mFiducial, "model:0.fiducial:0" );
-  looseRobot->findDevice ( mLaser, "laser:0" );
-  looseRobot->findDevice ( mPowerPack, "powerpack:0" );
-  looseRobot->findDevice ( mTextDisplay, "textdisplay:0" );
-  looseRobot->findDevice ( mDrivetrain, "position:0" );
-  if ( rapiError->hasError() )
-  {
+  looseRobot->findDevice( mFiducial, "model:0.fiducial:0" );
+  looseRobot->findDevice( mLaser, "laser:0" );
+  looseRobot->findDevice( mPowerPack, "powerpack:0" );
+  looseRobot->findDevice( mTextDisplay, "textdisplay:0" );
+  looseRobot->findDevice( mDrivetrain, "position:0" );
+  if ( rapiError->hasError() ) {
     rapiError->print();
-    exit ( -1 );
+    exit( -1 );
   }
 
   // get robot pose
   mRobotPose = mDrivetrain->getOdometry()->getPose();
 
   // Add nearest distance obstacle avoidance to robot
-  mNd = new CNd ( mRobot->getName().c_str() );
-  mNd->addRangeFinder ( mLaser );
+  mNd = new CNd( mRobot->getName().c_str() );
+  mNd->addRangeFinder( mLaser );
 
   //*************************************
   // Create Wavefront planner
   stgModel = mDrivetrain->getStageModel();
-  assert ( stgModel );
-  mWaveFrontMap = new CWaveFrontMap ( new CStageGridMap ( stgModel ),
-                                      mDrivetrain->getName().c_str() );
-  assert ( mWaveFrontMap );
-  mWaveFrontMap->addRangeFinder ( mLaser );
-  mWaveFrontMap->setRobotPose ( &mRobotPose );
-  mWaveFrontMap->setWaypointDistance ( 1.0, 5.0 );
-  mWaveFrontMap->setObstacleGrowth ( 0.4 );
+  assert( stgModel );
+  mWaveFrontMap = new CWaveFrontMap( new CStageGridMap( stgModel ),
+                                     mDrivetrain->getName().c_str() );
+  assert( mWaveFrontMap );
+  mWaveFrontMap->addRangeFinder( mLaser );
+  mWaveFrontMap->setRobotPose( &mRobotPose );
+  mWaveFrontMap->setWaypointDistance( 1.0, 5.0 );
+  mWaveFrontMap->setObstacleGrowth( 0.4 );
   // place a pointer to the map in the model where others (e.g. the MapVis object)
   // can find it
-  stgModel->SetProperty ( "wavefront_map", static_cast<void*> ( mWaveFrontMap ) );
+  stgModel->SetProperty( "wavefront_map", static_cast<void*>( mWaveFrontMap ) );
 
   // Add the Wavefront map visualizer, disabled by default
-  bg = stgModel->GetWorld()->GetModel ( "background" );
-  assert ( bg );
-  bg->AddVisualizer ( &stgMapVis, false );
+  bg = stgModel->GetWorld()->GetModel( "background" );
+  assert( bg );
+  bg->AddVisualizer( &stgMapVis, false );
 
-  mRobot->mVariableMonitor.addVar ( &mFgChargerDetected, "mFgChargerDetected" );
+  mRobot->mVariableMonitor.addVar( &mFgChargerDetected, "mFgChargerDetected" );
+  mRobot->mVariableMonitor.addVar( &mWaitingQueueTimer, "mWaitingQueueTimer" );
 }
 //-----------------------------------------------------------------------------
 ABaseRobotCtrl::~ABaseRobotCtrl()
@@ -140,18 +140,17 @@ ABaseRobotCtrl::~ABaseRobotCtrl()
     delete mNd;
 }
 //-----------------------------------------------------------------------------
-void ABaseRobotCtrl::removeWorkTask ( IWorkTaskRobotInterface* task )
+void ABaseRobotCtrl::removeWorkTask( IWorkTaskRobotInterface* task )
 {
   std::vector<IWorkTaskRobotInterface*>::iterator it;
 
-  for ( it = mWorkTaskVector.begin(); it != mWorkTaskVector.end(); it++ )
-  {
+  for ( it = mWorkTaskVector.begin(); it != mWorkTaskVector.end(); it++ ) {
     if ( task == *it )
-      it = mWorkTaskVector.erase ( it );
+      it = mWorkTaskVector.erase( it );
   }
 }
 //-----------------------------------------------------------------------------
-void ABaseRobotCtrl::addWorkTask ( IWorkTaskRobotInterface* newTask )
+void ABaseRobotCtrl::addWorkTask( IWorkTaskRobotInterface* newTask )
 {
   IWorkTaskRobotInterface* task;
   std::vector<IWorkTaskRobotInterface*>::iterator it;
@@ -159,36 +158,33 @@ void ABaseRobotCtrl::addWorkTask ( IWorkTaskRobotInterface* newTask )
 
   rewardRate = newTask->getReward() / newTask->getSrcSinkDistance();
 
-  if ( mWorkTaskVector.size() == 0 )
-  {
-    mWorkTaskVector.push_back ( newTask );
+  if ( mWorkTaskVector.size() == 0 ) {
+    mWorkTaskVector.push_back( newTask );
     return;
   }
 
-  for ( it = mWorkTaskVector.begin(); it != mWorkTaskVector.end(); it++ )
-  {
+  for ( it = mWorkTaskVector.begin(); it != mWorkTaskVector.end(); it++ ) {
     task = *it;
-    if ( rewardRate > task->getReward() / task->getSrcSinkDistance() )
-    {
-      it = mWorkTaskVector.insert ( it, newTask );
+    if ( rewardRate > task->getReward() / task->getSrcSinkDistance() ) {
+      it = mWorkTaskVector.insert( it, newTask );
       return;
     }
   }
 
-  mWorkTaskVector.push_back ( newTask );
+  mWorkTaskVector.push_back( newTask );
 }
 //-----------------------------------------------------------------------------
-void ABaseRobotCtrl::addCharger ( CCharger* charger )
+void ABaseRobotCtrl::addCharger( CCharger* charger )
 {
-  mChargerDestinationList.push_back ( charger );
+  mChargerDestinationList.push_back( charger );
 }
 //-----------------------------------------------------------------------------
-void ABaseRobotCtrl::setDepot ( CDestination* depot )
+void ABaseRobotCtrl::setDepot( CDestination* depot )
 {
   mDepotDestination = depot;
 }
 //-----------------------------------------------------------------------------
-void ABaseRobotCtrl::setBroadCast ( CBroadCast* broadCast )
+void ABaseRobotCtrl::setBroadCast( CBroadCast* broadCast )
 {
   mBroadCast = broadCast;
 }
@@ -198,12 +194,11 @@ void ABaseRobotCtrl::printTaskStatistics()
   IWorkTaskRobotInterface* task;
   std::vector<IWorkTaskRobotInterface*>::iterator it;
 
-  for ( it = mWorkTaskVector.begin(); it != mWorkTaskVector.end(); it++ )
-  {
+  for ( it = mWorkTaskVector.begin(); it != mWorkTaskVector.end(); it++ ) {
     task = ( IWorkTaskRobotInterface* ) * it;
-    printf ( "Task %s: #robots %2d reward rate %f\n", task->getName(),
-             task->getNumSubcribers(),
-             task->getExperiencedRewardRate() );
+    printf( "Task %s: #robots %2d reward rate %f\n", task->getName(),
+            task->getNumSubcribers(),
+            task->getExperiencedRewardRate() );
   }
 }
 //-----------------------------------------------------------------------------
@@ -212,20 +207,17 @@ char* ABaseRobotCtrl::getName()
   return ( char* ) mDrivetrain->getName().c_str();
 }
 //-----------------------------------------------------------------------------
-bool ABaseRobotCtrl::noProgress ( float timeout )
+bool ABaseRobotCtrl::noProgress( float timeout )
 {
-  if ( isModAboutZero ( mElapsedStateTime, 2.0 ) )
-  {
+  if ( isModAboutZero( mElapsedStateTime, 2.0 ) ) {
     mProgressPose = mRobotPose;
   }
 
-  if ( mRobotPose.distance ( mProgressPose ) < 0.2 )
-  {
+  if ( mRobotPose.distance( mProgressPose ) < 0.2 ) {
     if ( mProgressTimer > timeout )
       return true;  // no progress :-(
   }
-  else
-  {
+  else {
     mProgressTimer = 0.0;
     mProgressPose = mRobotPose;
   }
@@ -246,52 +238,48 @@ void ABaseRobotCtrl::transferWaypointToStage()
   wpList[i].pose.x = pose.mX;
   wpList[i].pose.y = pose.mY;
   wpList[i].pose.a = pose.mYaw;
-  wpList[i].color = Stg::stg_color_pack ( 0, 1, 0, 0 );
+  wpList[i].color = Stg::stg_color_pack( 0, 1, 0, 0 );
   i++;
 
-  for ( it = mWayPointList.begin(); it != mWayPointList.end(); it++ )
-  {
+  for ( it = mWayPointList.begin(); it != mWayPointList.end(); it++ ) {
     pose = ( *it ).getPose();
     color = ( *it ).getColor();
     wpList[i].pose.x = pose.mX;
     wpList[i].pose.y = pose.mY;
     wpList[i].pose.a = pose.mYaw;
 
-    wpList[i].color = Stg::stg_color_pack ( color.mRed/255.0, color.mBlue/255.0,
-                                            color.mGreen/255.0, 0 );
+    wpList[i].color = Stg::stg_color_pack( color.mRed/255.0, color.mBlue/255.0,
+                                           color.mGreen/255.0, 0 );
     i ++;
   }
 
-  oldList = mDrivetrain->getStageModel()->SetWaypoints (
-                wpList, i );
+  oldList = mDrivetrain->getStageModel()->SetWaypoints(
+              wpList, i );
 
   if ( oldList != NULL )
     delete[] oldList;
 }
 //-----------------------------------------------------------------------------
-void ABaseRobotCtrl::powerUp ( bool on )
+void ABaseRobotCtrl::powerUp( bool on )
 {
-  if ( mFgPoweredUp != on )
-  {
+  if ( mFgPoweredUp != on ) {
 
-    if ( on )
-    {
+    if ( on ) {
       //mDrivetrain->setEnabled ( true );
-      mLaser->setEnabled ( true );
-      mFiducial->setEnabled ( true );
+      mLaser->setEnabled( true );
+      mFiducial->setEnabled( true );
     }
-    else
-    {
+    else {
       //mDrivetrain->setEnabled ( false );();  // cannot disable the position
       //  model, or we won't get updated
-      mLaser->setEnabled ( false );
-      mFiducial->setEnabled ( false );
+      mLaser->setEnabled( false );
+      mFiducial->setEnabled( false );
     }
     mFgPoweredUp = on;
   }
 }
 //-----------------------------------------------------------------------------
-int ABaseRobotCtrl::fiducialUpdate ()
+int ABaseRobotCtrl::fiducialUpdate()
 {
   float minRange = INFINITY;
   tFiducialData fiducialData;
@@ -299,13 +287,11 @@ int ABaseRobotCtrl::fiducialUpdate ()
   mFgChargerDetected = false;
   mFgRobotDetected = false;
 
-  for ( unsigned int i = 0; i < mFiducial->getNumReadings(); i++ )
-  {
+  for ( unsigned int i = 0; i < mFiducial->getNumReadings(); i++ ) {
     fiducialData = mFiducial->mFiducialData[i];
 
     // check if this fiducial is a charging station
-    if ( ( fiducialData.id == 2 ) && ( fiducialData.range < minRange ) )
-    {
+    if (( fiducialData.id == 2 ) && ( fiducialData.range < minRange ) ) {
       minRange = fiducialData.range;
       // keep the information for later
       mFgChargerDetected = true;
@@ -321,7 +307,7 @@ int ABaseRobotCtrl::fiducialUpdate ()
   return 1; // everything is fine
 }
 //-----------------------------------------------------------------------------
-void ABaseRobotCtrl::replan ( const CPoint2d goal, const bool force )
+void ABaseRobotCtrl::replan( const CPoint2d goal, const bool force )
 {
   float localUpdate = false;
   float angleResolution;
@@ -330,61 +316,52 @@ void ABaseRobotCtrl::replan ( const CPoint2d goal, const bool force )
   int n;
 
   // check if replanning is required
-  if ( force == false )
-  {
+  if ( force == false ) {
     angleResolution = mLaser->getFov() / ( float ) mLaser->getNumSamples();
 
-    halfConeAngle = sin ( ( REPLANNING_BOX_WIDTH / 2.0 ) / REPLANNING_BOX_LENGTH );
+    halfConeAngle = sin(( REPLANNING_BOX_WIDTH / 2.0 ) / REPLANNING_BOX_LENGTH );
 
-    k = ( int ) ( ( mLaser->getNumSamples() / 2 ) - ( halfConeAngle / angleResolution ) );
-    n = ( int ) ( 2 * ceil ( halfConeAngle / angleResolution ) );
+    k = ( int )(( mLaser->getNumSamples() / 2 ) - ( halfConeAngle / angleResolution ) );
+    n = ( int )( 2 * ceil( halfConeAngle / angleResolution ) );
 
-    for ( int i = k; i < k + n; i++ )
-    {
-      if ( mLaser->mRangeData[i].range < REPLANNING_BOX_LENGTH )
-      {
+    for ( int i = k; i < k + n; i++ ) {
+      if ( mLaser->mRangeData[i].range < REPLANNING_BOX_LENGTH ) {
         localUpdate = true;
         break;
       }
     }
-    if ( localUpdate )
-    {
+    if ( localUpdate ) {
       //mWaveFrontMap->calculateLocalWaveFront ( true );
-      mWaveFrontMap->calculateWaveFront ( goal, CWaveFrontMap::USE_SENSOR_DATA );
+      mWaveFrontMap->calculateWaveFront( goal, CWaveFrontMap::USE_SENSOR_DATA );
     }
-    else
-    {
+    else {
       return; // no replanning required - we are out of here
     }
   }
-  else
-  {
-    mWaveFrontMap->calculateWaveFront ( goal, CWaveFrontMap::USE_SENSOR_DATA );
+  else {
+    mWaveFrontMap->calculateWaveFront( goal, CWaveFrontMap::USE_SENSOR_DATA );
   }
 
-  if ( mWaveFrontMap->calculatePlanFrom ( mRobotPose ) != -1 )
-  {
+  if ( mWaveFrontMap->calculatePlanFrom( mRobotPose ) != -1 ) {
     mWayPointList.clear();
     mFgWayPointListChanged = true;
-    mWaveFrontMap->getWaypointList ( mWayPointList );
+    mWaveFrontMap->getWaypointList( mWayPointList );
     mWayPointList.pop_front();
   }
-  else
-  {
+  else {
     //rprintf ( "Failed to plan path \n" );
   }
 }
 //-----------------------------------------------------------------------------
 void ABaseRobotCtrl::leaveCurrentWaitingQueue()
 {
-  if ( mWaitDestination != NULL )
-  {
-    mWaitDestination->leaveWaitingQueue ( this );
+  if ( mWaitDestination != NULL ) {
+    mWaitDestination->leaveWaitingQueue( this );
     mWaitDestination = NULL;
   }
 }
 //-----------------------------------------------------------------------------
-bool ABaseRobotCtrl::chargingPolicy ( float dt )
+bool ABaseRobotCtrl::chargingPolicy( float dt )
 {
   float energyRequired;
   float distFromSinkToCharger;
@@ -394,17 +371,17 @@ bool ABaseRobotCtrl::chargingPolicy ( float dt )
   if ( mCurrentWorkTask == NULL )
     return false;  // we dont have a task, which means we should go to the depot
 
-  mWaveFrontMap->calculateWaveFront ( mCurrentWorkTask->mSource->getLocation(),
-                                      CWaveFrontMap::USE_MAP_ONLY );
-  distFromHereToSource = mWaveFrontMap->calculatePlanFrom ( mRobotPose );
+  mWaveFrontMap->calculateWaveFront( mCurrentWorkTask->mSource->getLocation(),
+                                     CWaveFrontMap::USE_MAP_ONLY );
+  distFromHereToSource = mWaveFrontMap->calculatePlanFrom( mRobotPose );
 
-  mWaveFrontMap->calculateWaveFront ( mCurrentWorkTask->mSink->getLocation(),
-                                      CWaveFrontMap::USE_MAP_ONLY );
-  distFromSourceToSink = mWaveFrontMap->calculatePlanFrom (
-                             mCurrentWorkTask->mSource->getLocation() );
+  mWaveFrontMap->calculateWaveFront( mCurrentWorkTask->mSink->getLocation(),
+                                     CWaveFrontMap::USE_MAP_ONLY );
+  distFromSourceToSink = mWaveFrontMap->calculatePlanFrom(
+                           mCurrentWorkTask->mSource->getLocation() );
 
-  distFromSinkToCharger = mWaveFrontMap->calculatePlanFrom (
-                              mCurrentWorkTask->mSource->getLocation() );
+  distFromSinkToCharger = mWaveFrontMap->calculatePlanFrom(
+                            mCurrentWorkTask->mSource->getLocation() );
 
 
   energyRequired = ( distFromSinkToCharger + distFromSourceToSink +
@@ -420,34 +397,29 @@ bool ABaseRobotCtrl::actionDock()
 {
   CPoint2d point;
 
-  if ( mFgChargerDetected == true )
-  {
-    if ( mLastChargingStation.distance > 0.6 )
-    {
-      point.fromPolar ( mLastChargingStation.distance,
-                        NORMALIZE_ANGLE ( mLastChargingStation.bearing + mRobotPose.mYaw ) );
+  if ( mFgChargerDetected == true ) {
+    if ( mLastChargingStation.distance > 0.6 ) {
+      point.fromPolar( mLastChargingStation.distance,
+                       NORMALIZE_ANGLE( mLastChargingStation.bearing + mRobotPose.mYaw ) );
       mCurrentWaypoint = mRobotPose + point;
-      mNd->setGoal ( mCurrentWaypoint.getPose() );
-      mNd->update ( mSimTime, mRobotPose, mRobotVelocity );
-      mDrivetrain->setVelocityCmd ( mNd->getRecommendedVelocity() );
+      mNd->setGoal( mCurrentWaypoint.getPose() );
+      mNd->update( mSimTime, mRobotPose, mRobotVelocity );
+      mDrivetrain->setVelocityCmd( mNd->getRecommendedVelocity() );
     }
-    else
-    {
+    else {
       // creep towards it
-      mDrivetrain->setVelocityCmd ( DOCK_SPEED,
-                                    NORMALIZE_ANGLE ( mLastChargingStation.bearing ) );
-      if ( mPowerPack->isCharging() == true )
-      {
+      mDrivetrain->setVelocityCmd( DOCK_SPEED,
+                                   NORMALIZE_ANGLE( mLastChargingStation.bearing ) );
+      if ( mPowerPack->isCharging() == true ) {
         mDrivetrain->stop();
         return true;   // successfull dock
       }
 
       if ( mDrivetrain->isStalled() ) // touching
-        mDrivetrain->setVelocityCmd ( -0.01, 0.0 ); // back off a bit
+        mDrivetrain->setVelocityCmd( -0.01, 0.0 );  // back off a bit
     }
   }
-  else
-  {
+  else {
     // can't see the charger any more, better stop, and let the FSM take
     // care of it
     mDrivetrain->stop();
@@ -464,18 +436,16 @@ bool ABaseRobotCtrl::actionUnDock()
     return true;  // we can't see the charger any more, lets assume we are undocked
 
   // back up a bit
-  if ( mLastChargingStation.distance < BACK_OFF_DISTANCE )
-  {
-    mDrivetrain->setVelocityCmd ( BACK_OFF_SPEED, 0.0 );
-    mHeading = NORMALIZE_ANGLE ( mLastChargingStation.bearing - PI );
+  if ( mLastChargingStation.distance < BACK_OFF_DISTANCE ) {
+    mDrivetrain->setVelocityCmd( BACK_OFF_SPEED, 0.0 );
+    mHeading = NORMALIZE_ANGLE( mLastChargingStation.bearing - PI );
   }
-  else
-  {
-    mDrivetrain->setVelocityCmd ( 0.0, 0.5 );
+  else {
+    mDrivetrain->setVelocityCmd( 0.0, 0.5 );
   }
 
-  if ( ( mLastChargingStation.distance > BACK_OFF_DISTANCE ) &&
-          ( epsilonEqual ( mRobotPose.mYaw, mHeading, D2R ( 10.0 ) ) == true ) )
+  if (( mLastChargingStation.distance > BACK_OFF_DISTANCE ) &&
+      ( epsilonEqual( mRobotPose.mYaw, mHeading, D2R( 10.0 ) ) == true ) )
     return true;  // done undocking everything good
 
   return false; // undock procedure not completed yet
@@ -492,58 +462,48 @@ int ABaseRobotCtrl::actionAvoidObstacle()
   float minright = 1e6;
 
 
-  for ( uint32_t i = 0; i <  mLaser->getNumSamples(); i++ )
-  {
+  for ( uint32_t i = 0; i <  mLaser->getNumSamples(); i++ ) {
 
-    if ( ( mLaser->mRelativeBeamPose[i].mYaw > D2R ( -45.0 ) ) &&
-            ( mLaser->mRelativeBeamPose[i].mYaw < D2R ( 45.0 ) ) &&
-            ( mLaser->mRangeData[i].range < MIN_FRONT_DISTANCE ) )
-    {
+    if (( mLaser->mRelativeBeamPose[i].mYaw > D2R( -45.0 ) ) &&
+        ( mLaser->mRelativeBeamPose[i].mYaw < D2R( 45.0 ) ) &&
+        ( mLaser->mRangeData[i].range < MIN_FRONT_DISTANCE ) ) {
       obstruction = true;
     }
 
-    if ( ( mLaser->mRelativeBeamPose[i].mYaw > D2R ( -60.0 ) ) &&
-            ( mLaser->mRelativeBeamPose[i].mYaw < D2R ( 60.0 ) ) )
-    {
-      if ( mLaser->mRangeData[i].range < STOP_DISTANCE )
-      {
+    if (( mLaser->mRelativeBeamPose[i].mYaw > D2R( -60.0 ) ) &&
+        ( mLaser->mRelativeBeamPose[i].mYaw < D2R( 60.0 ) ) ) {
+      if ( mLaser->mRangeData[i].range < STOP_DISTANCE ) {
         stop = true;
       }
     }
 
-    if ( ( mLaser->mRelativeBeamPose[i].mYaw > D2R ( -90.0 ) ) &&
-            ( mLaser->mRelativeBeamPose[i].mYaw < D2R ( 90.0 ) ) )
-    {
+    if (( mLaser->mRelativeBeamPose[i].mYaw > D2R( -90.0 ) ) &&
+        ( mLaser->mRelativeBeamPose[i].mYaw < D2R( 90.0 ) ) ) {
 
-      if ( mLaser->mRangeData[i].range < STOP_DISTANCE )
-      {
+      if ( mLaser->mRangeData[i].range < STOP_DISTANCE ) {
         stop = true;
       }
       if ( i > mLaser->getNumSamples() / 2 )
-        minleft = MIN ( minleft, mLaser->mRangeData[i].range );
+        minleft = MIN( minleft, mLaser->mRangeData[i].range );
       else
-        minright = MIN ( minright, mLaser->mRangeData[i].range );
+        minright = MIN( minright, mLaser->mRangeData[i].range );
     }
   }
 
-  if ( obstruction || stop || ( mAvoidCount > 0 ) )
-  {
+  if ( obstruction || stop || ( mAvoidCount > 0 ) ) {
 
-    mDrivetrain->setVelocityCmd ( stop ? 0.0 : AVOID_SPEED, 0.0 );
+    mDrivetrain->setVelocityCmd( stop ? 0.0 : AVOID_SPEED, 0.0 );
 
     /* once we start avoiding, select a turn direction and stick
        with it for a few iterations */
-    if ( mAvoidCount < 1 )
-    {
-      mAvoidCount = ( int ) randNo ( AVOID_DURATION , 2 * AVOID_DURATION );
+    if ( mAvoidCount < 1 ) {
+      mAvoidCount = ( int ) randNo( AVOID_DURATION , 2 * AVOID_DURATION );
 
-      if ( minleft < minright )
-      {
-        mDrivetrain->setRotationalSpeedCmd ( -AVOID_TURN );
+      if ( minleft < minright ) {
+        mDrivetrain->setRotationalSpeedCmd( -AVOID_TURN );
       }
-      else
-      {
-        mDrivetrain->setRotationalSpeedCmd ( AVOID_TURN );
+      else {
+        mDrivetrain->setRotationalSpeedCmd( AVOID_TURN );
       }
     }
     mAvoidCount--;
@@ -556,32 +516,28 @@ int ABaseRobotCtrl::actionAvoidObstacle()
 //-----------------------------------------------------------------------------
 bool ABaseRobotCtrl::actionPickupLoad()
 {
-  if ( mCurrentWorkTask->mSource->getDistance ( mRobotPose ) <=
-          LOADING_BAY_DISTANCE )
-  {
+  if ( mCurrentWorkTask->mSource->getDistance( mRobotPose ) <=
+       LOADING_BAY_DISTANCE ) {
     mDrivetrain->stop();
 
     // protect access to source
     mCurrentWorkTask->mStgSource->Lock();
-    if ( mDrivetrain->getStageModel()->GetFlagCount() < mCargoBayCapacity )
-    {
+    if ( mDrivetrain->getStageModel()->GetFlagCount() < mCargoBayCapacity ) {
       // load flag
-      mDrivetrain->getStageModel()->PushFlag ( mCurrentWorkTask->mStgSource->PopFlag() );
+      mDrivetrain->getStageModel()->PushFlag( mCurrentWorkTask->mStgSource->PopFlag() );
     }
     // unlock source
     mCurrentWorkTask->mStgSource->Unlock();
   }
-  else
-  {
-    mNd->setEpsilonDistance ( 0.3 );
-    mNd->setEpsilonAngle ( D2R ( 180.0 ) );
-    mNd->setGoal ( mCurrentWorkTask->mSource->getPose() );
-    mNd->update ( mSimTime, mRobotPose );
-    mDrivetrain->setVelocityCmd ( mNd->getRecommendedVelocity() );
+  else {
+    mNd->setEpsilonDistance( 0.3 );
+    mNd->setEpsilonAngle( D2R( 180.0 ) );
+    mNd->setGoal( mCurrentWorkTask->mSource->getPose() );
+    mNd->update( mSimTime, mRobotPose, mRobotVelocity );
+    mDrivetrain->setVelocityCmd( mNd->getRecommendedVelocity() );
   }
 
-  if ( mDrivetrain->getStageModel()->GetFlagCount() >= mCargoBayCapacity )
-  {
+  if ( mDrivetrain->getStageModel()->GetFlagCount() >= mCargoBayCapacity ) {
     return true; // success, we are fully loaded
   }
 
@@ -590,37 +546,32 @@ bool ABaseRobotCtrl::actionPickupLoad()
 //---------------------------------------------------------------------------
 bool ABaseRobotCtrl::actionDeliverLoad()
 {
-  if ( mCurrentWorkTask->mSink->getDistance ( mRobotPose ) <=
-          LOADING_BAY_DISTANCE )
-  {
+  if ( mCurrentWorkTask->mSink->getDistance( mRobotPose ) <=
+       LOADING_BAY_DISTANCE ) {
     mDrivetrain->stop();
 
-    if ( mDrivetrain->getStageModel()->GetFlagCount() > 0 )
-    {
+    if ( mDrivetrain->getStageModel()->GetFlagCount() > 0 ) {
       // protect access to sink
       mCurrentWorkTask->mStgSink->Lock();
       // unload flag
-      mCurrentWorkTask->mStgSink->PushFlag ( mDrivetrain->getStageModel()->PopFlag() );
+      mCurrentWorkTask->mStgSink->PushFlag( mDrivetrain->getStageModel()->PopFlag() );
       // unlock sink
       mCurrentWorkTask->mStgSink->Unlock();
     }
-    else
-    {
+    else {
       return true;  // we were already empty exit here and do not collect
       // any reward
     }
   }
-  else
-  {
-    mNd->setEpsilonDistance ( 0.3 );
-    mNd->setEpsilonAngle ( D2R ( 180.0 ) );
-    mNd->setGoal ( mCurrentWorkTask->mSink->getPose() );
-    mNd->update ( mSimTime, mRobotPose );
-    mDrivetrain->setVelocityCmd ( mNd->getRecommendedVelocity() );
+  else {
+    mNd->setEpsilonDistance( 0.3 );
+    mNd->setEpsilonAngle( D2R( 180.0 ) );
+    mNd->setGoal( mCurrentWorkTask->mSink->getPose() );
+    mNd->update( mSimTime, mRobotPose, mRobotVelocity );
+    mDrivetrain->setVelocityCmd( mNd->getRecommendedVelocity() );
   }
 
-  if ( mDrivetrain->getStageModel()->GetFlagCount() == 0 )
-  {
+  if ( mDrivetrain->getStageModel()->GetFlagCount() == 0 ) {
     mReward = mCurrentWorkTask->getReward();
     mTotalReward += mReward;
     mTaskCompletionTime = mSimTime - mWorkTaskStartedTimeStamp;
@@ -628,11 +579,10 @@ bool ABaseRobotCtrl::actionDeliverLoad()
     mWorkTaskStartedTimeStamp = mSimTime;
     mCountTasksCompleted = mCountTasksCompleted + 1;
     // make experienced work rate available to others
-    if ( mFgPublishTaskInformation == true )
-    {
-      mCurrentWorkTask->setExperiencedRewardRate ( mRewardRate );
-      mCurrentWorkTask->setExperiencedTaskDuration ( mTaskCompletionTime );
-      mCurrentWorkTask->setExperiencedTravelDuration ( mTravelDuration );
+    if ( mFgPublishTaskInformation == true ) {
+      mCurrentWorkTask->setExperiencedRewardRate( mRewardRate );
+      mCurrentWorkTask->setExperiencedTaskDuration( mTaskCompletionTime );
+      mCurrentWorkTask->setExperiencedTravelDuration( mTravelDuration );
     }
 
     mFgPublishTaskInformation = true;
@@ -645,16 +595,14 @@ bool ABaseRobotCtrl::actionDeliverLoad()
 //---------------------------------------------------------------------------
 bool ABaseRobotCtrl::actionRecover()
 {
-  if ( mFgStateChanged )
-  {
-    mHeading = randNo ( -PI, PI );
-    mRecoveryTimeout = randNo ( 10.0, 20.0 );
+  if ( mFgStateChanged ) {
+    mHeading = randNo( -PI, PI );
+    mRecoveryTimeout = randNo( 10.0, 20.0 );
   }
-  if ( !actionAvoidObstacle() )
-  {
-    mDrivetrain->setVelocityCmd ( 0.2,
-                                  SIGN ( NORMALIZE_ANGLE ( mRobotPose.mYaw
-                                                           - mHeading ) ) * 0.5 );
+  if ( !actionAvoidObstacle() ) {
+    mDrivetrain->setVelocityCmd( 0.2,
+                                 SIGN( NORMALIZE_ANGLE( mRobotPose.mYaw
+                                                        - mHeading ) ) * 0.5 );
   }
 
   if ( mElapsedStateTime > mRecoveryTimeout )
@@ -663,78 +611,69 @@ bool ABaseRobotCtrl::actionRecover()
   return false;
 }
 //---------------------------------------------------------------------------
-bool ABaseRobotCtrl::actionFollowWayPointList ()
+bool ABaseRobotCtrl::actionFollowWayPointList()
 {
-  if ( mNd->atGoal() == true  || mFgWayPointListChanged == true )
-  {
+  if ( mNd->atGoal() == true  || mFgWayPointListChanged == true ) {
     mFgWayPointListChanged = false;
-    if ( mWayPointList.empty() == false )
-    {
+    if ( mWayPointList.empty() == false ) {
       mCurrentWaypoint = mWayPointList.front();
       mWayPointList.pop_front();
 
-      mNd->setGoal ( mCurrentWaypoint.getPose() );
+      mNd->setGoal( mCurrentWaypoint.getPose() );
       // did we just pop the last waypoint ?
-      if ( mWayPointList.empty() )
-      {
-        mNd->setEpsilonAngle ( D2R ( 25.0 ) );
-        mNd->setEpsilonDistance ( 0.5 );
+      if ( mWayPointList.empty() ) {
+        mNd->setEpsilonAngle( D2R( 25.0 ) );
+        mNd->setEpsilonDistance( 0.5 );
       }
-      else
-      {
-        mNd->setEpsilonAngle ( D2R ( 180.0 ) );
-        mNd->setEpsilonDistance ( 0.75 );
+      else {
+        mNd->setEpsilonAngle( D2R( 180.0 ) );
+        mNd->setEpsilonDistance( 0.75 );
       }
     }
-    else
-    {
+    else {
       mDrivetrain->stop();
       return true; // way point list is empty, this must mean we are at the goal
     }
   }
-  if ( mNd->hasActiveGoal() == false )
-  {
-    mNd->setGoal ( mCurrentWaypoint.getPose() );
+  if ( mNd->hasActiveGoal() == false ) {
+    mNd->setGoal( mCurrentWaypoint.getPose() );
   }
 
-  if ( mNd->isStalled() == true )
-  {
+  if ( mNd->isStalled() == true ) {
     mDrivetrain->stop();
-    if ( mTimer > ND_STALL_TIMEOUT )
-    {
-      mDrivetrain->setVelocityCmd ( BACK_OFF_SPEED, 0.0 );
+    if ( mTimer > ND_STALL_TIMEOUT ) {
+      mDrivetrain->setVelocityCmd( BACK_OFF_SPEED, 0.0 );
 
-      if ( mTimer > ND_STALL_TIMEOUT + ( BACK_OFF_DISTANCE / fabs ( BACK_OFF_SPEED ) ) )
-      {
-        mNd->setGoal ( mCurrentWaypoint.getPose() );
+      if ( mTimer > ND_STALL_TIMEOUT + ( BACK_OFF_DISTANCE / fabs( BACK_OFF_SPEED ) ) ) {
+        mNd->setGoal( mCurrentWaypoint.getPose() );
         mTimer = 0.0;
       }
     }
     return false;  // we are still in line and waiting
   }
 
-  mNd->update ( mSimTime, mRobotPose );
-  mDrivetrain->setVelocityCmd ( mNd->getRecommendedVelocity() );
+  mNd->update( mSimTime, mRobotPose, mRobotVelocity );
+  mDrivetrain->setVelocityCmd( mNd->getRecommendedVelocity() );
 
 
   return false; // not at goal yet
 }
 //---------------------------------------------------------------------------
-bool ABaseRobotCtrl::actionWaitInQueue ( bool fgEnforceWaitingPosition )
+bool ABaseRobotCtrl::actionWaitInQueue( float dt,
+                                        bool fgEnforceWaitingPosition )
 {
   CPoint2d point;
   CPose2d waitingPose;
 
-  if ( mWaitDestination == NULL )
-  {
-    rprintf ( "actionWaitInQueue has no waiting destination in state %s\n",
-              mFsmText[mState] );
+  if ( mWaitDestination == NULL ) {
+    rprintf( "actionWaitInQueue has no waiting destination in state %s\n",
+             mFsmText[mState] );
     return false;
   }
 
   mWayPointList.clear();
-  mQueueRank = mWaitDestination->getWaitingPosition ( this,  waitingPose );
-  mWayPointList.push_back ( waitingPose );
+  mQueueRank = mWaitDestination->getWaitingPosition( this,  waitingPose );
+  mWayPointList.push_back( waitingPose );
 
   /*
   if ( mNd->isStalled() ) {
@@ -748,39 +687,43 @@ bool ABaseRobotCtrl::actionWaitInQueue ( bool fgEnforceWaitingPosition )
   }
   */
   //if ( mQueueStallRecoverTimer->isRunning() == false ) {
-  if ( ( mNd->isStalled() == true ) ||
-          ( waitingPose != mCurrentWaypoint.getPose() ) )
-  {
+  if (( mNd->isStalled() == true ) ||
+      ( waitingPose != mCurrentWaypoint.getPose() ) ) {
+    if ( waitingPose != mCurrentWaypoint.getPose() )
+      mWaitingQueueTimer = 0.0;
+
     mCurrentWaypoint = waitingPose;
     point.mX = waitingPose.mX;
     point.mY = waitingPose.mY;
-    replan ( point, true );
-    mNd->setGoal ( waitingPose );
-    mNd->setEpsilonDistance ( 0.3 );
-    mNd->setEpsilonAngle ( D2R ( 20.0 ) );
+    replan( point, true );
+    mNd->setGoal( waitingPose );
+    mNd->setEpsilonDistance( 0.3 );
+    mNd->setEpsilonAngle( D2R( 20.0 ) );
   }
   //}
 
 
-  if ( mNd->atGoal() == false )
-  {
-    mNd->update ( mSimTime, mRobotPose );
-    mDrivetrain->setVelocityCmd ( mNd->getRecommendedVelocity() );
+  if ( mNd->atGoal() == false ) {
+    mWaitingQueueTimer += dt;
+    if ( mWaitingQueueTimer > 20.0 )
+      leaveCurrentWaitingQueue();
+
+    mNd->update( mSimTime, mRobotPose, mRobotVelocity );
+    mDrivetrain->setVelocityCmd( mNd->getRecommendedVelocity() );
   }
-  else
-  {
+  else {
     mDrivetrain->stop();
   }
 
-  if ( mQueueRank == 1 )
-  {
+  if ( mQueueRank == 1 ) {
     if ( mNd->atGoal() || fgEnforceWaitingPosition == false )
       return true;  // we made it to the front of the queue
   }
+
   return false; // still waiting in line
 }
 //---------------------------------------------------------------------------
-void ABaseRobotCtrl::updateData ( float dt )
+void ABaseRobotCtrl::updateData( float dt )
 {
   char statusStr[20];
   float r;
@@ -790,22 +733,21 @@ void ABaseRobotCtrl::updateData ( float dt )
   mRobotVelocity = mDrivetrain->getVelocity();
   mCargoLoad = mDrivetrain->getStageModel()->GetFlagCount();
   mSimTime = mRobot->getCurrentTime();
-  fiducialUpdate ();
+  fiducialUpdate();
 
-  snprintf ( statusStr, 20, "%s", mFsmText[mState] );
-  mWaveFrontMap->update ( mSimTime );
+  snprintf( statusStr, 20, "%s", mFsmText[mState] );
+  mWaveFrontMap->update( mSimTime );
   // remove ourselfs from the current task counter
   if ( mCurrentWorkTask )
-    mCurrentWorkTask->unsubscribe ( this );
+    mCurrentWorkTask->unsubscribe( this );
 
   // assume we are not working, till proven otherwise
   mFgWorking = false;
 
-  switch ( mState )
-  {
+  switch ( mState ) {
 
     case START:
-      startupPolicy ( dt );
+      startupPolicy( dt );
       break;
 
     case PAUSE:
@@ -814,62 +756,53 @@ void ABaseRobotCtrl::updateData ( float dt )
 
     case WAITING_AT_SOURCE:
       mFgWorking = true;
-      snprintf ( statusStr, 20, "%s (%d)", mFsmText[mState], mQueueRank );
-      if ( mWaitDestination == NULL )
-      {
+      snprintf( statusStr, 20, "%s (%d)", mFsmText[mState], mQueueRank );
+      if ( mWaitDestination == NULL ) {
         mState = GOTO_SOURCE;
       }
-      else if ( actionWaitInQueue() == true )
-      {
+      else if ( actionWaitInQueue( dt ) == true ) {
         mState = PICKUP_LOAD;
       }
-      waitAtSourcePolicy ( dt );
+      waitAtSourcePolicy( dt );
       break;
 
     case WAITING_AT_SINK:
       mFgWorking = true;
-      snprintf ( statusStr, 20, "%s (%d)", mFsmText[mState], mQueueRank );
-      if ( mWaitDestination == NULL )
-      {
+      snprintf( statusStr, 20, "%s (%d)", mFsmText[mState], mQueueRank );
+      if ( mWaitDestination == NULL ) {
         mState = GOTO_SINK;
       }
-      else if ( actionWaitInQueue() == true )
-      {
+      else if ( actionWaitInQueue( dt ) == true ) {
         mState = DELIVER_LOAD;
       }
       break;
 
     case WAITING_AT_CHARGER:
-      snprintf ( statusStr, 20, "%s (%d)", mFsmText[mState], mQueueRank );
+      snprintf( statusStr, 20, "%s (%d)", mFsmText[mState], mQueueRank );
 
-      if ( mWaitDestination == NULL )
-      {
+      if ( mWaitDestination == NULL ) {
         mState = GOTO_CHARGER;
       }
-      else if ( actionWaitInQueue () == true )
-      {
-        if ( ( mFgRobotDetected == true ) && ( mFgChargerDetected == false ) )
+      else if ( actionWaitInQueue( dt ) == true ) {
+        if (( mFgRobotDetected == true ) && ( mFgChargerDetected == false ) )
           mState = WAITING_AT_CHARGER;
-        if ( mFgChargerDetected == true )
-        {
+        if ( mFgChargerDetected == true ) {
           mState = DOCK;
         }
-        if ( ( mFgRobotDetected == false ) && ( mFgChargerDetected == false ) )
+        if (( mFgRobotDetected == false ) && ( mFgChargerDetected == false ) )
           mState = GOTO_CHARGER;
       }
-      waitAtChargerPolicy ( dt );
+      waitAtChargerPolicy( dt );
       break;
 
     case DELIVER_LOAD:
       mFgWorking = true;
-      if ( actionDeliverLoad() == true )
-      {
+      if ( actionDeliverLoad() == true ) {
         mState = GOTO_SOURCE;
-        selectWorkTaskPolicy ( dt );
+        selectWorkTaskPolicy( dt );
         //printTaskStatistics();
         mTravelStartTimeStamp = mSimTime;
-        if ( chargingPolicy ( dt ) == true )
-        {
+        if ( chargingPolicy( dt ) == true ) {
           mState = GOTO_CHARGER;
         }
       }
@@ -878,80 +811,68 @@ void ABaseRobotCtrl::updateData ( float dt )
     case PICKUP_LOAD:
       mPickupDuration = mPickupDuration + dt;
       mFgWorking = true;
-      if ( mCurrentWorkTask->mSource->getDistance ( mRobotPose ) >
-              LOADINGZONE_DISTANCE_LIMIT )
-      {
+      if ( mCurrentWorkTask->mSource->getDistance( mRobotPose ) >
+           LOADINGZONE_DISTANCE_LIMIT ) {
         mPickupDuration = 0.0;
-        if ( mElapsedStateTime > LOADINGZONE_APPROACH_TIMEOUT )
-        {
+        if ( mElapsedStateTime > LOADINGZONE_APPROACH_TIMEOUT ) {
           mState = GOTO_SOURCE;
         }
       }
 
-      if ( actionPickupLoad() == true )
-      {
+      if ( actionPickupLoad() == true ) {
         mState = GOTO_SINK;
         mTravelStartTimeStamp = mSimTime;
-        pickupCompletedPolicy ( dt );
+        pickupCompletedPolicy( dt );
       }
-      else
-      {
-        waitingAtPickupPolicy ( dt );
+      else {
+        waitingAtPickupPolicy( dt );
       }
       break;
 
     case GOTO_SOURCE:
       mFgWorking = true;
-      if ( mFgStateChanged )
-      {
-        replan ( mCurrentWorkTask->mSource->getLocation(), true );
+      if ( mFgStateChanged ) {
+        replan( mCurrentWorkTask->mSource->getLocation(), true );
       }
-      replan ( mCurrentWorkTask->mSource->getLocation() );
+      replan( mCurrentWorkTask->mSource->getLocation() );
 
       // are we far enought from the SINK to safely leave the queue ?
-      if ( mCurrentWorkTask->mSink->getDistance ( mRobotPose ) > 0.5 )
-      {
+      if ( mCurrentWorkTask->mSink->getDistance( mRobotPose ) > 0.5 ) {
         leaveCurrentWaitingQueue();
       }
       // close enough to SOURCE ?
-      if ( ( mCurrentWorkTask->mSource->isNear ( mRobotPose ) == true ) ||
-              ( actionFollowWayPointList() == true ) )
-      {
-        mCurrentWorkTask->mSource->enterWaitingQueue ( this );
+      if (( mCurrentWorkTask->mSource->isNear( mRobotPose ) == true ) ||
+          ( actionFollowWayPointList() == true ) ) {
+        mCurrentWorkTask->mSource->enterWaitingQueue( this );
         mWaitDestination = mCurrentWorkTask->mSource;
         mState = WAITING_AT_SOURCE;
         mTravelDuration = mSimTime - mTravelStartTimeStamp;
       }
 
-      if ( noProgress ( NO_PROGRESS_TIMEOUT ) == true )
-      {
+      if ( noProgress( NO_PROGRESS_TIMEOUT ) == true ) {
         mState = RECOVER;
       }
       break;
 
     case GOTO_SINK:
       mFgWorking = true;
-      if ( mFgStateChanged )
-      {
-        replan ( mCurrentWorkTask->mSink->getLocation(), true );
+      if ( mFgStateChanged ) {
+        replan( mCurrentWorkTask->mSink->getLocation(), true );
       }
-      replan ( mCurrentWorkTask->mSink->getLocation() );
+      replan( mCurrentWorkTask->mSink->getLocation() );
 
       // are we far enought from the SOURCE to safely leave the queue ?
-      if ( mCurrentWorkTask->mSource->getDistance ( mRobotPose ) > 0.5 )
-      {
+      if ( mCurrentWorkTask->mSource->getDistance( mRobotPose ) > 0.5 ) {
         leaveCurrentWaitingQueue();
       }
 
-      if ( noProgress ( NO_PROGRESS_TIMEOUT ) == true )
-      {
+      if ( noProgress( NO_PROGRESS_TIMEOUT ) == true ) {
         mState = RECOVER;
       }
 
-      if ( ( mCurrentWorkTask->mSink->isNear ( mRobotPose ) == true ) ||
-              ( actionFollowWayPointList() == true ) )
-      {
-        mCurrentWorkTask->mSink->enterWaitingQueue ( this );
+      if (( mCurrentWorkTask->mSink->isNear( mRobotPose ) == true ) ||
+          ( actionFollowWayPointList() == true ) ) {
+        mCurrentWorkTask->mSink->enterWaitingQueue( this );
         mWaitDestination = mCurrentWorkTask->mSink;
         mTravelDuration = mSimTime - mTravelStartTimeStamp;
         mState = WAITING_AT_SINK;
@@ -960,40 +881,34 @@ void ABaseRobotCtrl::updateData ( float dt )
 
 
     case GOTO_CHARGER:
-      if ( mFgStateChanged )
-      {
-        replan ( mCurrentChargerDestination->getLocation(), true );
+      if ( mFgStateChanged ) {
+        replan( mCurrentChargerDestination->getLocation(), true );
       }
       leaveCurrentWaitingQueue();
       actionFollowWayPointList();
-      if ( noProgress ( NO_PROGRESS_TIMEOUT ) == true )
-      {
+      if ( noProgress( NO_PROGRESS_TIMEOUT ) == true ) {
         mState = RECOVER;
       }
 
-      if ( mCurrentChargerDestination->isNear ( mRobotPose ) == true )
-      {
-        mCurrentChargerDestination->enterWaitingQueue ( this );
+      if ( mCurrentChargerDestination->isNear( mRobotPose ) == true ) {
+        mCurrentChargerDestination->enterWaitingQueue( this );
         mWaitDestination = mCurrentChargerDestination;
         mState = WAITING_AT_CHARGER;
       }
       break;
 
     case GOTO_DEPOT:
-      if ( mFgStateChanged )
-      {
-        replan ( mDepotDestination->getLocation(), true );
+      if ( mFgStateChanged ) {
+        replan( mDepotDestination->getLocation(), true );
         leaveCurrentWaitingQueue();
       }
       actionFollowWayPointList();
-      if ( noProgress ( NO_PROGRESS_TIMEOUT ) == true )
-      {
+      if ( noProgress( NO_PROGRESS_TIMEOUT ) == true ) {
         mState = RECOVER;
       }
 
-      if ( mDepotDestination->isNear ( mRobotPose ) == true )
-      {
-        mDepotDestination->enterWaitingQueue ( this );
+      if ( mDepotDestination->isNear( mRobotPose ) == true ) {
+        mDepotDestination->enterWaitingQueue( this );
         mWaitDestination = mDepotDestination;
         mState = UNALLOCATED;
       }
@@ -1002,39 +917,34 @@ void ABaseRobotCtrl::updateData ( float dt )
     case CHARGE:
       mDrivetrain->stop();
       leaveCurrentWaitingQueue();
-      powerUp ( false );
-      if ( ( mPowerPack->getBatteryLevel() > 0.99 ) ||
-              ( mPowerPack->isCharging() == false ) )
-      {
+      powerUp( false );
+      if (( mPowerPack->getBatteryLevel() > 0.99 ) ||
+          ( mPowerPack->isCharging() == false ) ) {
         mState = UNDOCK;
-        powerUp ( true );
+        powerUp( true );
       }
       break;
 
     case DOCK:
-      if ( actionDock() == true )
-      {
+      if ( actionDock() == true ) {
         mState = CHARGE;
       }
-      if ( mFgChargerDetected == false )
-      {
+      if ( mFgChargerDetected == false ) {
         mState = GOTO_CHARGER;
       }
       break;
 
     case UNDOCK:
-      if ( actionUnDock() == true )
-      {
+      if ( actionUnDock() == true ) {
         mFgPublishTaskInformation = false;
         leaveCurrentWaitingQueue();
-        leaveChargerPolicy ( dt );
+        leaveChargerPolicy( dt );
       }
       break;
 
     case RECOVER:
       leaveCurrentWaitingQueue();
-      if ( actionRecover() == true )
-      {
+      if ( actionRecover() == true ) {
         mProgressPose = mRobotPose;
         if ( mPrevState != RECOVER )
           mState = mPrevState;
@@ -1044,31 +954,28 @@ void ABaseRobotCtrl::updateData ( float dt )
       break;
 
     case UNALLOCATED:
-      snprintf ( statusStr, 20, "%s (%d)", mFsmText[mState], mQueueRank );
+      snprintf( statusStr, 20, "%s (%d)", mFsmText[mState], mQueueRank );
 
-      if ( mWaitDestination == NULL )
-      {
-        powerUp ( true );
+      if ( mWaitDestination == NULL ) {
+        powerUp( true );
         mState = GOTO_DEPOT;
       }
-      else
-      {
+      else {
         if ( mNd->atGoal() )
-          powerUp ( false );
+          powerUp( false );
         else
-          powerUp ( true );
+          powerUp( true );
 
-        if ( actionWaitInQueue ( false ) == true )
-        {
-          unallocatedPolicy ( dt );
+        if ( actionWaitInQueue( false ) == true ) {
+          unallocatedPolicy( dt );
           if ( mState != UNALLOCATED )
-            powerUp ( true );
+            powerUp( true );
         }
       }
       break;
 
     default:
-      PRT_ERR1 ( "unknown FSM state %d \n", mState );
+      PRT_ERR1( "unknown FSM state %d \n", mState );
       mState = START;
       break;
   } // switch
@@ -1077,14 +984,12 @@ void ABaseRobotCtrl::updateData ( float dt )
   transferWaypointToStage();
   //*****************************************
   // Emergency routines
-  if ( mDrivetrain->isStalled()  || ( mSimTime - mLastStalledTimestamp < 5.0 ) )
-  {
+  if ( mDrivetrain->isStalled()  || ( mSimTime - mLastStalledTimestamp < 5.0 ) ) {
     if ( mDrivetrain->isStalled() )
       mLastStalledTimestamp = mSimTime;
 
     leaveCurrentWaitingQueue();
-    if ( isModAboutZero ( mSimTime, 3.0f ) == true )
-    {
+    if ( isModAboutZero( mSimTime, 3.0f ) == true ) {
       r = drand48();
       if ( r <= 0.33 )
         mStallRecoverSpeedCmd.mVX = 0.0;
@@ -1101,44 +1006,42 @@ void ABaseRobotCtrl::updateData ( float dt )
       else
         mStallRecoverSpeedCmd.mYawDot = -STALL_RECOVER_TURNRATE;
     }
-    mDrivetrain->setVelocityCmd ( mStallRecoverSpeedCmd );
-    snprintf ( statusStr, 20, "%0.1f %0.1f", mStallRecoverSpeedCmd.mVX,
-               mStallRecoverSpeedCmd.mYawDot );
+    mDrivetrain->setVelocityCmd( mStallRecoverSpeedCmd );
+    snprintf( statusStr, 20, "%0.1f %0.1f", mStallRecoverSpeedCmd.mVX,
+              mStallRecoverSpeedCmd.mYawDot );
   }
 
   // add ourselfs to the current task again
-  if ( ( mFgWorking ) && ( mCurrentWorkTask ) )
-    mCurrentWorkTask->subscribe ( this );
+  if (( mFgWorking ) && ( mCurrentWorkTask ) )
+    mCurrentWorkTask->subscribe( this );
 
   //*****************************************
   // FSM stuff
-  if ( mPrevTimestepState != mState )
-  {
+  if ( mPrevTimestepState != mState ) {
     mElapsedStateTime = 0;
     mProgressTimer = 0;
     mFgStateChanged = true;
     mPrevState = mPrevTimestepState;
     //rprintf("state %s -> %s \n", mFsmText[mPrevState], mFsmText[mState]);
   }
-  else
-  {
+  else {
     mFgStateChanged = false;
   }
 
   if ( mFgWorking && mCurrentWorkTask != NULL )
     mTaskId = mCurrentWorkTask->getTaskId();
-  else if ( ( mState == GOTO_CHARGER ) || ( mState == CHARGE ) )
+  else if (( mState == GOTO_CHARGER ) || ( mState == CHARGE ) )
     mTaskId = -1;
-  else if ( ( mState == GOTO_DEPOT ) || ( mState == UNALLOCATED ) )
+  else if (( mState == GOTO_DEPOT ) || ( mState == UNALLOCATED ) )
     mTaskId = -2;
 
-  mTextDisplay->setText ( statusStr );
+  mTextDisplay->setText( statusStr );
   mTimer = mTimer + dt;
   mProgressTimer =  mProgressTimer + dt;
   mElapsedStateTime = mElapsedStateTime + dt;
   mPrevTimestepState = mState;
 
-  mLogWriter->print ( mSimTime, 1.0 );
+  mLogWriter->print( mSimTime, 1.0 );
 
   if ( rapiError->hasError() )
     rapiError->print();

@@ -206,12 +206,13 @@ class ABaseRobotCtrl : public ARobotCtrl, public IRobotWaitInterface
     bool actionPickupLoad();
     /**
      * This action makes the robot wait in the waiting queue
+     * @param dt update interval [s]
      * @param fgEnforceWaitingPosition forces the robot to alway visit any
      *        waiting position, even if there is nobody to wait for. This can be
      *        usefull if we need to enforce a precise heading when leaving the waiting queue
      * @return true if done waiting flase if still waiting
      */
-    bool actionWaitInQueue ( bool fgEnforceWaitingPosition = false );
+    bool actionWaitInQueue (float dt, bool fgEnforceWaitingPosition = false );
     /**
      * Causes the robot to drive a long a path planned and given by the
      * waypoint list
@@ -382,6 +383,8 @@ class ABaseRobotCtrl : public ARobotCtrl, public IRobotWaitInterface
     int mTaskId;
     /** Time stamp of last stall event [s] */
     float mLastStalledTimestamp;
+    /** Times how long we spend in a waiting queue to get to the correct location [s] */
+    float mWaitingQueueTimer;
     CTimer* mQueueStallRecoverTimer;
 };
 

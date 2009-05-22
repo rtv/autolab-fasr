@@ -271,7 +271,9 @@ taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: /usr/include/glib-2.0/glib/gu
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: /usr/include/glib-2.0/glib/gutils.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: /usr/include/glib-2.0/glib/gwin32.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: /usr/lib/glib-2.0/include/glibconfig.h
+taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-nd-0.1/geometria.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-nd-0.1/nd.h
+taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/binarysensorarray.h
@@ -393,7 +395,9 @@ taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: /usr/include/glib-2.0/
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: /usr/include/glib-2.0/glib/gutils.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: /usr/include/glib-2.0/glib/gwin32.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: /usr/lib/glib-2.0/include/glibconfig.h
+taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-nd-0.1/geometria.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-nd-0.1/nd.h
+taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/binarysensorarray.h

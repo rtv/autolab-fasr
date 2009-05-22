@@ -272,7 +272,9 @@ taskManager/CMakeFiles/taskmanager.dir/main.cpp.o
  /usr/include/glib-2.0/glib/gutils.h
  /usr/include/glib-2.0/glib/gwin32.h
  /usr/lib/glib-2.0/include/glibconfig.h
+ local/include/autolab-nd-0.1/geometria.h
  local/include/autolab-nd-0.1/nd.h
+ local/include/autolab-nd-0.1/nd2_alg.h
  local/include/autolab-nd-0.1/nd_alg.h
  local/include/autolab-rapi-0.1/RapiCore
  local/include/autolab-rapi-0.1/binarysensorarray.h
@@ -394,7 +396,9 @@ taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o
  /usr/include/glib-2.0/glib/gutils.h
  /usr/include/glib-2.0/glib/gwin32.h
  /usr/lib/glib-2.0/include/glibconfig.h
+ local/include/autolab-nd-0.1/geometria.h
  local/include/autolab-nd-0.1/nd.h
+ local/include/autolab-nd-0.1/nd2_alg.h
  local/include/autolab-nd-0.1/nd_alg.h
  local/include/autolab-rapi-0.1/RapiCore
  local/include/autolab-rapi-0.1/binarysensorarray.h
