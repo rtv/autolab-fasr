@@ -401,7 +401,7 @@ bool ABaseRobotCtrl::actionDock()
   if ( mFgChargerDetected == true ) {
     if ( mLastChargingStation.distance > 0.6 ) {
       point.fromPolar( mLastChargingStation.distance,
-                       NORMALIZE_ANGLE( mLastChargingStation.bearing + mRobotPose.mYaw ) );
+                       normalizeAngle( mLastChargingStation.bearing + mRobotPose.mYaw ) );
       mCurrentWaypoint = mRobotPose + point;
       mNd->setGoal( mCurrentWaypoint.getPose() );
       mNd->update( mSimTime, mRobotPose, mRobotVelocity );
@@ -410,7 +410,7 @@ bool ABaseRobotCtrl::actionDock()
     else {
       // creep towards it
       mDrivetrain->setVelocityCmd( DOCK_SPEED,
-                                   NORMALIZE_ANGLE( mLastChargingStation.bearing ) );
+                                   normalizeAngle( mLastChargingStation.bearing ) );
       if ( mPowerPack->isCharging() == true ) {
         mDrivetrain->stop();
         return true;   // successfull dock
@@ -439,7 +439,7 @@ bool ABaseRobotCtrl::actionUnDock()
   // back up a bit
   if ( mLastChargingStation.distance < BACK_OFF_DISTANCE ) {
     mDrivetrain->setVelocityCmd( BACK_OFF_SPEED, 0.0 );
-    mHeading = NORMALIZE_ANGLE( mLastChargingStation.bearing - PI );
+    mHeading = normalizeAngle( mLastChargingStation.bearing - PI );
   }
   else {
     mDrivetrain->setVelocityCmd( 0.0, 0.5 );
@@ -602,7 +602,7 @@ bool ABaseRobotCtrl::actionRecover()
   }
   if ( !actionAvoidObstacle() ) {
     mDrivetrain->setVelocityCmd( 0.2,
-                                 SIGN( NORMALIZE_ANGLE( mRobotPose.mYaw
+                                 sign( normalizeAngle( mRobotPose.mYaw
                                                         - mHeading ) ) * 0.5 );
   }
 
@@ -993,11 +993,11 @@ void ABaseRobotCtrl::updateData( float dt )
     if ( isModAboutZero( mSimTime, 3.0f ) == true ) {
       r = drand48();
       if ( r <= 0.33 )
-        mStallRecoverSpeedCmd.mVX = 0.0;
+        mStallRecoverSpeedCmd.mXDot = 0.0;
       else if ( r <= 0.66 )
-        mStallRecoverSpeedCmd.mVX = STALL_RECOVER_SPEED;
+        mStallRecoverSpeedCmd.mXDot = STALL_RECOVER_SPEED;
       else
-        mStallRecoverSpeedCmd.mVX = -STALL_RECOVER_SPEED;
+        mStallRecoverSpeedCmd.mXDot = -STALL_RECOVER_SPEED;
 
       r = drand48();
       if ( r <= 0.33 )
@@ -1008,8 +1008,7 @@ void ABaseRobotCtrl::updateData( float dt )
         mStallRecoverSpeedCmd.mYawDot = -STALL_RECOVER_TURNRATE;
     }
     mDrivetrain->setVelocityCmd( mStallRecoverSpeedCmd );
-    snprintf( statusStr, 20, "%0.1f %0.1f", mStallRecoverSpeedCmd.mVX,
-              mStallRecoverSpeedCmd.mYawDot );
+    snprintf( statusStr, 20, "%s", mStallRecoverSpeedCmd.toStr().c_str());
   }
 
   // add ourselfs to the current task again

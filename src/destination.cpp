@@ -192,7 +192,7 @@ int CDestination::getWaitingPosition ( IRobotWaitInterface* robot,
             * WAITING_SPACING;
   pose.mY = mLocation.mY + sin ( mQueueDirection ) * ( index )
             * WAITING_SPACING;
-  pose.mYaw = NORMALIZE_ANGLE ( mQueueDirection - PI );
+  pose.mYaw = normalizeAngle ( mQueueDirection - PI );
 
   return index;
 }
@@ -202,7 +202,7 @@ bool CDestination::isNear ( CPose2d pose )
   float dist;
   dist = CLOSENESS_THRESHOLD + mWaitingQueue.size() * WAITING_SPACING;
 
-  dist = LIMIT ( dist, 0.0, MAX_CLOSENESS_DISTANCE );
+  dist = limit ( dist, 0.0, MAX_CLOSENESS_DISTANCE );
 
   if ( getDistance ( pose ) < dist )
     return true;
@@ -212,7 +212,7 @@ bool CDestination::isNear ( CPose2d pose )
 //---------------------------------------------------------------------------
 float CDestination::getDistance ( CPose2d pose )
 {
-  return EUCLIDIAN ( mLocation.mX, mLocation.mY, pose.mX, pose.mY );
+  return euclidian ( mLocation.mX, mLocation.mY, pose.mX, pose.mY );
 }
 //---------------------------------------------------------------------------
 CPose2d CDestination::getPose()
