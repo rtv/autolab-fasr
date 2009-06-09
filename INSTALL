@@ -1,0 +1,26 @@
+Installation
+Preliminaries
+
+Before you start building and installing this project, make sure you have the following packages are installed and configured:
+
+    * git
+    * cmake
+    * Qt Framework (libraries)
+    * Stage 3.1
+      Make sure that Stage is configured properly and $PKG_CONFIG_PATH variable contains the path to the Stage directory.
+    * OpenGL 
+
+Building and installing
+If you downloaded the project in zip or tar formats, unpack the archives. Change into the project directory and execute following commands:
+
+$ ./build_dependencies.sh
+$ source ./setpath.sh  
+$ cmake .
+$ make  
+
+Testing your installation
+From the project directory run
+
+$ stage ./world/fasr.world
+
+You should see a Stage simulator window with robots moving around. 

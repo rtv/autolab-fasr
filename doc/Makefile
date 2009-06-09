@@ -1,0 +1,31 @@
+
+
+# add these subdirs to the distribution tarball
+#EXTRA_DIST = \
+#README \
+#stage.txt \
+#header.html \
+#stage.dox \
+#stage_button.png 
+#
+DOCDIR = $(prefix)/share/doc
+
+# build docs manually with 'make doc'
+doc:
+	./sourcedocs.sh > additional.txt
+	(cat Doxyfile; echo "INPUT+=additional.txt") | doxygen
+#	cp stage_button.png stage
+	rm -f additional.txt
+
+# install the latest docs
+doc-install: doc 
+	install -d stage $(DOCDIR)
+	cp -r -p -v stage $(DOCDIR)/stage
+
+# zap the built docs
+clean:
+	rm -rf html additional.txt
+
+# copy the latest docs to the web server
+#upload: 
+#	./upload.sh stage-svn stage
