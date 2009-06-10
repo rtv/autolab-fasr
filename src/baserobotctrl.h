@@ -6,10 +6,10 @@
 #include "broadcast.h"
 #include "charger.h"
 #include "destination.h"
-#include "nd.h"
+#include "stagend.h"
 #include "worktaskrobotinterface.h"
 #include "robotwaitinterface.h"
-#include "wavefrontmap.h"
+#include "stagewavefrontmap.h"
 #include "stagegridmap.h"
 #include <list>
 
@@ -287,7 +287,7 @@ class ABaseRobotCtrl : public ARobotCtrl, public IRobotWaitInterface
     /** Current charger destination */
     CCharger* mCurrentChargerDestination;
     /** Near-Distance obstacle avoidance */
-    CNd* mNd;
+    CStageNd* mNd;
     /** Robot pose */
     CPose2d mRobotPose;
     /** Velocity of robot */
@@ -318,7 +318,7 @@ class ABaseRobotCtrl : public ARobotCtrl, public IRobotWaitInterface
     /** Elapsed time since the current FSM state was entered */
     float mElapsedStateTime;
     /** Wavefront map for general purpose */
-    CWaveFrontMap* mWaveFrontMap;
+    CStageWaveFrontMap* mWaveFrontMap;
     /** Time it took to complete the last work task [s] */
     float mTaskCompletionTime;
     /** Simulation time [s] */

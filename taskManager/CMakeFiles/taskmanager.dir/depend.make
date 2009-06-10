@@ -281,6 +281,8 @@ taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-nd-0.1/
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-nd-0.1/nd.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
+taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-nd-0.1/ndvis.h
+taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-nd-0.1/stagend.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/binarysensorarray.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/conversions.h
@@ -333,6 +335,7 @@ taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-st
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-wp-0.1/gridmap.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-wp-0.1/stagegridmap.h
+taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-wp-0.1/stagewavefrontmap.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-wp-0.1/wavefrontmap.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-wp-0.1/wavefrontmapvis.h
 
@@ -408,6 +411,8 @@ taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-nd-0.1/nd.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
+taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-nd-0.1/ndvis.h
+taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-nd-0.1/stagend.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/binarysensorarray.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/conversions.h
@@ -460,6 +465,7 @@ taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-wp-0.1/gridmap.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-wp-0.1/stagegridmap.h
+taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-wp-0.1/stagewavefrontmap.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-wp-0.1/wavefrontmap.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-wp-0.1/wavefrontmapvis.h
 

@@ -73,6 +73,8 @@ src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-nd-0.1/nd.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
+src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-nd-0.1/ndvis.h
+src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-nd-0.1/stagend.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/binarysensorarray.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/conversions.h
@@ -125,6 +127,7 @@ src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-wp-0.1/gridmap.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-wp-0.1/stagegridmap.h
+src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-wp-0.1/stagewavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-wp-0.1/wavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-wp-0.1/wavefrontmapvis.h
 
@@ -198,6 +201,8 @@ src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-nd-0.
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-nd-0.1/nd.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
+src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-nd-0.1/ndvis.h
+src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-nd-0.1/stagend.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/binarysensorarray.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/conversions.h
@@ -250,6 +255,7 @@ src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-wp-0.1/gridmap.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-wp-0.1/stagegridmap.h
+src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-wp-0.1/stagewavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-wp-0.1/wavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-wp-0.1/wavefrontmapvis.h
 
@@ -639,6 +645,8 @@ src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
+src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/ndvis.h
+src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/stagend.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/binarysensorarray.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/conversions.h
@@ -691,6 +699,7 @@ src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/gridmap.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/stagegridmap.h
+src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/stagewavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/wavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/wavefrontmapvis.h
 
@@ -901,8 +910,15 @@ src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtCore/qvarlengthar
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtCore/qvector.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtCore/qwaitcondition.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtCore/qxmlstream.h
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtGui/QCheckBox
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtGui/QGroupBox
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtGui/QHBoxLayout
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtGui/QLabel
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtGui/QLayout
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtGui/QPixmap
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtGui/QPrinter
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtGui/QVBoxLayout
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtGui/QWidget
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtGui/QtGui
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtGui/qabstractbutton.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: /usr/include/qt4/QtGui/qabstractitemdelegate.h
@@ -1110,18 +1126,25 @@ src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-nd-0.1/geometr
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-nd-0.1/nd.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-nd-0.1/ndvis.h
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-nd-0.1/stagend.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/RapiGui
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/binarysensorarray.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/conversions.h
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/customdialog.h
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/dataled.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/dataupdateobserver.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/device.h
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/devicewidget.h
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/devicewidgetlist.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/drivetrain2dof.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/fiducialfinder.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/gui.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/lights.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/limit.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/localizer2d.h
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/mainwindow.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/odometry.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/point2d.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/pose2d.h
@@ -1164,6 +1187,7 @@ src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-stage-0.1
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-wp-0.1/gridmap.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-wp-0.1/stagegridmap.h
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-wp-0.1/stagewavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-wp-0.1/wavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-wp-0.1/wavefrontmapvis.h
 
@@ -1241,6 +1265,8 @@ src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autol
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
+src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/ndvis.h
+src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/stagend.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/binarysensorarray.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/conversions.h
@@ -1293,6 +1319,7 @@ src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autol
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/gridmap.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/stagegridmap.h
+src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/stagewavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/wavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/wavefrontmapvis.h
 
@@ -1369,6 +1396,8 @@ src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-nd-0
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-nd-0.1/nd.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
+src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-nd-0.1/ndvis.h
+src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-nd-0.1/stagend.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/binarysensorarray.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/conversions.h
@@ -1421,6 +1450,7 @@ src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-wp-0.1/gridmap.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-wp-0.1/stagegridmap.h
+src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-wp-0.1/stagewavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-wp-0.1/wavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-wp-0.1/wavefrontmapvis.h
 
@@ -1495,6 +1525,8 @@ src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autol
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
+src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/ndvis.h
+src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/stagend.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/binarysensorarray.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/conversions.h
@@ -1547,6 +1579,7 @@ src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autol
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/gridmap.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/stagegridmap.h
+src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/stagewavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/wavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/wavefrontmapvis.h
 
@@ -1621,6 +1654,8 @@ src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/aut
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd2_alg.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/nd_alg.h
+src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/ndvis.h
+src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-nd-0.1/stagend.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/RapiCore
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/binarysensorarray.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/conversions.h
@@ -1673,6 +1708,7 @@ src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/aut
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/gridmap.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/stagegridmap.h
+src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/stagewavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/wavefrontmap.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-wp-0.1/wavefrontmapvis.h
 

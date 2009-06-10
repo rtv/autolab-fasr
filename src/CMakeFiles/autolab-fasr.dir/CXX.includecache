@@ -17,14 +17,14 @@ charger.h
 ./src/charger.h
 destination.h
 ./src/destination.h
-nd.h
-./src/nd.h
+stagend.h
+./src/stagend.h
 worktaskrobotinterface.h
 ./src/worktaskrobotinterface.h
 robotwaitinterface.h
 ./src/robotwaitinterface.h
-wavefrontmap.h
-./src/wavefrontmap.h
+stagewavefrontmap.h
+./src/stagewavefrontmap.h
 stagegridmap.h
 ./src/stagegridmap.h
 list
@@ -117,14 +117,14 @@ charger.h
 /home/jwawerla/autolab-fasr/src/charger.h
 destination.h
 /home/jwawerla/autolab-fasr/src/destination.h
-nd.h
-/home/jwawerla/autolab-fasr/src/nd.h
+stagend.h
+/home/jwawerla/autolab-fasr/src/stagend.h
 worktaskrobotinterface.h
 /home/jwawerla/autolab-fasr/src/worktaskrobotinterface.h
 robotwaitinterface.h
 /home/jwawerla/autolab-fasr/src/robotwaitinterface.h
-wavefrontmap.h
-/home/jwawerla/autolab-fasr/src/wavefrontmap.h
+stagewavefrontmap.h
+/home/jwawerla/autolab-fasr/src/stagewavefrontmap.h
 stagegridmap.h
 /home/jwawerla/autolab-fasr/src/stagegridmap.h
 list
@@ -1868,13 +1868,41 @@ QtCore/QString
 QtCore/QVector
 -
 
+/usr/include/qt4/QtGui/QCheckBox
+qcheckbox.h
+/usr/include/qt4/QtGui/qcheckbox.h
+
+/usr/include/qt4/QtGui/QGroupBox
+qgroupbox.h
+/usr/include/qt4/QtGui/qgroupbox.h
+
+/usr/include/qt4/QtGui/QHBoxLayout
+qboxlayout.h
+/usr/include/qt4/QtGui/qboxlayout.h
+
+/usr/include/qt4/QtGui/QLabel
+qlabel.h
+/usr/include/qt4/QtGui/qlabel.h
+
 /usr/include/qt4/QtGui/QLayout
 qlayout.h
 /usr/include/qt4/QtGui/qlayout.h
 
+/usr/include/qt4/QtGui/QPixmap
+qpixmap.h
+/usr/include/qt4/QtGui/qpixmap.h
+
 /usr/include/qt4/QtGui/QPrinter
 qprinter.h
 /usr/include/qt4/QtGui/qprinter.h
+
+/usr/include/qt4/QtGui/QVBoxLayout
+qboxlayout.h
+/usr/include/qt4/QtGui/qboxlayout.h
+
+/usr/include/qt4/QtGui/QWidget
+qwidget.h
+/usr/include/qt4/QtGui/qwidget.h
 
 /usr/include/qt4/QtGui/QtGui
 QtCore/QtCore
@@ -3772,6 +3800,20 @@ local/include/autolab-nd-0.1/nd_alg.h
 utilities.h
 local/include/autolab-nd-0.1/utilities.h
 
+local/include/autolab-nd-0.1/ndvis.h
+nd.h
+local/include/autolab-nd-0.1/nd.h
+stage.hh
+local/include/autolab-nd-0.1/stage.hh
+
+local/include/autolab-nd-0.1/stagend.h
+nd.h
+local/include/autolab-nd-0.1/nd.h
+ndvis.h
+local/include/autolab-nd-0.1/ndvis.h
+stage.hh
+-
+
 local/include/autolab-rapi-0.1/RapiCore
 printerror.h
 local/include/autolab-rapi-0.1/printerror.h
@@ -3838,6 +3880,18 @@ local/include/autolab-rapi-0.1/pose2d.h
 
 local/include/autolab-rapi-0.1/conversions.h
 
+local/include/autolab-rapi-0.1/customdialog.h
+qdialog.h
+-
+
+local/include/autolab-rapi-0.1/dataled.h
+QWidget
+-
+QPixmap
+-
+QLabel
+-
+
 local/include/autolab-rapi-0.1/dataupdateobserver.h
 
 local/include/autolab-rapi-0.1/device.h
@@ -3854,6 +3908,28 @@ local/include/autolab-rapi-0.1/pose3d.h
 dataupdateobserver.h
 local/include/autolab-rapi-0.1/dataupdateobserver.h
 
+local/include/autolab-rapi-0.1/devicewidget.h
+QGroupBox
+-
+QVBoxLayout
+-
+QHBoxLayout
+-
+QCheckBox
+-
+dataled.h
+local/include/autolab-rapi-0.1/dataled.h
+device.h
+local/include/autolab-rapi-0.1/device.h
+
+local/include/autolab-rapi-0.1/devicewidgetlist.h
+list
+-
+QtGui
+-
+devicewidget.h
+local/include/autolab-rapi-0.1/devicewidget.h
+
 local/include/autolab-rapi-0.1/drivetrain2dof.h
 device.h
 local/include/autolab-rapi-0.1/device.h
@@ -3869,10 +3945,14 @@ local/include/autolab-rapi-0.1/device.h
 local/include/autolab-rapi-0.1/gui.h
 robot.h
 local/include/autolab-rapi-0.1/robot.h
+customdialog.h
+local/include/autolab-rapi-0.1/customdialog.h
 pthread.h
 -
 QtGui
 -
+mainwindow.h
+local/include/autolab-rapi-0.1/mainwindow.h
 
 local/include/autolab-rapi-0.1/lights.h
 device.h
@@ -3887,6 +3967,18 @@ device.h
 local/include/autolab-rapi-0.1/device.h
 pose2d.h
 local/include/autolab-rapi-0.1/pose2d.h
+
+local/include/autolab-rapi-0.1/mainwindow.h
+QtGui
+-
+list
+-
+robot.h
+local/include/autolab-rapi-0.1/robot.h
+devicewidgetlist.h
+local/include/autolab-rapi-0.1/devicewidgetlist.h
+customdialog.h
+local/include/autolab-rapi-0.1/customdialog.h
 
 local/include/autolab-rapi-0.1/odometry.h
 localizer2d.h
@@ -4207,6 +4299,12 @@ gridmap.h
 local/include/autolab-wp-0.1/gridmap.h
 stage.hh
 local/include/autolab-wp-0.1/stage.hh
+
+local/include/autolab-wp-0.1/stagewavefrontmap.h
+wavefrontmap.h
+local/include/autolab-wp-0.1/wavefrontmap.h
+stagegridmap.h
+local/include/autolab-wp-0.1/stagegridmap.h
 wavefrontmapvis.h
 local/include/autolab-wp-0.1/wavefrontmapvis.h
 
@@ -4220,6 +4318,8 @@ local/include/autolab-wp-0.1/waypoint2d.h
 list
 -
 math.h
+-
+string
 -
 
 local/include/autolab-wp-0.1/wavefrontmapvis.h
