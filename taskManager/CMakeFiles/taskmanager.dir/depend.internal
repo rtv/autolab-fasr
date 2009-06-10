@@ -71,6 +71,7 @@ taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o
  local/include/autolab-rapi-0.1/drivetrain2dof.h
  local/include/autolab-rapi-0.1/fiducialfinder.h
  local/include/autolab-rapi-0.1/lights.h
+ local/include/autolab-rapi-0.1/limit.h
  local/include/autolab-rapi-0.1/localizer2d.h
  local/include/autolab-rapi-0.1/odometry.h
  local/include/autolab-rapi-0.1/point2d.h
@@ -81,6 +82,8 @@ taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o
  local/include/autolab-rapi-0.1/rangefinder.h
  local/include/autolab-rapi-0.1/rapierror.h
  local/include/autolab-rapi-0.1/rapitypes.h
+ local/include/autolab-rapi-0.1/rapivar.h
+ local/include/autolab-rapi-0.1/rectangle.h
  local/include/autolab-rapi-0.1/rgbcolor.h
  local/include/autolab-rapi-0.1/robot.h
  local/include/autolab-rapi-0.1/robotctrl.h
@@ -173,6 +176,7 @@ taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o
  local/include/autolab-rapi-0.1/drivetrain2dof.h
  local/include/autolab-rapi-0.1/fiducialfinder.h
  local/include/autolab-rapi-0.1/lights.h
+ local/include/autolab-rapi-0.1/limit.h
  local/include/autolab-rapi-0.1/localizer2d.h
  local/include/autolab-rapi-0.1/odometry.h
  local/include/autolab-rapi-0.1/point2d.h
@@ -183,6 +187,8 @@ taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o
  local/include/autolab-rapi-0.1/rangefinder.h
  local/include/autolab-rapi-0.1/rapierror.h
  local/include/autolab-rapi-0.1/rapitypes.h
+ local/include/autolab-rapi-0.1/rapivar.h
+ local/include/autolab-rapi-0.1/rectangle.h
  local/include/autolab-rapi-0.1/rgbcolor.h
  local/include/autolab-rapi-0.1/robot.h
  local/include/autolab-rapi-0.1/robotctrl.h
@@ -284,6 +290,7 @@ taskManager/CMakeFiles/taskmanager.dir/main.cpp.o
  local/include/autolab-rapi-0.1/drivetrain2dof.h
  local/include/autolab-rapi-0.1/fiducialfinder.h
  local/include/autolab-rapi-0.1/lights.h
+ local/include/autolab-rapi-0.1/limit.h
  local/include/autolab-rapi-0.1/localizer2d.h
  local/include/autolab-rapi-0.1/odometry.h
  local/include/autolab-rapi-0.1/point2d.h
@@ -294,6 +301,8 @@ taskManager/CMakeFiles/taskmanager.dir/main.cpp.o
  local/include/autolab-rapi-0.1/rangefinder.h
  local/include/autolab-rapi-0.1/rapierror.h
  local/include/autolab-rapi-0.1/rapitypes.h
+ local/include/autolab-rapi-0.1/rapivar.h
+ local/include/autolab-rapi-0.1/rectangle.h
  local/include/autolab-rapi-0.1/rgbcolor.h
  local/include/autolab-rapi-0.1/robot.h
  local/include/autolab-rapi-0.1/robotctrl.h
@@ -408,6 +417,7 @@ taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o
  local/include/autolab-rapi-0.1/drivetrain2dof.h
  local/include/autolab-rapi-0.1/fiducialfinder.h
  local/include/autolab-rapi-0.1/lights.h
+ local/include/autolab-rapi-0.1/limit.h
  local/include/autolab-rapi-0.1/localizer2d.h
  local/include/autolab-rapi-0.1/odometry.h
  local/include/autolab-rapi-0.1/point2d.h
@@ -418,6 +428,8 @@ taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o
  local/include/autolab-rapi-0.1/rangefinder.h
  local/include/autolab-rapi-0.1/rapierror.h
  local/include/autolab-rapi-0.1/rapitypes.h
+ local/include/autolab-rapi-0.1/rapivar.h
+ local/include/autolab-rapi-0.1/rectangle.h
  local/include/autolab-rapi-0.1/rgbcolor.h
  local/include/autolab-rapi-0.1/robot.h
  local/include/autolab-rapi-0.1/robotctrl.h

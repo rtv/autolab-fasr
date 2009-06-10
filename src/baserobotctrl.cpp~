@@ -1008,8 +1008,7 @@ void ABaseRobotCtrl::updateData( float dt )
         mStallRecoverSpeedCmd.mYawDot = -STALL_RECOVER_TURNRATE;
     }
     mDrivetrain->setVelocityCmd( mStallRecoverSpeedCmd );
-    snprintf( statusStr, 20, "%0.1f %0.1f", mStallRecoverSpeedCmd.mVX,
-              mStallRecoverSpeedCmd.mYawDot );
+    snprintf( statusStr, 20, "%s", mStallRecoverSpeedCmd.toStr().c_str());
   }
 
   // add ourselfs to the current task again

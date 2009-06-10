@@ -187,6 +187,8 @@ list
 -
 map
 -
+set
+-
 glib.h
 -
 FL/Fl.H
@@ -625,6 +627,10 @@ velocity2d.h
 local/include/autolab-nd-0.1/velocity2d.h
 rangefinder.h
 local/include/autolab-nd-0.1/rangefinder.h
+rectangle.h
+local/include/autolab-nd-0.1/rectangle.h
+vector
+-
 
 local/include/autolab-nd-0.1/nd2_alg.h
 geometria.h
@@ -645,6 +651,8 @@ pose3d.h
 local/include/autolab-rapi-0.1/pose3d.h
 point2d.h
 local/include/autolab-rapi-0.1/point2d.h
+rectangle.h
+local/include/autolab-rapi-0.1/rectangle.h
 rangefinder.h
 local/include/autolab-rapi-0.1/rangefinder.h
 velocity2d.h
@@ -679,6 +687,10 @@ timer.h
 local/include/autolab-rapi-0.1/timer.h
 statevariable.h
 local/include/autolab-rapi-0.1/statevariable.h
+limit.h
+local/include/autolab-rapi-0.1/limit.h
+rapivar.h
+local/include/autolab-rapi-0.1/rapivar.h
 
 local/include/autolab-rapi-0.1/binarysensorarray.h
 device.h
@@ -721,6 +733,8 @@ device.h
 local/include/autolab-rapi-0.1/device.h
 rgbcolor.h
 local/include/autolab-rapi-0.1/rgbcolor.h
+
+local/include/autolab-rapi-0.1/limit.h
 
 local/include/autolab-rapi-0.1/localizer2d.h
 device.h
@@ -772,7 +786,19 @@ stack
 
 local/include/autolab-rapi-0.1/rapitypes.h
 
+local/include/autolab-rapi-0.1/rapivar.h
+string
+-
+
+local/include/autolab-rapi-0.1/rectangle.h
+point2d.h
+local/include/autolab-rapi-0.1/point2d.h
+string
+-
+
 local/include/autolab-rapi-0.1/rgbcolor.h
+rapivar.h
+local/include/autolab-rapi-0.1/rapivar.h
 
 local/include/autolab-rapi-0.1/robot.h
 robotupdateinterface.h
@@ -823,6 +849,8 @@ robotupdateinterface.h
 local/include/autolab-rapi-0.1/robotupdateinterface.h
 robot.h
 local/include/autolab-rapi-0.1/robot.h
+string
+-
 
 local/include/autolab-rapi-0.1/utilities.h
 sys/time.h
@@ -843,6 +871,8 @@ string
 -
 vector
 -
+rapivar.h
+local/include/autolab-rapi-0.1/rapivar.h
 pose2d.h
 local/include/autolab-rapi-0.1/pose2d.h
 point2d.h
@@ -853,6 +883,8 @@ waypoint2d.h
 local/include/autolab-rapi-0.1/waypoint2d.h
 
 local/include/autolab-rapi-0.1/velocity2d.h
+string
+-
 
 local/include/autolab-rapi-0.1/waypoint2d.h
 pose2d.h

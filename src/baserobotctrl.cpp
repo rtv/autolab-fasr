@@ -501,10 +501,10 @@ int ABaseRobotCtrl::actionAvoidObstacle()
       mAvoidCount = ( int ) randNo( AVOID_DURATION , 2 * AVOID_DURATION );
 
       if ( minleft < minright ) {
-        mDrivetrain->setRotationalSpeedCmd( -AVOID_TURN );
+        mDrivetrain->setRotationalVelocityCmd( -AVOID_TURN );
       }
       else {
-        mDrivetrain->setRotationalSpeedCmd( AVOID_TURN );
+        mDrivetrain->setRotationalVelocityCmd( AVOID_TURN );
       }
     }
     mAvoidCount--;

@@ -92,7 +92,7 @@ void CRobotScheduler::robotIsCharging ( IReplanPolicyRobotInterface* robot )
           it = mTaskVector[i].robotsAssignedList.erase ( it );
           mFreeRobotList.push_back ( robot );
         }
-      }    
+      }
     }
   }
 }

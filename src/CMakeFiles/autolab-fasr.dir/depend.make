@@ -81,6 +81,7 @@ src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/drivetrain2dof.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/fiducialfinder.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/lights.h
+src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/limit.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/localizer2d.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/odometry.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/point2d.h
@@ -91,6 +92,8 @@ src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/rangefinder.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/rapierror.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/rapitypes.h
+src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/rapivar.h
+src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/rectangle.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/rgbcolor.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/robot.h
 src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.o: local/include/autolab-rapi-0.1/robotctrl.h
@@ -203,6 +206,7 @@ src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/drivetrain2dof.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/fiducialfinder.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/lights.h
+src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/limit.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/localizer2d.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/odometry.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/point2d.h
@@ -213,6 +217,8 @@ src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/rangefinder.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/rapierror.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/rapitypes.h
+src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/rapivar.h
+src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/rectangle.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/rgbcolor.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/robot.h
 src/CMakeFiles/autolab-fasr.dir/baserobotctrl.cpp.o: local/include/autolab-rapi-0.1/robotctrl.h
@@ -318,6 +324,7 @@ src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-0.1/
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-0.1/drivetrain2dof.h
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-0.1/fiducialfinder.h
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-0.1/lights.h
+src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-0.1/limit.h
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-0.1/localizer2d.h
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-0.1/odometry.h
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-0.1/point2d.h
@@ -328,6 +335,8 @@ src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-0.1/
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-0.1/rangefinder.h
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-0.1/rapierror.h
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-0.1/rapitypes.h
+src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-0.1/rapivar.h
+src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-0.1/rectangle.h
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-0.1/rgbcolor.h
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-0.1/robot.h
 src/CMakeFiles/autolab-fasr.dir/broadcast.cpp.o: local/include/autolab-rapi-0.1/robotctrl.h
@@ -419,6 +428,7 @@ src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-0.1/de
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-0.1/drivetrain2dof.h
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-0.1/fiducialfinder.h
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-0.1/lights.h
+src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-0.1/limit.h
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-0.1/localizer2d.h
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-0.1/odometry.h
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-0.1/point2d.h
@@ -429,6 +439,8 @@ src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-0.1/pr
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-0.1/rangefinder.h
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-0.1/rapierror.h
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-0.1/rapitypes.h
+src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-0.1/rapivar.h
+src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-0.1/rectangle.h
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-0.1/rgbcolor.h
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-0.1/robot.h
 src/CMakeFiles/autolab-fasr.dir/charger.cpp.o: local/include/autolab-rapi-0.1/robotctrl.h
@@ -519,6 +531,7 @@ src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: local/include/autolab-rapi-0.
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: local/include/autolab-rapi-0.1/drivetrain2dof.h
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: local/include/autolab-rapi-0.1/fiducialfinder.h
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: local/include/autolab-rapi-0.1/lights.h
+src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: local/include/autolab-rapi-0.1/limit.h
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: local/include/autolab-rapi-0.1/localizer2d.h
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: local/include/autolab-rapi-0.1/odometry.h
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: local/include/autolab-rapi-0.1/point2d.h
@@ -529,6 +542,8 @@ src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: local/include/autolab-rapi-0.
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: local/include/autolab-rapi-0.1/rangefinder.h
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: local/include/autolab-rapi-0.1/rapierror.h
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: local/include/autolab-rapi-0.1/rapitypes.h
+src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: local/include/autolab-rapi-0.1/rapivar.h
+src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: local/include/autolab-rapi-0.1/rectangle.h
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: local/include/autolab-rapi-0.1/rgbcolor.h
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: local/include/autolab-rapi-0.1/robot.h
 src/CMakeFiles/autolab-fasr.dir/destination.cpp.o: local/include/autolab-rapi-0.1/robotctrl.h
@@ -632,6 +647,7 @@ src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/drivetrain2dof.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/fiducialfinder.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/lights.h
+src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/limit.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/localizer2d.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/odometry.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/point2d.h
@@ -642,6 +658,8 @@ src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rangefinder.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rapierror.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rapitypes.h
+src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rapivar.h
+src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rectangle.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rgbcolor.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/robot.h
 src/CMakeFiles/autolab-fasr.dir/looppolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/robotctrl.h
@@ -1102,6 +1120,7 @@ src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/drive
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/fiducialfinder.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/gui.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/lights.h
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/limit.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/localizer2d.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/odometry.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/point2d.h
@@ -1112,6 +1131,8 @@ src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/print
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/rangefinder.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/rapierror.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/rapitypes.h
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/rapivar.h
+src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/rectangle.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/rgbcolor.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/robot.h
 src/CMakeFiles/autolab-fasr.dir/main.cpp.o: local/include/autolab-rapi-0.1/robotctrl.h
@@ -1228,6 +1249,7 @@ src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autol
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/drivetrain2dof.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/fiducialfinder.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/lights.h
+src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/limit.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/localizer2d.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/odometry.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/point2d.h
@@ -1238,6 +1260,8 @@ src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autol
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rangefinder.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rapierror.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rapitypes.h
+src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rapivar.h
+src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rectangle.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rgbcolor.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/robot.h
 src/CMakeFiles/autolab-fasr.dir/replanpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/robotctrl.h
@@ -1353,6 +1377,7 @@ src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/drivetrain2dof.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/fiducialfinder.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/lights.h
+src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/limit.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/localizer2d.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/odometry.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/point2d.h
@@ -1363,6 +1388,8 @@ src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/rangefinder.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/rapierror.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/rapitypes.h
+src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/rapivar.h
+src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/rectangle.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/rgbcolor.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/robot.h
 src/CMakeFiles/autolab-fasr.dir/robotscheduler.cpp.o: local/include/autolab-rapi-0.1/robotctrl.h
@@ -1476,6 +1503,7 @@ src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autol
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/drivetrain2dof.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/fiducialfinder.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/lights.h
+src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/limit.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/localizer2d.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/odometry.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/point2d.h
@@ -1486,6 +1514,8 @@ src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autol
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rangefinder.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rapierror.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rapitypes.h
+src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rapivar.h
+src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rectangle.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rgbcolor.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/robot.h
 src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/robotctrl.h
@@ -1599,6 +1629,7 @@ src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/aut
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/drivetrain2dof.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/fiducialfinder.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/lights.h
+src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/limit.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/localizer2d.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/odometry.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/point2d.h
@@ -1609,6 +1640,8 @@ src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/aut
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rangefinder.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rapierror.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rapitypes.h
+src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rapivar.h
+src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rectangle.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/rgbcolor.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/robot.h
 src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.o: local/include/autolab-rapi-0.1/robotctrl.h
@@ -1714,6 +1747,7 @@ src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: local/include/autolab-rapi-0.1/d
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: local/include/autolab-rapi-0.1/drivetrain2dof.h
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: local/include/autolab-rapi-0.1/fiducialfinder.h
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: local/include/autolab-rapi-0.1/lights.h
+src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: local/include/autolab-rapi-0.1/limit.h
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: local/include/autolab-rapi-0.1/localizer2d.h
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: local/include/autolab-rapi-0.1/odometry.h
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: local/include/autolab-rapi-0.1/point2d.h
@@ -1724,6 +1758,8 @@ src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: local/include/autolab-rapi-0.1/p
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: local/include/autolab-rapi-0.1/rangefinder.h
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: local/include/autolab-rapi-0.1/rapierror.h
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: local/include/autolab-rapi-0.1/rapitypes.h
+src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: local/include/autolab-rapi-0.1/rapivar.h
+src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: local/include/autolab-rapi-0.1/rectangle.h
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: local/include/autolab-rapi-0.1/rgbcolor.h
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: local/include/autolab-rapi-0.1/robot.h
 src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o: local/include/autolab-rapi-0.1/robotctrl.h

@@ -70,6 +70,7 @@ taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: local/include/a
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: local/include/autolab-rapi-0.1/drivetrain2dof.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: local/include/autolab-rapi-0.1/fiducialfinder.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: local/include/autolab-rapi-0.1/lights.h
+taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: local/include/autolab-rapi-0.1/limit.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: local/include/autolab-rapi-0.1/localizer2d.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: local/include/autolab-rapi-0.1/odometry.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: local/include/autolab-rapi-0.1/point2d.h
@@ -80,6 +81,8 @@ taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: local/include/a
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: local/include/autolab-rapi-0.1/rangefinder.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: local/include/autolab-rapi-0.1/rapierror.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: local/include/autolab-rapi-0.1/rapitypes.h
+taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: local/include/autolab-rapi-0.1/rapivar.h
+taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: local/include/autolab-rapi-0.1/rectangle.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: local/include/autolab-rapi-0.1/rgbcolor.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: local/include/autolab-rapi-0.1/robot.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: local/include/autolab-rapi-0.1/robotctrl.h
@@ -172,6 +175,7 @@ taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: local/include/auto
 taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: local/include/autolab-rapi-0.1/drivetrain2dof.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: local/include/autolab-rapi-0.1/fiducialfinder.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: local/include/autolab-rapi-0.1/lights.h
+taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: local/include/autolab-rapi-0.1/limit.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: local/include/autolab-rapi-0.1/localizer2d.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: local/include/autolab-rapi-0.1/odometry.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: local/include/autolab-rapi-0.1/point2d.h
@@ -182,6 +186,8 @@ taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: local/include/auto
 taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: local/include/autolab-rapi-0.1/rangefinder.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: local/include/autolab-rapi-0.1/rapierror.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: local/include/autolab-rapi-0.1/rapitypes.h
+taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: local/include/autolab-rapi-0.1/rapivar.h
+taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: local/include/autolab-rapi-0.1/rectangle.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: local/include/autolab-rapi-0.1/rgbcolor.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: local/include/autolab-rapi-0.1/robot.h
 taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: local/include/autolab-rapi-0.1/robotctrl.h
@@ -283,6 +289,7 @@ taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/drivetrain2dof.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/fiducialfinder.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/lights.h
+taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/limit.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/localizer2d.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/odometry.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/point2d.h
@@ -293,6 +300,8 @@ taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/rangefinder.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/rapierror.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/rapitypes.h
+taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/rapivar.h
+taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/rectangle.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/rgbcolor.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/robot.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o: local/include/autolab-rapi-0.1/robotctrl.h
@@ -407,6 +416,7 @@ taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/drivetrain2dof.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/fiducialfinder.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/lights.h
+taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/limit.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/localizer2d.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/odometry.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/point2d.h
@@ -417,6 +427,8 @@ taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/rangefinder.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/rapierror.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/rapitypes.h
+taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/rapivar.h
+taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/rectangle.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/rgbcolor.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/robot.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o: local/include/autolab-rapi-0.1/robotctrl.h
