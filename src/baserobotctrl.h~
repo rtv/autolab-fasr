@@ -383,6 +383,8 @@ class ABaseRobotCtrl : public ARobotCtrl, public IRobotWaitInterface
     int mTaskId;
     /** Time stamp of last stall event [s] */
     float mLastStalledTimestamp;
+    /** Times how long we spend in a waiting queue to get to the correct location [s] */
+    float mWaitingQueueTimer;
     CTimer* mQueueStallRecoverTimer;
 };
 

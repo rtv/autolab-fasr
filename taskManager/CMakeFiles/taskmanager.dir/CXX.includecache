@@ -17,14 +17,14 @@ charger.h
 ./src/charger.h
 destination.h
 ./src/destination.h
-nd.h
-./src/nd.h
+stagend.h
+./src/stagend.h
 worktaskrobotinterface.h
 ./src/worktaskrobotinterface.h
 robotwaitinterface.h
 ./src/robotwaitinterface.h
-wavefrontmap.h
-./src/wavefrontmap.h
+stagewavefrontmap.h
+./src/stagewavefrontmap.h
 stagegridmap.h
 ./src/stagegridmap.h
 list
@@ -186,6 +186,8 @@ vector
 list
 -
 map
+-
+set
 -
 glib.h
 -
@@ -625,6 +627,10 @@ velocity2d.h
 local/include/autolab-nd-0.1/velocity2d.h
 rangefinder.h
 local/include/autolab-nd-0.1/rangefinder.h
+rectangle.h
+local/include/autolab-nd-0.1/rectangle.h
+vector
+-
 
 local/include/autolab-nd-0.1/nd2_alg.h
 geometria.h
@@ -633,6 +639,20 @@ local/include/autolab-nd-0.1/geometria.h
 local/include/autolab-nd-0.1/nd_alg.h
 utilities.h
 local/include/autolab-nd-0.1/utilities.h
+
+local/include/autolab-nd-0.1/ndvis.h
+nd.h
+local/include/autolab-nd-0.1/nd.h
+stage.hh
+local/include/autolab-nd-0.1/stage.hh
+
+local/include/autolab-nd-0.1/stagend.h
+nd.h
+local/include/autolab-nd-0.1/nd.h
+ndvis.h
+local/include/autolab-nd-0.1/ndvis.h
+stage.hh
+-
 
 local/include/autolab-rapi-0.1/RapiCore
 printerror.h
@@ -645,6 +665,8 @@ pose3d.h
 local/include/autolab-rapi-0.1/pose3d.h
 point2d.h
 local/include/autolab-rapi-0.1/point2d.h
+rectangle.h
+local/include/autolab-rapi-0.1/rectangle.h
 rangefinder.h
 local/include/autolab-rapi-0.1/rangefinder.h
 velocity2d.h
@@ -679,6 +701,10 @@ timer.h
 local/include/autolab-rapi-0.1/timer.h
 statevariable.h
 local/include/autolab-rapi-0.1/statevariable.h
+limit.h
+local/include/autolab-rapi-0.1/limit.h
+rapivar.h
+local/include/autolab-rapi-0.1/rapivar.h
 
 local/include/autolab-rapi-0.1/binarysensorarray.h
 device.h
@@ -721,6 +747,8 @@ device.h
 local/include/autolab-rapi-0.1/device.h
 rgbcolor.h
 local/include/autolab-rapi-0.1/rgbcolor.h
+
+local/include/autolab-rapi-0.1/limit.h
 
 local/include/autolab-rapi-0.1/localizer2d.h
 device.h
@@ -772,7 +800,19 @@ stack
 
 local/include/autolab-rapi-0.1/rapitypes.h
 
+local/include/autolab-rapi-0.1/rapivar.h
+string
+-
+
+local/include/autolab-rapi-0.1/rectangle.h
+point2d.h
+local/include/autolab-rapi-0.1/point2d.h
+string
+-
+
 local/include/autolab-rapi-0.1/rgbcolor.h
+rapivar.h
+local/include/autolab-rapi-0.1/rapivar.h
 
 local/include/autolab-rapi-0.1/robot.h
 robotupdateinterface.h
@@ -823,6 +863,8 @@ robotupdateinterface.h
 local/include/autolab-rapi-0.1/robotupdateinterface.h
 robot.h
 local/include/autolab-rapi-0.1/robot.h
+string
+-
 
 local/include/autolab-rapi-0.1/utilities.h
 sys/time.h
@@ -843,6 +885,8 @@ string
 -
 vector
 -
+rapivar.h
+local/include/autolab-rapi-0.1/rapivar.h
 pose2d.h
 local/include/autolab-rapi-0.1/pose2d.h
 point2d.h
@@ -853,6 +897,8 @@ waypoint2d.h
 local/include/autolab-rapi-0.1/waypoint2d.h
 
 local/include/autolab-rapi-0.1/velocity2d.h
+string
+-
 
 local/include/autolab-rapi-0.1/waypoint2d.h
 pose2d.h
@@ -1029,6 +1075,12 @@ gridmap.h
 local/include/autolab-wp-0.1/gridmap.h
 stage.hh
 local/include/autolab-wp-0.1/stage.hh
+
+local/include/autolab-wp-0.1/stagewavefrontmap.h
+wavefrontmap.h
+local/include/autolab-wp-0.1/wavefrontmap.h
+stagegridmap.h
+local/include/autolab-wp-0.1/stagegridmap.h
 wavefrontmapvis.h
 local/include/autolab-wp-0.1/wavefrontmapvis.h
 
@@ -1042,6 +1094,8 @@ local/include/autolab-wp-0.1/waypoint2d.h
 list
 -
 math.h
+-
+string
 -
 
 local/include/autolab-wp-0.1/wavefrontmapvis.h

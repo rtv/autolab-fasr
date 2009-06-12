@@ -71,6 +71,7 @@ taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o
  local/include/autolab-rapi-0.1/drivetrain2dof.h
  local/include/autolab-rapi-0.1/fiducialfinder.h
  local/include/autolab-rapi-0.1/lights.h
+ local/include/autolab-rapi-0.1/limit.h
  local/include/autolab-rapi-0.1/localizer2d.h
  local/include/autolab-rapi-0.1/odometry.h
  local/include/autolab-rapi-0.1/point2d.h
@@ -81,6 +82,8 @@ taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o
  local/include/autolab-rapi-0.1/rangefinder.h
  local/include/autolab-rapi-0.1/rapierror.h
  local/include/autolab-rapi-0.1/rapitypes.h
+ local/include/autolab-rapi-0.1/rapivar.h
+ local/include/autolab-rapi-0.1/rectangle.h
  local/include/autolab-rapi-0.1/rgbcolor.h
  local/include/autolab-rapi-0.1/robot.h
  local/include/autolab-rapi-0.1/robotctrl.h
@@ -173,6 +176,7 @@ taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o
  local/include/autolab-rapi-0.1/drivetrain2dof.h
  local/include/autolab-rapi-0.1/fiducialfinder.h
  local/include/autolab-rapi-0.1/lights.h
+ local/include/autolab-rapi-0.1/limit.h
  local/include/autolab-rapi-0.1/localizer2d.h
  local/include/autolab-rapi-0.1/odometry.h
  local/include/autolab-rapi-0.1/point2d.h
@@ -183,6 +187,8 @@ taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o
  local/include/autolab-rapi-0.1/rangefinder.h
  local/include/autolab-rapi-0.1/rapierror.h
  local/include/autolab-rapi-0.1/rapitypes.h
+ local/include/autolab-rapi-0.1/rapivar.h
+ local/include/autolab-rapi-0.1/rectangle.h
  local/include/autolab-rapi-0.1/rgbcolor.h
  local/include/autolab-rapi-0.1/robot.h
  local/include/autolab-rapi-0.1/robotctrl.h
@@ -276,6 +282,8 @@ taskManager/CMakeFiles/taskmanager.dir/main.cpp.o
  local/include/autolab-nd-0.1/nd.h
  local/include/autolab-nd-0.1/nd2_alg.h
  local/include/autolab-nd-0.1/nd_alg.h
+ local/include/autolab-nd-0.1/ndvis.h
+ local/include/autolab-nd-0.1/stagend.h
  local/include/autolab-rapi-0.1/RapiCore
  local/include/autolab-rapi-0.1/binarysensorarray.h
  local/include/autolab-rapi-0.1/conversions.h
@@ -284,6 +292,7 @@ taskManager/CMakeFiles/taskmanager.dir/main.cpp.o
  local/include/autolab-rapi-0.1/drivetrain2dof.h
  local/include/autolab-rapi-0.1/fiducialfinder.h
  local/include/autolab-rapi-0.1/lights.h
+ local/include/autolab-rapi-0.1/limit.h
  local/include/autolab-rapi-0.1/localizer2d.h
  local/include/autolab-rapi-0.1/odometry.h
  local/include/autolab-rapi-0.1/point2d.h
@@ -294,6 +303,8 @@ taskManager/CMakeFiles/taskmanager.dir/main.cpp.o
  local/include/autolab-rapi-0.1/rangefinder.h
  local/include/autolab-rapi-0.1/rapierror.h
  local/include/autolab-rapi-0.1/rapitypes.h
+ local/include/autolab-rapi-0.1/rapivar.h
+ local/include/autolab-rapi-0.1/rectangle.h
  local/include/autolab-rapi-0.1/rgbcolor.h
  local/include/autolab-rapi-0.1/robot.h
  local/include/autolab-rapi-0.1/robotctrl.h
@@ -325,6 +336,7 @@ taskManager/CMakeFiles/taskmanager.dir/main.cpp.o
  local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
  local/include/autolab-wp-0.1/gridmap.h
  local/include/autolab-wp-0.1/stagegridmap.h
+ local/include/autolab-wp-0.1/stagewavefrontmap.h
  local/include/autolab-wp-0.1/wavefrontmap.h
  local/include/autolab-wp-0.1/wavefrontmapvis.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o
@@ -400,6 +412,8 @@ taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o
  local/include/autolab-nd-0.1/nd.h
  local/include/autolab-nd-0.1/nd2_alg.h
  local/include/autolab-nd-0.1/nd_alg.h
+ local/include/autolab-nd-0.1/ndvis.h
+ local/include/autolab-nd-0.1/stagend.h
  local/include/autolab-rapi-0.1/RapiCore
  local/include/autolab-rapi-0.1/binarysensorarray.h
  local/include/autolab-rapi-0.1/conversions.h
@@ -408,6 +422,7 @@ taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o
  local/include/autolab-rapi-0.1/drivetrain2dof.h
  local/include/autolab-rapi-0.1/fiducialfinder.h
  local/include/autolab-rapi-0.1/lights.h
+ local/include/autolab-rapi-0.1/limit.h
  local/include/autolab-rapi-0.1/localizer2d.h
  local/include/autolab-rapi-0.1/odometry.h
  local/include/autolab-rapi-0.1/point2d.h
@@ -418,6 +433,8 @@ taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o
  local/include/autolab-rapi-0.1/rangefinder.h
  local/include/autolab-rapi-0.1/rapierror.h
  local/include/autolab-rapi-0.1/rapitypes.h
+ local/include/autolab-rapi-0.1/rapivar.h
+ local/include/autolab-rapi-0.1/rectangle.h
  local/include/autolab-rapi-0.1/rgbcolor.h
  local/include/autolab-rapi-0.1/robot.h
  local/include/autolab-rapi-0.1/robotctrl.h
@@ -449,5 +466,6 @@ taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o
  local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
  local/include/autolab-wp-0.1/gridmap.h
  local/include/autolab-wp-0.1/stagegridmap.h
+ local/include/autolab-wp-0.1/stagewavefrontmap.h
  local/include/autolab-wp-0.1/wavefrontmap.h
  local/include/autolab-wp-0.1/wavefrontmapvis.h
