@@ -16,7 +16,6 @@ ABaseRobotCtrl::ABaseRobotCtrl( ARobot* robot )
 {
   CLooseStageRobot* looseRobot;
   Stg::Model* stgModel;
-  Stg::Model* bg;
 
 
   //***********************************
@@ -104,29 +103,22 @@ ABaseRobotCtrl::ABaseRobotCtrl( ARobot* robot )
   // get robot pose
   mRobotPose = mDrivetrain->getOdometry()->getPose();
 
+  stgModel = mDrivetrain->getStageModel();
+  assert( stgModel );
+
   // Add nearest distance obstacle avoidance to robot
-  mNd = new CNd( 0.4, 0.3, 0.2, mRobot->getName().c_str() );
+  mNd = new CStageNd( stgModel, 0.4, 0.3, 0.2, mRobot->getName() );
   mNd->addRangeFinder( mLaser );
 
   //*************************************
   // Create Wavefront planner
-  stgModel = mDrivetrain->getStageModel();
-  assert( stgModel );
-  mWaveFrontMap = new CWaveFrontMap( new CStageGridMap( stgModel ),
-                                     mDrivetrain->getName().c_str() );
+  mWaveFrontMap = new CStageWaveFrontMap( new CStageGridMap( stgModel ),
+                                          mDrivetrain->getName().c_str() );
   assert( mWaveFrontMap );
   mWaveFrontMap->addRangeFinder( mLaser );
   mWaveFrontMap->setRobotPose( &mRobotPose );
   mWaveFrontMap->setWaypointDistance( 1.0, 5.0 );
   mWaveFrontMap->setObstacleGrowth( 0.4 );
-  // place a pointer to the map in the model where others (e.g. the MapVis object)
-  // can find it
-  stgModel->SetProperty( "wavefront_map", static_cast<void*>( mWaveFrontMap ) );
-
-  // Add the Wavefront map visualizer, disabled by default
-  bg = stgModel->GetWorld()->GetModel( "background" );
-  assert( bg );
-  bg->AddVisualizer( &stgMapVis, false );
 
   mRobot->mVariableMonitor.addVar( &mFgChargerDetected, "mFgChargerDetected" );
   mRobot->mVariableMonitor.addVar( &mWaitingQueueTimer, "mWaitingQueueTimer" );
@@ -446,7 +438,7 @@ bool ABaseRobotCtrl::actionUnDock()
   }
 
   if (( mLastChargingStation.distance > BACK_OFF_DISTANCE ) &&
-      ( epsilonEqual( mRobotPose.mYaw, mHeading, D2R( 10.0 ) ) == true ) )
+      ( fabs(normalize(mRobotPose.mYaw -  mHeading)) < D2R( 10.0 ) == true ) )
     return true;  // done undocking everything good
 
   return false; // undock procedure not completed yet

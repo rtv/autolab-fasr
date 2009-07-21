@@ -6,6 +6,10 @@ cmake_minimum_required(VERSION 2.6)
 #if you don't want the full compiler output, remove the following line
 SET(CMAKE_VERBOSE_MAKEFILE OFF)
 
+
+# generate git version number
+EXECUTE_PROCESS(COMMAND ./GIT-VERSION-GEN OUTPUT_FILE GIT-VERSION-FILE)
+
 INCLUDE(FindPkgConfig)
 
 #add definitions, compiler switches, etc.

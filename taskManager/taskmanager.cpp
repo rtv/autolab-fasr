@@ -60,12 +60,10 @@
 #include "error.h"
 #include "utilities.h"
 
-/** The only instance of this class */
-static CTaskManager* instance = NULL;
-
 //-----------------------------------------------------------------------------
 CTaskManager::CTaskManager ( Stg::Model* mod )
 {
+  printf("CTaskManager::CTaskManager \n");
   char* mapModelName = NULL;
   float wavefrontCellSize;
   mSimTime = 0;
@@ -150,6 +148,9 @@ CTaskManager::~CTaskManager()
 //-----------------------------------------------------------------------------
 CTaskManager* CTaskManager::getInstance ( Stg::Model* mod )
 {
+  /** The only instance of this class */
+  static CTaskManager* instance = NULL;
+
   if ( instance == NULL )
     instance = new CTaskManager ( mod );
 

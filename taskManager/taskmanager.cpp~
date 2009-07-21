@@ -66,6 +66,7 @@ static CTaskManager* instance = NULL;
 //-----------------------------------------------------------------------------
 CTaskManager::CTaskManager ( Stg::Model* mod )
 {
+  printf("CTaskManager::CTaskManager \n");
   char* mapModelName = NULL;
   float wavefrontCellSize;
   mSimTime = 0;
@@ -74,15 +75,19 @@ CTaskManager::CTaskManager ( Stg::Model* mod )
   mTaskList.clear();
   mRobotList.clear();
 
-  if ( mod == NULL ) {
+  if ( mod == NULL )
+  {
     PRT_ERR0 ( "No Stage model given " );
     mStgModel = NULL;
-  } else {
+  }
+  else
+  {
     mStgModel = mod;
     mStgModel->AddUpdateCallback ( ( Stg::stg_model_callback_t ) stgUpdate, this );
     if ( ! mStgModel->GetPropertyStr ( "scriptname", &mScriptName,  NULL ) )
       PRT_WARN0 ( "No script specified " );
-    else {
+    else
+    {
       PRT_MSG1 ( 5, "Loading script %s", mScriptName );
     }
 
@@ -90,14 +95,16 @@ CTaskManager::CTaskManager ( Stg::Model* mod )
       PRT_WARN1 ( "CTaskManager %s has no parameter wavefrontcellsize specified in worldfile.",
                   mod->Token() );
 
-    if ( ! mod->GetPropertyStr ( "mapmodel", &mapModelName,  NULL ) ) {
+    if ( ! mod->GetPropertyStr ( "mapmodel", &mapModelName,  NULL ) )
+    {
       PRT_ERR1 ( "robot %s has no mapmodel string specified in worldfile.",
                  mod->Token() );
       exit ( -1 );
     }
 
     Stg::Model* mapModel = mod->GetWorld()->GetModel ( mapModelName );
-    if ( ! mapModel ) {
+    if ( ! mapModel )
+    {
       PRT_ERR1 ( "worldfile has no model named \"%s\"", mapModelName );
       exit ( -1 );
     }
@@ -133,7 +140,8 @@ CTaskManager::~CTaskManager()
   CWorkTask* task = NULL;
   std::list<CWorkTask*>::iterator it;
 
-  for ( it = mTaskList.begin(); it != mTaskList.end(); it++ ) {
+  for ( it = mTaskList.begin(); it != mTaskList.end(); it++ )
+  {
     task = *it;
     if ( task )
       delete task;
@@ -155,7 +163,8 @@ void CTaskManager::registerRobot ( ABaseRobotCtrl* robot )
 
   mRobotList.push_back ( robot );
 
-  for ( it = mTaskList.begin(); it != mTaskList.end(); it++ ) {
+  for ( it = mTaskList.begin(); it != mTaskList.end(); it++ )
+  {
     robot->addWorkTask ( *it );
   }
 }
@@ -185,40 +194,48 @@ int CTaskManager::loadScript()
   FILE* fp = NULL;
 
   fp = fopen ( mScriptName, "r" );
-  if ( fp == NULL ) {
+  if ( fp == NULL )
+  {
     PRT_ERR1 ( "Failed to open script file %s", mScriptName );
     return 0; // error
   }
 
   mNextModificationTime = INFINITY;
 
-  while ( feof ( fp ) == false ) {
+  while ( feof ( fp ) == false )
+  {
     if ( fscanf ( fp, "TASK: %f %s %s %s %d %f %f\n", &timestamp, taskName,
                   sourceName, sinkName, &capacity, &productionRate,
-                  &reward ) != 7 ) {
+                  &reward ) != 7 )
+    {
       PRT_ERR1 ( "While reading script file %s", mScriptName );
     }
 
     // check if this task is already in the list of tasks, if not add it to the list
     fgFound = false;
-    for ( it = mTaskList.begin(); it != mTaskList.end(); it++ ) {
-      if ( strcmp ( ( *it )->getName(), taskName ) == 0 ) {
+    for ( it = mTaskList.begin(); it != mTaskList.end(); it++ )
+    {
+      if ( strcmp ( ( *it )->getName(), taskName ) == 0 )
+      {
         fgFound = true;
         newWorkTask = *it;
       }
     }
-    if ( fgFound == false ) {
+    if ( fgFound == false )
+    {
       newWorkTask = new CWorkTask ( mStgModel->GetWorld()->GetModel ( sourceName ),
                                     mStgModel->GetWorld()->GetModel ( sinkName ),
                                     taskName );
       mTaskList.push_back ( newWorkTask );
 
-      mWaveFrontMap->calculateWaveFront ( newWorkTask->mSource->getLocation(), CWaveFrontMap::MAP_DATA_ONLY );
+      mWaveFrontMap->calculateWaveFront ( newWorkTask->mSource->getLocation(),
+                                          CWaveFrontMap::USE_MAP_ONLY );
       newWorkTask->setSrcSinkDistance ( mWaveFrontMap->calculatePlanFrom (
-                                          newWorkTask->mSink->getLocation() ) );
+                                            newWorkTask->mSink->getLocation() ) );
     }
 
-    if ( ( timestamp == mSimTime ) && ( newWorkTask != NULL ) ) {
+    if ( ( timestamp == mSimTime ) && ( newWorkTask != NULL ) )
+    {
       newWorkTask->setStorageCapacity ( capacity );
       newWorkTask->setReward ( reward );
       newWorkTask->setProductionRate ( productionRate );

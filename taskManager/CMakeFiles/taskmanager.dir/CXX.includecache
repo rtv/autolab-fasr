@@ -189,6 +189,8 @@ map
 -
 set
 -
+algorithm
+-
 glib.h
 -
 FL/Fl.H
