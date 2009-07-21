@@ -4,7 +4,6 @@
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o
  /home/jwawerla/autolab-fasr/src/destination.cpp
  /home/jwawerla/autolab-fasr/src/destination.h
- /home/jwawerla/autolab-fasr/src/robotwaitinterface.h
  /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
  /usr/include/glib-2.0/glib.h
  /usr/include/glib-2.0/glib/galloca.h
@@ -63,9 +62,9 @@ taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o
  /usr/include/glib-2.0/glib/gutils.h
  /usr/include/glib-2.0/glib/gwin32.h
  /usr/lib/glib-2.0/include/glibconfig.h
- local/include/autolab-rapi-0.1/RapiCore
+ local/include/autolab-rapi-0.1/analogsensorarray.h
  local/include/autolab-rapi-0.1/binarysensorarray.h
- local/include/autolab-rapi-0.1/conversions.h
+ local/include/autolab-rapi-0.1/datalogger.h
  local/include/autolab-rapi-0.1/dataupdateobserver.h
  local/include/autolab-rapi-0.1/device.h
  local/include/autolab-rapi-0.1/drivetrain2dof.h
@@ -80,36 +79,24 @@ taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o
  local/include/autolab-rapi-0.1/powerpack.h
  local/include/autolab-rapi-0.1/printerror.h
  local/include/autolab-rapi-0.1/rangefinder.h
- local/include/autolab-rapi-0.1/rapierror.h
  local/include/autolab-rapi-0.1/rapitypes.h
- local/include/autolab-rapi-0.1/rapivar.h
- local/include/autolab-rapi-0.1/rectangle.h
+ local/include/autolab-rapi-0.1/rapitypesystem.h
+ local/include/autolab-rapi-0.1/rapivarinterface.h
  local/include/autolab-rapi-0.1/rgbcolor.h
  local/include/autolab-rapi-0.1/robot.h
  local/include/autolab-rapi-0.1/robotctrl.h
  local/include/autolab-rapi-0.1/robotupdateinterface.h
- local/include/autolab-rapi-0.1/statevariable.h
+ local/include/autolab-rapi-0.1/switcharray.h
  local/include/autolab-rapi-0.1/textdisplay.h
- local/include/autolab-rapi-0.1/timer.h
  local/include/autolab-rapi-0.1/utilities.h
  local/include/autolab-rapi-0.1/variablemonitor.h
  local/include/autolab-rapi-0.1/velocity2d.h
  local/include/autolab-rapi-0.1/waypoint2d.h
- local/include/autolab-rapi-stage-0.1/RapiStage
- local/include/autolab-rapi-stage-0.1/stagedrivetrain2dof.h
- local/include/autolab-rapi-stage-0.1/stagefiducialfinder.h
- local/include/autolab-rapi-stage-0.1/stagelaser.h
- local/include/autolab-rapi-stage-0.1/stagelights.h
- local/include/autolab-rapi-stage-0.1/stagepowerpack.h
- local/include/autolab-rapi-stage-0.1/stagerobot.h
- local/include/autolab-rapi-stage-0.1/stagesonar.h
- local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
-taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o
+taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.o
  /home/jwawerla/autolab-fasr/src/destination.h
- /home/jwawerla/autolab-fasr/src/robotwaitinterface.h
- /home/jwawerla/autolab-fasr/src/worktask.cpp
- /home/jwawerla/autolab-fasr/src/worktask.h
- /home/jwawerla/autolab-fasr/src/worktaskrobotinterface.h
+ /home/jwawerla/autolab-fasr/src/transportationtask.cpp
+ /home/jwawerla/autolab-fasr/src/transportationtask.h
+ /home/jwawerla/autolab-fasr/src/transporttaskinterface.h
  /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
  /usr/include/glib-2.0/glib.h
  /usr/include/glib-2.0/glib/galloca.h
@@ -169,8 +156,10 @@ taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o
  /usr/include/glib-2.0/glib/gwin32.h
  /usr/lib/glib-2.0/include/glibconfig.h
  local/include/autolab-rapi-0.1/RapiCore
+ local/include/autolab-rapi-0.1/analogsensorarray.h
  local/include/autolab-rapi-0.1/binarysensorarray.h
  local/include/autolab-rapi-0.1/conversions.h
+ local/include/autolab-rapi-0.1/datalogger.h
  local/include/autolab-rapi-0.1/dataupdateobserver.h
  local/include/autolab-rapi-0.1/device.h
  local/include/autolab-rapi-0.1/drivetrain2dof.h
@@ -187,37 +176,27 @@ taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o
  local/include/autolab-rapi-0.1/rangefinder.h
  local/include/autolab-rapi-0.1/rapierror.h
  local/include/autolab-rapi-0.1/rapitypes.h
- local/include/autolab-rapi-0.1/rapivar.h
+ local/include/autolab-rapi-0.1/rapitypesystem.h
+ local/include/autolab-rapi-0.1/rapivariable.h
+ local/include/autolab-rapi-0.1/rapivarinterface.h
  local/include/autolab-rapi-0.1/rectangle.h
  local/include/autolab-rapi-0.1/rgbcolor.h
  local/include/autolab-rapi-0.1/robot.h
  local/include/autolab-rapi-0.1/robotctrl.h
  local/include/autolab-rapi-0.1/robotupdateinterface.h
- local/include/autolab-rapi-0.1/statevariable.h
+ local/include/autolab-rapi-0.1/switcharray.h
  local/include/autolab-rapi-0.1/textdisplay.h
  local/include/autolab-rapi-0.1/timer.h
  local/include/autolab-rapi-0.1/utilities.h
  local/include/autolab-rapi-0.1/variablemonitor.h
  local/include/autolab-rapi-0.1/velocity2d.h
  local/include/autolab-rapi-0.1/waypoint2d.h
- local/include/autolab-rapi-stage-0.1/RapiStage
- local/include/autolab-rapi-stage-0.1/stagedrivetrain2dof.h
- local/include/autolab-rapi-stage-0.1/stagefiducialfinder.h
- local/include/autolab-rapi-stage-0.1/stagelaser.h
- local/include/autolab-rapi-stage-0.1/stagelights.h
- local/include/autolab-rapi-stage-0.1/stagepowerpack.h
- local/include/autolab-rapi-stage-0.1/stagerobot.h
- local/include/autolab-rapi-stage-0.1/stagesonar.h
- local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
 taskManager/CMakeFiles/taskmanager.dir/main.cpp.o
  ./src/baserobotctrl.h
- ./src/broadcast.h
  ./src/charger.h
  ./src/destination.h
- ./src/logwriter.h
- ./src/robotwaitinterface.h
- ./src/worktask.h
- ./src/worktaskrobotinterface.h
+ ./src/transportationtask.h
+ ./src/transporttaskinterface.h
  /home/jwawerla/autolab-fasr/taskManager/main.cpp
  /home/jwawerla/autolab-fasr/taskManager/taskmanager.h
  /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
@@ -285,8 +264,10 @@ taskManager/CMakeFiles/taskmanager.dir/main.cpp.o
  local/include/autolab-nd-0.1/ndvis.h
  local/include/autolab-nd-0.1/stagend.h
  local/include/autolab-rapi-0.1/RapiCore
+ local/include/autolab-rapi-0.1/analogsensorarray.h
  local/include/autolab-rapi-0.1/binarysensorarray.h
  local/include/autolab-rapi-0.1/conversions.h
+ local/include/autolab-rapi-0.1/datalogger.h
  local/include/autolab-rapi-0.1/dataupdateobserver.h
  local/include/autolab-rapi-0.1/device.h
  local/include/autolab-rapi-0.1/drivetrain2dof.h
@@ -303,13 +284,15 @@ taskManager/CMakeFiles/taskmanager.dir/main.cpp.o
  local/include/autolab-rapi-0.1/rangefinder.h
  local/include/autolab-rapi-0.1/rapierror.h
  local/include/autolab-rapi-0.1/rapitypes.h
- local/include/autolab-rapi-0.1/rapivar.h
+ local/include/autolab-rapi-0.1/rapitypesystem.h
+ local/include/autolab-rapi-0.1/rapivariable.h
+ local/include/autolab-rapi-0.1/rapivarinterface.h
  local/include/autolab-rapi-0.1/rectangle.h
  local/include/autolab-rapi-0.1/rgbcolor.h
  local/include/autolab-rapi-0.1/robot.h
  local/include/autolab-rapi-0.1/robotctrl.h
  local/include/autolab-rapi-0.1/robotupdateinterface.h
- local/include/autolab-rapi-0.1/statevariable.h
+ local/include/autolab-rapi-0.1/switcharray.h
  local/include/autolab-rapi-0.1/textdisplay.h
  local/include/autolab-rapi-0.1/timer.h
  local/include/autolab-rapi-0.1/utilities.h
@@ -317,7 +300,6 @@ taskManager/CMakeFiles/taskmanager.dir/main.cpp.o
  local/include/autolab-rapi-0.1/velocity2d.h
  local/include/autolab-rapi-0.1/waypoint2d.h
  local/include/autolab-rapi-stage-0.1/RapiLooseStage
- local/include/autolab-rapi-stage-0.1/RapiStage
  local/include/autolab-rapi-stage-0.1/loosestagedrivetrain2dof.h
  local/include/autolab-rapi-stage-0.1/loosestagefiducialfinder.h
  local/include/autolab-rapi-stage-0.1/loosestagelaser.h
@@ -341,13 +323,10 @@ taskManager/CMakeFiles/taskmanager.dir/main.cpp.o
  local/include/autolab-wp-0.1/wavefrontmapvis.h
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o
  ./src/baserobotctrl.h
- ./src/broadcast.h
  ./src/charger.h
  ./src/destination.h
- ./src/logwriter.h
- ./src/robotwaitinterface.h
- ./src/worktask.h
- ./src/worktaskrobotinterface.h
+ ./src/transportationtask.h
+ ./src/transporttaskinterface.h
  /home/jwawerla/autolab-fasr/taskManager/taskmanager.cpp
  /home/jwawerla/autolab-fasr/taskManager/taskmanager.h
  /home/jwawerla/local/stage-svn/include/Stage-3.1/stage.hh
@@ -415,8 +394,10 @@ taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o
  local/include/autolab-nd-0.1/ndvis.h
  local/include/autolab-nd-0.1/stagend.h
  local/include/autolab-rapi-0.1/RapiCore
+ local/include/autolab-rapi-0.1/analogsensorarray.h
  local/include/autolab-rapi-0.1/binarysensorarray.h
  local/include/autolab-rapi-0.1/conversions.h
+ local/include/autolab-rapi-0.1/datalogger.h
  local/include/autolab-rapi-0.1/dataupdateobserver.h
  local/include/autolab-rapi-0.1/device.h
  local/include/autolab-rapi-0.1/drivetrain2dof.h
@@ -433,13 +414,15 @@ taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o
  local/include/autolab-rapi-0.1/rangefinder.h
  local/include/autolab-rapi-0.1/rapierror.h
  local/include/autolab-rapi-0.1/rapitypes.h
- local/include/autolab-rapi-0.1/rapivar.h
+ local/include/autolab-rapi-0.1/rapitypesystem.h
+ local/include/autolab-rapi-0.1/rapivariable.h
+ local/include/autolab-rapi-0.1/rapivarinterface.h
  local/include/autolab-rapi-0.1/rectangle.h
  local/include/autolab-rapi-0.1/rgbcolor.h
  local/include/autolab-rapi-0.1/robot.h
  local/include/autolab-rapi-0.1/robotctrl.h
  local/include/autolab-rapi-0.1/robotupdateinterface.h
- local/include/autolab-rapi-0.1/statevariable.h
+ local/include/autolab-rapi-0.1/switcharray.h
  local/include/autolab-rapi-0.1/textdisplay.h
  local/include/autolab-rapi-0.1/timer.h
  local/include/autolab-rapi-0.1/utilities.h
@@ -447,7 +430,6 @@ taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o
  local/include/autolab-rapi-0.1/velocity2d.h
  local/include/autolab-rapi-0.1/waypoint2d.h
  local/include/autolab-rapi-stage-0.1/RapiLooseStage
- local/include/autolab-rapi-stage-0.1/RapiStage
  local/include/autolab-rapi-stage-0.1/loosestagedrivetrain2dof.h
  local/include/autolab-rapi-stage-0.1/loosestagefiducialfinder.h
  local/include/autolab-rapi-stage-0.1/loosestagelaser.h

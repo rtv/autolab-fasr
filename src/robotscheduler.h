@@ -1,7 +1,8 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Jens
- *   jwawerla@sfu.ca
- *                                                                         *
+ * Project: FASR                                                           *
+ * Author:  Jens Wawerla (jwawerla@sfu.ca)                                 *
+ * $Id: $
+ ***************************************************************************
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
  *   the Free Software Foundation; either version 2 of the License, or     *
@@ -16,82 +17,109 @@
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
- ***************************************************************************
- * $Log: robotscheduler.h,v $
- * Revision 1.4  2009-03-31 01:42:00  jwawerla
- * Task definitions moved to task manager and stage world file
- *
- * Revision 1.3  2009-03-29 00:54:27  jwawerla
- * Replan ctrl seems to work now
- *
- * Revision 1.2  2009-03-28 21:53:57  jwawerla
- * *** empty log message ***
- *
- * Revision 1.1  2009-03-28 00:54:39  jwawerla
- * *** empty log message ***
- *
- * Revision 1.1.1.1  2009-03-15 03:52:02  jwawerla
- * First commit
- *
- *
  **************************************************************************/
 #ifndef ROBOTSCHEDULER_H
 #define ROBOTSCHEDULER_H
 
-#include <vector>
+#include "transportationtask.h"
+#include "robotschedulerinterface.h"
 #include <list>
-#include "replanpolicyrobotinterface.h"
-#include "worktask.h"
+
+/** Structure for task data used to do the planning */
+typedef struct {
+  /** Basic task information */
+  CTransportationTask* task;
+  /** Optimal number of robot serviceing this task */
+  unsigned int optNumWorkers;
+  /** Round trip time source sink [s] */
+  float roundTripTime;
+  /** List of assigned robots */
+  std::list<IRobotSchedulerInterface*> assignedRobotList;
+} tTaskData;
+
 
 /**
- * Scheduler robot globaly
- * @author Jens Wawerla <jwawerla@sfu.ca>
+ * This class provides a robot scheduler that plans an optimal task allocation
+ * based on the available information, either the map data or if the robot
+ * provide feedback from measurements.
+ * @author Jens Wawerla
  */
 class CRobotScheduler
 {
+  friend class CRobotSchedulerDialog;
+
   public:
-    /** Default constructor */
-    CRobotScheduler();
     /** Default destructor */
-    virtual ~CRobotScheduler();
+    ~CRobotScheduler();
     /**
-     * Register a robot with the planner
-     * @param robot to register
+     * Gets the only instance of this class
+     * @return instance of this class
      */
-    void registerRobot ( IReplanPolicyRobotInterface* robot );
+    static CRobotScheduler* getInstance();
     /**
-     * Add a work task to the planner
+     * Adds a task to the scheduler
      * @param task to be added
      */
-    void addWorkTask ( IWorkTaskRobotInterface* task );
+    void addTransportationTask( ITransportTaskInterface* task );
     /**
-     * Gets the next work task for a given robot
-     * @param robot to get task for
-     * @return next task for robot
+     * Given a robot it returns the task the robot is scheduler to perform
+     * @param robot requesting a task
+     * @return task to be performed, or NULL if no task available
      */
-    IWorkTaskRobotInterface* getWorkTask ( IReplanPolicyRobotInterface* robot );
+    ITransportTaskInterface* getTask( IRobotSchedulerInterface* robot );
+    /**
+     * Register a robot with the scheduler
+     * @param robot to register
+     */
+    void registerRobot( IRobotSchedulerInterface* robot );
+    /**
+     * Give a robot the chance to inform the scheduler about the experienced
+     * task completion time
+     * @param task that was completed
+     * @param time [s]
+     */
+    void setExperiencedTaskCompletionTime( ITransportTaskInterface* task,
+                                           float time );
+    /**
+     * Checks if a robot should keep waiting at the source of a given task
+     * @param task to wait for
+     * @param robot waiting
+     * @return true keep waiting, false stop waiting
+     */
+    bool keepWaiting( ITransportTaskInterface* task, IRobotSchedulerInterface* robot );
     /**
      * Notifies the planner that a given robot is now charging
      * @param robot that is charging
      */
-    void robotIsCharging ( IReplanPolicyRobotInterface* robot );
+    void robotIsCharging ( IRobotSchedulerInterface* robot );
 
   protected:
 
-    typedef struct {
-      IWorkTaskRobotInterface* task;
-      unsigned short optNumOfWorkers;
-      std::list<IReplanPolicyRobotInterface*> robotsAssignedList;
-    } tTaskData;
+    /**
+     * Remove robot from the list of assigned robots of a task
+     * @param task to remove robot from
+     * @param robot to remove
+     */
+    void removeRobotFromTask( tTaskData* task, IRobotSchedulerInterface* robot );
+    /**
+     * Remove robot from the list of assigned robots of a task
+     * @param task to remove robot from
+     * @param robot to remove
+     */
+    void removeRobotFromTask( CTransportationTask* task, IRobotSchedulerInterface* robot );
+
 
   private:
+    /** Default constructor */
+    CRobotScheduler();
+    /** Vector of tasks */
+    std::vector<tTaskData> mTaskList;
     /** Vector of all robots */
-    std::vector<IReplanPolicyRobotInterface*> mRobotVector;
-    /** List of free robots */
-    std::list<IReplanPolicyRobotInterface*> mFreeRobotList;
-    /** List of all tasks */
-    std::vector<tTaskData> mTaskVector;
-
+    std::vector<IRobotSchedulerInterface*> mRobotList;
+    /** List of all free (unassigned robots) */
+    std::list<IRobotSchedulerInterface*> mFreeRobotList;
+    /** Number of robots reassigned to different task */
+    unsigned int mNumReassignments;
 };
 
 #endif

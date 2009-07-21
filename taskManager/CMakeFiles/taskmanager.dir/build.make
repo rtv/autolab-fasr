@@ -97,29 +97,29 @@ taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o.provides: taskManager/C
 taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o.provides.build: taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o
 .PHONY : taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o.provides.build
 
-taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: taskManager/CMakeFiles/taskmanager.dir/flags.make
-taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o: src/worktask.cpp
+taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.o: taskManager/CMakeFiles/taskmanager.dir/flags.make
+taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.o: src/transportationtask.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/jwawerla/autolab-fasr/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o"
-	cd /home/jwawerla/autolab-fasr/taskManager && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o -c /home/jwawerla/autolab-fasr/src/worktask.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.o"
+	cd /home/jwawerla/autolab-fasr/taskManager && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.o -c /home/jwawerla/autolab-fasr/src/transportationtask.cpp
 
-taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/taskmanager.dir/__/src/worktask.cpp.i"
-	cd /home/jwawerla/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/autolab-fasr/src/worktask.cpp > CMakeFiles/taskmanager.dir/__/src/worktask.cpp.i
+taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.i"
+	cd /home/jwawerla/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jwawerla/autolab-fasr/src/transportationtask.cpp > CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.i
 
-taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/taskmanager.dir/__/src/worktask.cpp.s"
-	cd /home/jwawerla/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/autolab-fasr/src/worktask.cpp -o CMakeFiles/taskmanager.dir/__/src/worktask.cpp.s
+taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.s"
+	cd /home/jwawerla/autolab-fasr/taskManager && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jwawerla/autolab-fasr/src/transportationtask.cpp -o CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.s
 
-taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o.requires:
-.PHONY : taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o.requires
+taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.o.requires:
+.PHONY : taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.o.requires
 
-taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o.provides: taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o.requires
-	$(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o.provides.build
-.PHONY : taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o.provides
+taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.o.provides: taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.o.requires
+	$(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.o.provides.build
+.PHONY : taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.o.provides
 
-taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o.provides.build: taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o
-.PHONY : taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o.provides.build
+taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.o.provides.build: taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.o
+.PHONY : taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.o.provides.build
 
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: taskManager/CMakeFiles/taskmanager.dir/flags.make
 taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o: src/destination.cpp
@@ -149,7 +149,7 @@ taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o.provides.build: 
 taskmanager_OBJECTS = \
 "CMakeFiles/taskmanager.dir/main.cpp.o" \
 "CMakeFiles/taskmanager.dir/taskmanager.cpp.o" \
-"CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o" \
+"CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.o" \
 "CMakeFiles/taskmanager.dir/__/src/destination.cpp.o"
 
 # External object files for target taskmanager
@@ -157,7 +157,7 @@ taskmanager_EXTERNAL_OBJECTS =
 
 taskManager/taskmanager.so: taskManager/CMakeFiles/taskmanager.dir/main.cpp.o
 taskManager/taskmanager.so: taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o
-taskManager/taskmanager.so: taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o
+taskManager/taskmanager.so: taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.o
 taskManager/taskmanager.so: taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o
 taskManager/taskmanager.so: taskManager/CMakeFiles/taskmanager.dir/build.make
 taskManager/taskmanager.so: taskManager/CMakeFiles/taskmanager.dir/link.txt
@@ -170,7 +170,7 @@ taskManager/CMakeFiles/taskmanager.dir/build: taskManager/taskmanager.so
 
 taskManager/CMakeFiles/taskmanager.dir/requires: taskManager/CMakeFiles/taskmanager.dir/main.cpp.o.requires
 taskManager/CMakeFiles/taskmanager.dir/requires: taskManager/CMakeFiles/taskmanager.dir/taskmanager.cpp.o.requires
-taskManager/CMakeFiles/taskmanager.dir/requires: taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o.requires
+taskManager/CMakeFiles/taskmanager.dir/requires: taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.o.requires
 taskManager/CMakeFiles/taskmanager.dir/requires: taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.o.requires
 .PHONY : taskManager/CMakeFiles/taskmanager.dir/requires
 

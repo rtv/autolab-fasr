@@ -9,126 +9,100 @@
 ./src/baserobotctrl.h
 RapiLooseStage
 ./src/RapiLooseStage
-logwriter.h
-./src/logwriter.h
-broadcast.h
-./src/broadcast.h
-charger.h
-./src/charger.h
-destination.h
-./src/destination.h
 stagend.h
 ./src/stagend.h
-worktaskrobotinterface.h
-./src/worktaskrobotinterface.h
-robotwaitinterface.h
-./src/robotwaitinterface.h
 stagewavefrontmap.h
 ./src/stagewavefrontmap.h
-stagegridmap.h
-./src/stagegridmap.h
-list
+transporttaskinterface.h
+./src/transporttaskinterface.h
+charger.h
+./src/charger.h
+vector
 -
-
-./src/broadcast.h
-list
--
-worktaskrobotinterface.h
-./src/worktaskrobotinterface.h
 
 ./src/charger.h
 destination.h
 ./src/destination.h
 
 ./src/destination.h
-glib.h
--
-assert.h
--
-list
--
-RapiStage
-./src/RapiStage
-robotwaitinterface.h
-./src/robotwaitinterface.h
-
-./src/logwriter.h
-string.h
--
-stdio.h
--
-sys/time.h
--
-time.h
--
-
-./src/robotwaitinterface.h
+stage.hh
+./src/stage.hh
 pose2d.h
 ./src/pose2d.h
-
-./src/worktask.h
-destination.h
-./src/destination.h
-stage.hh
-./src/stage.hh
-worktaskrobotinterface.h
-./src/worktaskrobotinterface.h
-assert.h
--
+robotctrl.h
+./src/robotctrl.h
 list
 -
+string
+-
 
-./src/worktaskrobotinterface.h
-destination.h
-./src/destination.h
+./src/transportationtask.h
+RapiCore
+-
+string
+-
+transporttaskinterface.h
+./src/transporttaskinterface.h
 stage.hh
 ./src/stage.hh
+destination.h
+./src/destination.h
+
+./src/transporttaskinterface.h
+pose2d.h
+./src/pose2d.h
+stage.hh
+./src/stage.hh
+destination.h
+./src/destination.h
 
 /home/jwawerla/autolab-fasr/src/destination.cpp
 destination.h
 /home/jwawerla/autolab-fasr/src/destination.h
+assert.h
+/home/jwawerla/autolab-fasr/src/assert.h
+printerror.h
+/home/jwawerla/autolab-fasr/src/printerror.h
 utilities.h
 /home/jwawerla/autolab-fasr/src/utilities.h
-string.h
-/home/jwawerla/autolab-fasr/src/string.h
 
 /home/jwawerla/autolab-fasr/src/destination.h
-glib.h
--
-assert.h
--
-list
--
-RapiStage
-/home/jwawerla/autolab-fasr/src/RapiStage
-robotwaitinterface.h
-/home/jwawerla/autolab-fasr/src/robotwaitinterface.h
-
-/home/jwawerla/autolab-fasr/src/robotwaitinterface.h
+stage.hh
+/home/jwawerla/autolab-fasr/src/stage.hh
 pose2d.h
 /home/jwawerla/autolab-fasr/src/pose2d.h
-
-/home/jwawerla/autolab-fasr/src/worktask.cpp
-worktask.h
-/home/jwawerla/autolab-fasr/src/worktask.h
-
-/home/jwawerla/autolab-fasr/src/worktask.h
-destination.h
-/home/jwawerla/autolab-fasr/src/destination.h
-stage.hh
-/home/jwawerla/autolab-fasr/src/stage.hh
-worktaskrobotinterface.h
-/home/jwawerla/autolab-fasr/src/worktaskrobotinterface.h
-assert.h
--
+robotctrl.h
+/home/jwawerla/autolab-fasr/src/robotctrl.h
 list
 -
+string
+-
 
-/home/jwawerla/autolab-fasr/src/worktaskrobotinterface.h
-destination.h
-/home/jwawerla/autolab-fasr/src/destination.h
+/home/jwawerla/autolab-fasr/src/transportationtask.cpp
+transportationtask.h
+/home/jwawerla/autolab-fasr/src/transportationtask.h
+assert.h
+/home/jwawerla/autolab-fasr/src/assert.h
+
+/home/jwawerla/autolab-fasr/src/transportationtask.h
+RapiCore
+-
+string
+-
+transporttaskinterface.h
+/home/jwawerla/autolab-fasr/src/transporttaskinterface.h
 stage.hh
 /home/jwawerla/autolab-fasr/src/stage.hh
+destination.h
+/home/jwawerla/autolab-fasr/src/destination.h
+
+/home/jwawerla/autolab-fasr/src/transporttaskinterface.h
+pose2d.h
+/home/jwawerla/autolab-fasr/src/pose2d.h
+stage.hh
+/home/jwawerla/autolab-fasr/src/stage.hh
+destination.h
+/home/jwawerla/autolab-fasr/src/destination.h
 
 /home/jwawerla/autolab-fasr/taskManager/main.cpp
 stdio.h
@@ -151,8 +125,8 @@ utilities.h
 /home/jwawerla/autolab-fasr/taskManager/taskmanager.h
 baserobotctrl.h
 /home/jwawerla/autolab-fasr/taskManager/baserobotctrl.h
-worktask.h
-/home/jwawerla/autolab-fasr/taskManager/worktask.h
+transportationtask.h
+/home/jwawerla/autolab-fasr/taskManager/transportationtask.h
 wavefrontmap.h
 /home/jwawerla/autolab-fasr/taskManager/wavefrontmap.h
 stage.hh
@@ -701,12 +675,20 @@ rgbcolor.h
 local/include/autolab-rapi-0.1/rgbcolor.h
 timer.h
 local/include/autolab-rapi-0.1/timer.h
-statevariable.h
-local/include/autolab-rapi-0.1/statevariable.h
+rapivariable.h
+local/include/autolab-rapi-0.1/rapivariable.h
 limit.h
 local/include/autolab-rapi-0.1/limit.h
-rapivar.h
-local/include/autolab-rapi-0.1/rapivar.h
+rapivarinterface.h
+local/include/autolab-rapi-0.1/rapivarinterface.h
+switcharray.h
+local/include/autolab-rapi-0.1/switcharray.h
+analogsensorarray.h
+local/include/autolab-rapi-0.1/analogsensorarray.h
+
+local/include/autolab-rapi-0.1/analogsensorarray.h
+device.h
+local/include/autolab-rapi-0.1/device.h
 
 local/include/autolab-rapi-0.1/binarysensorarray.h
 device.h
@@ -715,6 +697,14 @@ pose2d.h
 local/include/autolab-rapi-0.1/pose2d.h
 
 local/include/autolab-rapi-0.1/conversions.h
+
+local/include/autolab-rapi-0.1/datalogger.h
+rapitypesystem.h
+local/include/autolab-rapi-0.1/rapitypesystem.h
+rapitypes.h
+local/include/autolab-rapi-0.1/rapitypes.h
+stdio.h
+-
 
 local/include/autolab-rapi-0.1/dataupdateobserver.h
 
@@ -731,12 +721,16 @@ pose3d.h
 local/include/autolab-rapi-0.1/pose3d.h
 dataupdateobserver.h
 local/include/autolab-rapi-0.1/dataupdateobserver.h
+datalogger.h
+local/include/autolab-rapi-0.1/datalogger.h
 
 local/include/autolab-rapi-0.1/drivetrain2dof.h
 device.h
 local/include/autolab-rapi-0.1/device.h
 velocity2d.h
 local/include/autolab-rapi-0.1/velocity2d.h
+limit.h
+local/include/autolab-rapi-0.1/limit.h
 odometry.h
 local/include/autolab-rapi-0.1/odometry.h
 
@@ -751,6 +745,8 @@ rgbcolor.h
 local/include/autolab-rapi-0.1/rgbcolor.h
 
 local/include/autolab-rapi-0.1/limit.h
+rapivarinterface.h
+local/include/autolab-rapi-0.1/rapivarinterface.h
 
 local/include/autolab-rapi-0.1/localizer2d.h
 device.h
@@ -769,8 +765,8 @@ string
 local/include/autolab-rapi-0.1/pose2d.h
 point2d.h
 local/include/autolab-rapi-0.1/point2d.h
-string
--
+rapivarinterface.h
+local/include/autolab-rapi-0.1/rapivarinterface.h
 
 local/include/autolab-rapi-0.1/pose3d.h
 
@@ -802,7 +798,39 @@ stack
 
 local/include/autolab-rapi-0.1/rapitypes.h
 
-local/include/autolab-rapi-0.1/rapivar.h
+local/include/autolab-rapi-0.1/rapitypesystem.h
+string
+-
+vector
+-
+rapivarinterface.h
+local/include/autolab-rapi-0.1/rapivarinterface.h
+pose2d.h
+local/include/autolab-rapi-0.1/pose2d.h
+point2d.h
+local/include/autolab-rapi-0.1/point2d.h
+velocity2d.h
+local/include/autolab-rapi-0.1/velocity2d.h
+waypoint2d.h
+local/include/autolab-rapi-0.1/waypoint2d.h
+
+local/include/autolab-rapi-0.1/rapivariable.h
+rapivarinterface.h
+local/include/autolab-rapi-0.1/rapivarinterface.h
+robotupdateinterface.h
+local/include/autolab-rapi-0.1/robotupdateinterface.h
+robot.h
+local/include/autolab-rapi-0.1/robot.h
+assert.h
+-
+printerror.h
+local/include/autolab-rapi-0.1/printerror.h
+sstream
+-
+typeinfo
+-
+
+local/include/autolab-rapi-0.1/rapivarinterface.h
 string
 -
 
@@ -813,8 +841,8 @@ string
 -
 
 local/include/autolab-rapi-0.1/rgbcolor.h
-rapivar.h
-local/include/autolab-rapi-0.1/rapivar.h
+rapivarinterface.h
+local/include/autolab-rapi-0.1/rapivarinterface.h
 
 local/include/autolab-rapi-0.1/robot.h
 robotupdateinterface.h
@@ -833,6 +861,10 @@ textdisplay.h
 local/include/autolab-rapi-0.1/textdisplay.h
 binarysensorarray.h
 local/include/autolab-rapi-0.1/binarysensorarray.h
+switcharray.h
+local/include/autolab-rapi-0.1/switcharray.h
+analogsensorarray.h
+local/include/autolab-rapi-0.1/analogsensorarray.h
 variablemonitor.h
 local/include/autolab-rapi-0.1/variablemonitor.h
 list
@@ -850,11 +882,9 @@ string
 
 local/include/autolab-rapi-0.1/robotupdateinterface.h
 
-local/include/autolab-rapi-0.1/statevariable.h
-robotupdateinterface.h
-local/include/autolab-rapi-0.1/robotupdateinterface.h
-robot.h
-local/include/autolab-rapi-0.1/robot.h
+local/include/autolab-rapi-0.1/switcharray.h
+device.h
+local/include/autolab-rapi-0.1/device.h
 
 local/include/autolab-rapi-0.1/textdisplay.h
 device.h
@@ -883,24 +913,12 @@ stdlib.h
 -
 
 local/include/autolab-rapi-0.1/variablemonitor.h
-string
--
-vector
--
-rapivar.h
-local/include/autolab-rapi-0.1/rapivar.h
-pose2d.h
-local/include/autolab-rapi-0.1/pose2d.h
-point2d.h
-local/include/autolab-rapi-0.1/point2d.h
-velocity2d.h
-local/include/autolab-rapi-0.1/velocity2d.h
-waypoint2d.h
-local/include/autolab-rapi-0.1/waypoint2d.h
+rapitypesystem.h
+local/include/autolab-rapi-0.1/rapitypesystem.h
 
 local/include/autolab-rapi-0.1/velocity2d.h
-string
--
+rapivarinterface.h
+local/include/autolab-rapi-0.1/rapivarinterface.h
 
 local/include/autolab-rapi-0.1/waypoint2d.h
 pose2d.h
@@ -931,28 +949,6 @@ loosestagelights.h
 local/include/autolab-rapi-stage-0.1/loosestagelights.h
 loosestagetextdisplay.h
 local/include/autolab-rapi-stage-0.1/loosestagetextdisplay.h
-
-local/include/autolab-rapi-stage-0.1/RapiStage
-RapiCore
-local/include/autolab-rapi-stage-0.1/RapiCore
-stage.hh
-local/include/autolab-rapi-stage-0.1/stage.hh
-stagerobot.h
-local/include/autolab-rapi-stage-0.1/stagerobot.h
-stagelaser.h
-local/include/autolab-rapi-stage-0.1/stagelaser.h
-stagesonar.h
-local/include/autolab-rapi-stage-0.1/stagesonar.h
-stagedrivetrain2dof.h
-local/include/autolab-rapi-stage-0.1/stagedrivetrain2dof.h
-stagepowerpack.h
-local/include/autolab-rapi-stage-0.1/stagepowerpack.h
-stagefiducialfinder.h
-local/include/autolab-rapi-stage-0.1/stagefiducialfinder.h
-stagelights.h
-local/include/autolab-rapi-stage-0.1/stagelights.h
-stagetextdisplay.h
-local/include/autolab-rapi-stage-0.1/stagetextdisplay.h
 
 local/include/autolab-rapi-stage-0.1/loosestagedrivetrain2dof.h
 stagedrivetrain2dof.h

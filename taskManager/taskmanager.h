@@ -1,7 +1,8 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Jens
- *   jwawerla@sfu.ca
- *                                                                         *
+ * Project: FASR                                                           *
+ * Author:  Jens Wawerla (jwawerla@sfu.ca)                                 *
+ * $Id: $
+ ***************************************************************************
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
  *   the Free Software Foundation; either version 2 of the License, or     *
@@ -16,33 +17,12 @@
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
- ***************************************************************************
- * $Log: taskmanager.h,v $
- * Revision 1.5  2009-04-25 16:08:26  jwawerla
- * *** empty log message ***
- *
- * Revision 1.4  2009-04-03 16:57:43  jwawerla
- * Some bug fixing
- *
- * Revision 1.3  2009-03-31 23:52:59  jwawerla
- * Moved cell index from float to int math
- *
- * Revision 1.2  2009-03-31 04:27:33  jwawerla
- * Some bug fixing
- *
- * Revision 1.1  2009-03-31 01:42:01  jwawerla
- * Task definitions moved to task manager and stage world file
- *
- * Revision 1.1.1.1  2009-03-15 03:52:02  jwawerla
- * First commit
- *
- *
  **************************************************************************/
 #ifndef TASKMANAGER_H
 #define TASKMANAGER_H
 
 #include "baserobotctrl.h"
-#include "worktask.h"
+#include "transportationtask.h"
 #include "wavefrontmap.h"
 #include <stage.hh>
 #include <list>
@@ -93,7 +73,7 @@ class CTaskManager
     /** Time of next task modification [s] */
     float mNextModificationTime;
     /** List of available tasks */
-    std::list<CWorkTask*> mTaskList;
+    std::list<CTransportationTask*> mTaskList;
     /** List of registered robots */
     std::list<ABaseRobotCtrl*> mRobotList;
     /** Map of the world to get distance between source and sink */

@@ -1,7 +1,8 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Jens
- *   jwawerla@sfu.ca
- *                                                                         *
+ * Project: FASR                                                           *
+ * Author:  Jens Wawerla (jwawerla@sfu.ca)                                 *
+ * $Id: $
+ ***************************************************************************
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
  *   the Free Software Foundation; either version 2 of the License, or     *
@@ -16,21 +17,6 @@
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
- ***************************************************************************
- * $Log: fasrsource.h,v $
- * Revision 1.4  2009-03-31 01:41:59  jwawerla
- * Task definitions moved to task manager and stage world file
- *
- * Revision 1.3  2009-03-26 04:09:45  jwawerla
- * Minor bug fixing
- *
- * Revision 1.2  2009-03-20 03:05:22  jwawerla
- * dynamic obstacles added to wavefront
- *
- * Revision 1.1.1.1  2009-03-15 03:52:03  jwawerla
- * First commit
- *
- *
  **************************************************************************/
 #ifndef FASRSOURCE_H
 #define FASRSOURCE_H
@@ -84,6 +70,8 @@ class CFasrSource
      * Switches to the next task configuration
      */
     void nextTaskConfiguration();
+    /** Updates the source */
+    void update();
 
   private:
     /** File name and path of script */
@@ -96,12 +84,14 @@ class CFasrSource
     int mStorageCapacity;
     /** Production rate [1/s] */
     float mProductionRate;
-    /** Update interval in simulation steps */
-    int mUpdateInterval;
+    /** Update interval [s] */
+    float mUpdateInterval;
     /** Reward per completed task */
     float mReward;
-    /** Time stamp of last production */
-    float mLastProducedUnitTimestamp;
+    /** Time stamp of last start of production */
+    float mProductionStartedTimestamp;
+    /** Flags if production was started */
+    bool mFgProductionStarted;
     /** Simulation time [s] */
     float mSimTime;
     /** Time of next task modification [s] */

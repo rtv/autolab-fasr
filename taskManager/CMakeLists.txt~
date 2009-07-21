@@ -7,8 +7,8 @@ set_source_files_properties( taskmanager.cpp PROPERTIES COMPILE_FLAGS "${FLTK_CF
 ADD_LIBRARY(taskmanager MODULE
   main.cpp
   taskmanager.cpp
-  ../src/worktask.cpp
-  ../src/destination.cpp
+  ../src/transportationtask.cpp
+
 )
 
 # delete the "lib" prefix from the plugin libraries
@@ -18,6 +18,7 @@ SET_TARGET_PROPERTIES( taskmanager PROPERTIES PREFIX "" )
 TARGET_LINK_LIBRARIES(taskmanager
   ${STAGE_LIBRARIES}
   ${RAPI_LIBRARIES}
+  ${WP_LIBRARIES}
 )
 
 INSTALL(TARGETS taskmanager

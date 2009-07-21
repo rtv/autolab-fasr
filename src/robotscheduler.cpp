@@ -1,7 +1,8 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Jens
- *   jwawerla@sfu.ca
- *                                                                         *
+ * Project: FASR                                                           *
+ * Author:  Jens Wawerla (jwawerla@sfu.ca)                                 *
+ * $Id: $
+ ***************************************************************************
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
  *   the Free Software Foundation; either version 2 of the License, or     *
@@ -16,139 +17,207 @@
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
- ***************************************************************************
- * $Log: robotscheduler.cpp,v $
- * Revision 1.7  2009-04-03 15:10:02  jwawerla
- * *** empty log message ***
- *
- * Revision 1.6  2009-03-31 04:27:33  jwawerla
- * Some bug fixing
- *
- * Revision 1.5  2009-03-31 01:42:00  jwawerla
- * Task definitions moved to task manager and stage world file
- *
- * Revision 1.4  2009-03-29 00:54:27  jwawerla
- * Replan ctrl seems to work now
- *
- * Revision 1.3  2009-03-28 22:08:15  vaughan
- * added selecting policy from worldfile
- *
- * Revision 1.2  2009-03-28 21:53:57  jwawerla
- * *** empty log message ***
- *
- * Revision 1.1  2009-03-28 00:54:39  jwawerla
- * *** empty log message ***
- *
- * Revision 1.1.1.1  2009-03-15 03:52:02  jwawerla
- * First commit
- *
- *
- ***************************************************************************/
+ **************************************************************************/
 #include "robotscheduler.h"
+#include "stdio.h"
+#include "global.h"
 
-/** Speed of robot, to plan round trip time [m/s] */
-const float PLANNING_SPEED = 0.40;
+/** Time constant for trip round trip time low pass filter */
+const float TAU_TRIP_TIME = 0.02;
 
 //-----------------------------------------------------------------------------
 CRobotScheduler::CRobotScheduler()
 {
+  mNumReassignments = 0;
 }
 //-----------------------------------------------------------------------------
 CRobotScheduler::~CRobotScheduler()
 {
 }
 //-----------------------------------------------------------------------------
-void CRobotScheduler::registerRobot ( IReplanPolicyRobotInterface* robot )
+CRobotScheduler* CRobotScheduler::getInstance()
 {
-  mRobotVector.push_back ( robot );
-  mFreeRobotList.push_back ( robot );
+  static CRobotScheduler* instance = NULL;
+
+  if ( instance == NULL )
+    instance = new CRobotScheduler();
+
+  return instance;
 }
 //-----------------------------------------------------------------------------
-void CRobotScheduler::addWorkTask ( IWorkTaskRobotInterface* task )
+void CRobotScheduler::setExperiencedTaskCompletionTime(
+  ITransportTaskInterface* task, float time )
 {
-  tTaskData taskData;
-
-  for ( unsigned int i = 0; i < mTaskVector.size(); i++ ) {
-    if ( mTaskVector[i].task == task )
+  for ( unsigned int i = 0; i < mTaskList.size(); i++ ) {
+    if ( mTaskList[i].task == task ) {
+      mTaskList[i].roundTripTime += TAU_TRIP_TIME *
+                                    ( time - mTaskList[i].roundTripTime );
       return;
-  }
-
-  task->preSetExperiencedTravelDuration ( task->getSrcSinkDistance() /
-                                          PLANNING_SPEED );
-  taskData.task = task;
-  mTaskVector.push_back ( taskData );
-}
-//-----------------------------------------------------------------------------
-void CRobotScheduler::robotIsCharging ( IReplanPolicyRobotInterface* robot )
-{
-  std::list<IReplanPolicyRobotInterface*>::iterator it;
-
-  // remove robot from assignment list
-  for ( unsigned int i = 0; i < mTaskVector.size(); i++ ) {
-    if ( mTaskVector[i].task == robot->getTask() ) {
-      for ( it  = mTaskVector[i].robotsAssignedList.begin();
-            it != mTaskVector[i].robotsAssignedList.end(); it++ ) {
-        if ( robot == *it ) {
-          it = mTaskVector[i].robotsAssignedList.erase ( it );
-          mFreeRobotList.push_back ( robot );
-        }
-      }
     }
   }
+  PRT_WARN0( "Task not found" );
 }
 //-----------------------------------------------------------------------------
-IWorkTaskRobotInterface* CRobotScheduler::getWorkTask ( IReplanPolicyRobotInterface* robot )
+ITransportTaskInterface* CRobotScheduler::getTask(
+  IRobotSchedulerInterface* robot )
 {
-  std::list<IReplanPolicyRobotInterface*>::iterator it;
-  IWorkTaskRobotInterface* taskAssignment = robot->getTask();
+  std::list<IRobotSchedulerInterface*>::iterator roIt;
+  CTransportationTask* assignedTask;
 
-  // find optimal number of worker robots for each task
-  for ( unsigned int i = 0; i < mTaskVector.size(); i++ ) {
+  // currently assigned task
+  assignedTask = static_cast<CTransportationTask*>( robot->getTask() );
 
-    mTaskVector[i].optNumOfWorkers = ( unsigned short ) ceil ( 2.0 *
-                                     mTaskVector[i].task->getExperiencedTravelDuration() *
-                                     mTaskVector[i].task->getProductionRate() /
-                                     ( float ) robot->getCargoBayCapacity() );
-
+  // iterate over all tasks
+  for ( unsigned int i = 0; i < mTaskList.size(); i++ ) {
+    //****************************************************
+    // find optimal number of worker robots for each task
+    mTaskList[i].optNumWorkers = ( unsigned short ) ceil(
+                                   mTaskList[i].roundTripTime *
+                                   mTaskList[i].task->getProductionRate() /
+                                   ( float ) robot->getCargoBayCapacity() );
+/*
+    printf( "robot %d -> task %6s: rtt %1.1f assigned %2d opt %2d free %2d\n",
+            robot->getRobotId(), mTaskList[i].task->getName().c_str(),
+            mTaskList[i].roundTripTime,
+            mTaskList[i].assignedRobotList.size(),
+            mTaskList[i].optNumWorkers,
+            mFreeRobotList.size() );
+*/
+    //****************************************************
     // check if this task has too many robots
-    if ( mTaskVector[i].optNumOfWorkers < mTaskVector[i].robotsAssignedList.size() ) {
-      // is the requesting robot serving this task ? if so remove it from the task
-      if ( robot->getTask() == mTaskVector[i].task ) {
+    if ( mTaskList[i].optNumWorkers < mTaskList[i].assignedRobotList.size() ) {
+      printf( "remove robot from task\n" );
+      // is the requesting robot serving this task ?
+      // if so remove it from the task
+      if ( robot->getTask() == mTaskList[i].task ) {
         // remove robot from assignment list
-        for ( it  = mTaskVector[i].robotsAssignedList.begin();
-              it != mTaskVector[i].robotsAssignedList.end(); it++ ) {
-          if ( *it == robot ) {
-            it = mTaskVector[i].robotsAssignedList.erase ( it );
-            mFreeRobotList.push_back ( robot );
-            taskAssignment = NULL; // no task
-            break;
-          }
-        } // for
+        removeRobotFromTask( mTaskList[i].task, robot );
+        // add robot to free list
+        mFreeRobotList.push_back( robot );
+        assignedTask = NULL; // no task
+        break;
       }
     }
-    // does this task have not enough works ?
-    if ( mTaskVector[i].optNumOfWorkers > mTaskVector[i].robotsAssignedList.size() ) {
+    //****************************************************
+    // this task has the correct number of workers
+    if ( mTaskList[i].optNumWorkers == mTaskList[i].assignedRobotList.size() ) {
+      // we don't have to change anything, if the robot is currently executing
+      // the in question task
+      if ( assignedTask == mTaskList[i].task ) {
+        printf( "no change !\n" );
+        return assignedTask;
+      }
+    }
+    //****************************************************
+    // this tasks need more workers
+    if ( mTaskList[i].optNumWorkers > mTaskList[i].assignedRobotList.size() ) {
 
-      // if the free list is empty we have to assign the requesting robot to a better task
+      // if the free list is empty we have to assign the requesting robot to a
+      // better task. Since the tasks are ordered by quality better tasks are
+      // first in the list
       if ( mFreeRobotList.size() == 0 ) {
-        taskAssignment = mTaskVector[i].task;
-        mTaskVector[i].robotsAssignedList.push_back ( robot );
-        return taskAssignment;
+        if ( assignedTask != mTaskList[i].task ) {
+          printf( "add robot to task\n" );
+          // remove robot from current task
+          removeRobotFromTask( assignedTask, robot );
+          assignedTask = mTaskList[i].task;
+          mTaskList[i].assignedRobotList.push_back( robot );
+          mNumReassignments ++;
+        }
+        return assignedTask;
       }
 
       // if the requesting robot is in the free list, assign it to the task
-      for ( it = mFreeRobotList.begin(); it != mFreeRobotList.end(); it++ ) {
-        if ( *it == robot ) {
-          it = mFreeRobotList.erase ( it );
-          mTaskVector[i].robotsAssignedList.push_back ( robot );
-          taskAssignment = mTaskVector[i].task;
-          return taskAssignment;
+      for ( roIt = mFreeRobotList.begin(); roIt != mFreeRobotList.end(); roIt++ ) {
+        if ( *roIt == robot ) {
+          roIt = mFreeRobotList.erase( roIt );
+          mTaskList[i].assignedRobotList.push_back( robot );
+          assignedTask = mTaskList[i].task;
+          mNumReassignments ++;
+          printf( "get robot from free list\n" );
+          return assignedTask;
         }
       }
     }
 
   } // for tasks
 
-  return taskAssignment;
+  return assignedTask;
+}
+//-----------------------------------------------------------------------------
+void CRobotScheduler::removeRobotFromTask( CTransportationTask* task,
+    IRobotSchedulerInterface* robot )
+{
+  if ( task ) {
+    for ( unsigned int i = 0;  i < mTaskList.size(); i++ ) {
+      if ( task == mTaskList[i].task ) {
+        removeRobotFromTask( &mTaskList[i], robot );
+        return;
+      }
+    }
+  }
+}
+//-----------------------------------------------------------------------------
+void CRobotScheduler::removeRobotFromTask( tTaskData* task,
+    IRobotSchedulerInterface* robot )
+{
+  std::list<IRobotSchedulerInterface*>::iterator roIt;
+
+  for ( roIt  = task->assignedRobotList.begin();
+        roIt != task->assignedRobotList.end(); roIt++ ) {
+    if ( *roIt == robot ) {
+      roIt = task->assignedRobotList.erase( roIt );
+      return;
+    }
+  } // for
+}
+//-----------------------------------------------------------------------------
+void CRobotScheduler::addTransportationTask( ITransportTaskInterface* task )
+{
+  tTaskData taskData;
+  for ( unsigned int i = 0; i < mTaskList.size(); i++ ) {
+    if ( task == mTaskList[i].task )
+      return;  // task already in list
+  }
+  taskData.task = static_cast<CTransportationTask*>( task );
+  taskData.roundTripTime = 2 * taskData.task->getSourceSinkDistance() /
+                           PLANNING_SPEED;
+  taskData.assignedRobotList.clear();
+  taskData.optNumWorkers = 0;
+
+  mTaskList.push_back( taskData );
+}
+//-----------------------------------------------------------------------------
+void CRobotScheduler::registerRobot( IRobotSchedulerInterface* robot )
+{
+  mRobotList.push_back( robot );
+  mFreeRobotList.push_back( robot );
+}
+//-----------------------------------------------------------------------------
+bool CRobotScheduler::keepWaiting( ITransportTaskInterface* task,
+                                   IRobotSchedulerInterface* robot )
+{
+  if ( static_cast<CTransportationTask*>( task )->getProductionRate() > 0 )
+    return true;  // yes keep waiting
+
+  return false; // no
+}
+//-----------------------------------------------------------------------------
+void CRobotScheduler::robotIsCharging ( IRobotSchedulerInterface* robot )
+{
+  std::list<IRobotSchedulerInterface*>::iterator it;
+
+  // remove robot from assignment list
+  for ( unsigned int i = 0; i < mTaskList.size(); i++ ) {
+    if ( mTaskList[i].task == robot->getTask() ) {
+      for ( it  = mTaskList[i].assignedRobotList.begin();
+            it != mTaskList[i].assignedRobotList.end(); it++ ) {
+        if ( robot == *it ) {
+          it = mTaskList[i].assignedRobotList.erase ( it );
+          mFreeRobotList.push_back ( robot );
+        }
+      }
+    }
+  }
 }
 //-----------------------------------------------------------------------------

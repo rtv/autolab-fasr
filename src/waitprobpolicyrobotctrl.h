@@ -1,7 +1,8 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Jens
- *   jwawerla@sfu.ca
- *                                                                         *
+ * Project: FASR                                                           *
+ * Author:  Jens Wawerla (jwawerla@sfu.ca)                                 *
+ * $Id: $
+ ***************************************************************************
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
  *   the Free Software Foundation; either version 2 of the License, or     *
@@ -16,119 +17,80 @@
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
- ***************************************************************************
- * $Log: waitprobpolicyrobot.h,v $
- * Revision 1.6  2009-04-03 16:21:30  jwawerla
- * Move wavefront map specification to world file
- *
- * Revision 1.5  2009-03-31 01:42:01  jwawerla
- * Task definitions moved to task manager and stage world file
- *
- * Revision 1.4  2009-03-29 00:54:27  jwawerla
- * Replan ctrl seems to work now
- *
- * Revision 1.3  2009-03-27 01:32:58  jwawerla
- * wait prob controller improved
- *
- * Revision 1.2  2009-03-27 00:27:37  jwawerla
- * *** empty log message ***
- *
- * Revision 1.1  2009-03-26 04:09:45  jwawerla
- * Minor bug fixing
- *
- * Revision 1.1  2009-03-24 01:04:46  jwawerla
- * switching cost robot added
- *
- * Revision 1.1.1.1  2009-03-15 03:52:02  jwawerla
- * First commit
- *
- *
  **************************************************************************/
 #ifndef WAITPROBPOLICYROBOTCTRL_H
-#define WAITPROBPOLICYROBOTCTLR_H
+#define WAITPROBPOLICYROBOTCTRL_H
 
 #include "baserobotctrl.h"
+#include "broadcast.h"
 
 /**
- * Implements a robot with a policy based on probability task switching. Where
- * the probability to switch is proportional to the ratio of waiting time to
- * overall trip time
- * @author Jens Wawerla <jwawerla@sfu.ca>
+ * Probabilistic robot controller based on the waiting times in various
+ * situations
+ * @author Jens Wawerla
  */
 class CWaitProbPolicyRobotCtrl : public ABaseRobotCtrl
 {
   public:
     /**
      * Default constructor
-     * @param robot this controller controls
+     * @param robot to control
+     * @param probBroadcast probability to broadcast a new worker request
      */
-    CWaitProbPolicyRobotCtrl ( ARobot* robot );
+    CWaitProbPolicyRobotCtrl( ARobot* robot, float probBroadcast);
     /** Default destructor */
     ~CWaitProbPolicyRobotCtrl();
+    /** Start up policy */
+    void startPolicy();
     /**
-     * Chooses the next work task according to some policy
+     * Policy for leaving a charger, this must set mState to what ever we
+     * should do next
      * @param dt length of time step [s]
      */
-    virtual void selectWorkTaskPolicy ( float dt );
+    void leaveChargerPolicy( float dt );
     /**
-     * Policy for start up
-     * @param dt length of time step [s]
+     * Policy for delivery completed, this policy determines what to do next,
+     * after the cargo was delivered to the sink
      */
-    virtual void startupPolicy ( float dt );
+    void deliveryCompletedPolicy( float dt );
     /**
-     * Policy for leaving a charger
-     * @param dt length of time step [s]
+     * Policy for robot on rank 1 in waiting queue at depot. This is the robot
+     * that is allowed to leave the queue next, the policy determines when
+     * the robot leave the depot and what it does next
      */
-    virtual void leaveChargerPolicy ( float dt );
+    void unallocatedPolicy( float dt );
     /**
-     * Policy for waiting at source
-     * @param dt length of time step [s]
+     * Policy for waiting at the source
      */
-    virtual void waitAtSourcePolicy ( float dt );
+    void waitingAtSourcePolicy( float dt );
     /**
-     * Policy for waiting at charger
-     * @param dt length of time step [s]
+     * Policy for pickup completed, this policy allows the robot controller to
+     * decide what to do after the load was picked up
      */
-    virtual void waitAtChargerPolicy ( float dt );
-    /**
-     * Policy for the first unallocated robot
-     * @param dt length of time step [s]
-     */
-    virtual void unallocatedPolicy ( float dt );
-    /**
-     * Policy for a successfull pick up
-     * @param dt length of time step [s]
-     */
-    virtual void pickupCompletedPolicy ( float dt );
+    void pickupCompletedPolicy( float dt );
     /**
      * Policy for waiting at the pickup patch, note not in the queue
      * @param dt length of time step [s]
      */
-    virtual void waitingAtPickupPolicy ( float dt );
+    void waitingAtPickupPolicy ( float dt );
 
   protected:
     /**
-     * Selects a new work task by setting mCurrentWorkTask or goes to the depot
+     * Selects a new work task by setting mCurrentTask or goes to the depot
      */
     void selectNewTask();
-
-  private:
-    /** Time spend waiting [s] */
-    float mWaitDuration;
-    /** Time we are willing to wait [s] */
+    /** Threshold for waiting time [s] */
     float mWaitDurationThreshold;
-    /** Time stamp when we started the last task [s] */
-    float mTaskStartedTimestamp;
-    /** Probability of switching */
-    float mSwitchProbabilty;
-    /** Index of current task */
+    /** Threshold for pickup time [s] */
+    float mPickupDurationThreshold;
+    /** Index of the current task */
     unsigned int mTaskIndex;
-    /**
-     * Flags if robot is sent to depot or not, we use this to figure out what
-     * to do after recharging.
-     */
+    /** Flags if we are sent to the depot or not */
     bool mFgSendToDepot;
-
+    /** Probability to broadcast a worker recuiting request */
+    float mProbBroadcast;
+    /** Broadcast system */
+    CBroadCast* mBroadCast;
 };
 
 #endif

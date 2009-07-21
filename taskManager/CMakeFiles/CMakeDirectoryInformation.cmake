@@ -14,16 +14,17 @@ SET(CMAKE_C_INCLUDE_PATH
   "/usr/include/qt4/QtGui"
   "/usr/include/qt4/QtCore"
   "./src"
+  "./src/gui"
   "./fasrSource"
   "./taskManager"
   "local/include/autolab-rapi-stage-0.1"
   "local/include/autolab-rapi-0.1"
-  "local/include/autolab-rapi-gui-0.1"
-  "local/include/autolab-nd-0.1"
-  "local/include/autolab-wp-0.1"
   "/home/jwawerla/local/stage-svn/include/Stage-3.1"
   "/usr/include/glib-2.0"
   "/usr/lib/glib-2.0/include"
+  "local/include/autolab-rapi-gui-0.1"
+  "local/include/autolab-nd-0.1"
+  "local/include/autolab-wp-0.1"
   )
 SET(CMAKE_CXX_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})
 SET(CMAKE_Fortran_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})

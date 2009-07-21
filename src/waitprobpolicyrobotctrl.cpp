@@ -1,7 +1,8 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Jens
- *   jwawerla@sfu.ca
- *                                                                         *
+ * Project: FASR                                                           *
+ * Author:  Jens Wawerla (jwawerla@sfu.ca)                                 *
+ * $Id: $
+ ***************************************************************************
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
  *   the Free Software Foundation; either version 2 of the License, or     *
@@ -16,92 +17,50 @@
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
- ***************************************************************************
- * $Log: waitprobpolicyrobot.cpp,v $
- * Revision 1.9  2009-04-03 16:21:30  jwawerla
- * Move wavefront map specification to world file
- *
- * Revision 1.8  2009-04-03 15:10:02  jwawerla
- * *** empty log message ***
- *
- * Revision 1.7  2009-03-31 23:52:59  jwawerla
- * Moved cell index from float to int math
- *
- * Revision 1.6  2009-03-31 01:42:01  jwawerla
- * Task definitions moved to task manager and stage world file
- *
- * Revision 1.5  2009-03-29 00:54:27  jwawerla
- * Replan ctrl seems to work now
- *
- * Revision 1.4  2009-03-28 00:54:39  jwawerla
- * *** empty log message ***
- *
- * Revision 1.3  2009-03-27 01:32:58  jwawerla
- * wait prob controller improved
- *
- * Revision 1.2  2009-03-27 00:27:37  jwawerla
- * *** empty log message ***
- *
- * Revision 1.1  2009-03-26 04:09:45  jwawerla
- * Minor bug fixing
- *
- *
- ***************************************************************************/
+ **************************************************************************/
 #include "waitprobpolicyrobotctrl.h"
 
 /** Minimum time we wait at a pickup for a flag [s] */
 const float MIN_PICKUP_WAIT_DURATION = 50.0;
 
 //-----------------------------------------------------------------------------
-CWaitProbPolicyRobotCtrl::CWaitProbPolicyRobotCtrl ( ARobot* robot )
-    : ABaseRobotCtrl ( robot )
+CWaitProbPolicyRobotCtrl::CWaitProbPolicyRobotCtrl( ARobot* robot,
+    float probBroadcast )
+    : ABaseRobotCtrl( robot )
 {
-  mWaitDuration = 0;
-  mTaskStartedTimestamp = 0;
-  rprintf ( "Loading CWaitProbPolicyRobot\n" );
+  mProbBroadcast = probBroadcast;
+  mPickupDurationThreshold = 0.5;
+  mWaitDurationThreshold = 0.0;
+  mTaskIndex = 0;
+  mBroadCast = CBroadCast::getInstance();
 }
 //-----------------------------------------------------------------------------
 CWaitProbPolicyRobotCtrl::~CWaitProbPolicyRobotCtrl()
 {
 }
 //-----------------------------------------------------------------------------
-void CWaitProbPolicyRobotCtrl::selectWorkTaskPolicy ( float dt )
+void CWaitProbPolicyRobotCtrl::startPolicy()
 {
-  mWaitDuration = 0.0;
-  mTaskStartedTimestamp = mSimTime;
-}
-//-----------------------------------------------------------------------------
-void CWaitProbPolicyRobotCtrl::selectNewTask()
-{
-  mTaskIndex = mTaskIndex + 1;
-  if ( mTaskIndex >= mWorkTaskVector.size() ) {
-    mTaskIndex = 0;
-    mFgSendToDepot = true;
-    if ( mPowerPack->getBatteryLevel() < 0.6 )
-      mState = GOTO_CHARGER;
-    else
-      if ( mState != UNALLOCATED )
-        mState = GOTO_DEPOT;
-  } else {
-    mFgSendToDepot = false;
+  if ( mTaskVector.empty() ) {
+    rprintf( "No tasks available\n" );
+    return;
+  }
+
+  // assign first task at random
+  mTaskIndex = ( int )round( drand48() * ( mTaskVector.size() -1 ) );
+  mCurrentTask = mTaskVector[mTaskIndex];
+
+  if ( mCurrentTask ) {
+    rprintf( "CWaitProbPolicyRobotCtrl: Selected task: %s \n",
+             mCurrentTask->getName().c_str() );
     mState = GOTO_SOURCE;
   }
-  mCurrentWorkTask = mWorkTaskVector[mTaskIndex];
+  else {
+    mState = GOTO_DEPOT;
+  }
 }
 //-----------------------------------------------------------------------------
-void CWaitProbPolicyRobotCtrl::startupPolicy ( float dt )
-{
-  // select a task at random with uniform probability
-  mTaskIndex = ( int ) floor ( drand48() * mWorkTaskVector.size() );
-  mCurrentWorkTask = mWorkTaskVector[mTaskIndex];
-
-  // select first charger
-  mCurrentChargerDestination = mChargerDestinationList.front();
-
-  mState = GOTO_SOURCE;
-}
-//-----------------------------------------------------------------------------
-void CWaitProbPolicyRobotCtrl::leaveChargerPolicy ( float dt )
+void CWaitProbPolicyRobotCtrl::leaveChargerPolicy( float dt )
 {
   if ( mFgSendToDepot )
     mState = GOTO_DEPOT;
@@ -109,51 +68,102 @@ void CWaitProbPolicyRobotCtrl::leaveChargerPolicy ( float dt )
     mState = GOTO_SOURCE;
 }
 //-----------------------------------------------------------------------------
-void CWaitProbPolicyRobotCtrl::waitAtSourcePolicy ( float dt )
+void CWaitProbPolicyRobotCtrl::deliveryCompletedPolicy( float dt )
 {
-  float r;
-  mWaitDuration = mWaitDuration + dt;
-
-  if ( mFgStateChanged ) {
-    r = drand48();
-    mWaitDurationThreshold = r * mTravelDuration / ( 1 - r );
-    //rprintf("mWaitDurationThreshold %f \n",mWaitDurationThreshold);
+  // should we charge or work
+  if ( chargingPolicy( dt ) ) {
+    mState = GOTO_CHARGER;
   }
-
-  if ( mWaitDuration > mWaitDurationThreshold )
-    selectNewTask();
-}
-//-----------------------------------------------------------------------------
-void CWaitProbPolicyRobotCtrl::waitAtChargerPolicy ( float dt )
-{
-}
-//-----------------------------------------------------------------------------
-void CWaitProbPolicyRobotCtrl::unallocatedPolicy ( float dt )
-{
-  if ( mBroadCast->hasMessage ( mSimTime ) ) {
-    mCurrentWorkTask = mBroadCast->popMessage();
+  else {
     mState = GOTO_SOURCE;
   }
 }
 //-----------------------------------------------------------------------------
-void CWaitProbPolicyRobotCtrl::pickupCompletedPolicy ( float dt )
+void CWaitProbPolicyRobotCtrl::unallocatedPolicy( float dt )
 {
-  if ( mPickupDuration < 2.0 ) {
-    mBroadCast->addMessage ( mCurrentWorkTask, mSimTime );
-    //rprintf("requesting more workers %f \n", mPickupDuration );
+  if ( mBroadCast->hasMessage( mRobot->getCurrentTime() ) ) {
+    mCurrentTask = mBroadCast->popMessage();
+    mState = GOTO_SOURCE;
   }
 }
 //-----------------------------------------------------------------------------
-void CWaitProbPolicyRobotCtrl::waitingAtPickupPolicy ( float dt )
+void CWaitProbPolicyRobotCtrl::waitingAtSourcePolicy( float dt )
+{
+  float r;
+  float time;
+
+  if ( mFgStateChanged ) {
+    r = drand48();
+    time = mTaskCompletionTime - mSlowedDownTime - mSourceWaitingTime -
+           mSinkWaitingTime;
+    //mWaitDurationThreshold = r * mTaskCompletionTime / ( 1.0 - r );
+    mWaitDurationThreshold = r * time;
+    // wait at least 10 sec
+    mWaitDurationThreshold = max( mWaitDurationThreshold, 10.0 );
+    //rprintf( "mWaitDurationThreshold %f \n", mWaitDurationThreshold );
+  }
+
+  // only consider task switching if we actually have some information about
+  // the task competion time
+  if ( mTaskCompletionTime > 0.0 ) {
+    if ( mElapsedStateTime > mWaitDurationThreshold )
+      selectNewTask();
+
+
+    snprintf( mStatusStr, 20, "wait %0.1f %01.f", mElapsedStateTime,
+              mWaitDurationThreshold );
+  }
+}
+//-----------------------------------------------------------------------------
+void CWaitProbPolicyRobotCtrl::pickupCompletedPolicy( float dt )
+{
+  if ( mPickupTime < mPickupDurationThreshold ) {
+    if (drand48() < mProbBroadcast )
+      mBroadCast->addMessage( mCurrentTask, mRobot->getCurrentTime() );
+    /*
+    rprintf( "requesting more workers %f for task %s \n", mPickupTime,
+             mCurrentTask->getName().c_str() );
+    */
+  }
+}
+//-----------------------------------------------------------------------------
+void CWaitProbPolicyRobotCtrl::selectNewTask()
+{
+
+  if ( mCurrentTask )
+    mCurrentTask->getSource()->leaveQueue( this );
+
+  mTaskIndex = mTaskIndex + 1;
+
+  // CAVE: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  mTaskIndex = 1 + mTaskVector.size();
+
+  if ( mTaskIndex >= mTaskVector.size() ) {
+    mTaskIndex = 0;
+    mCurrentTask = NULL;
+    mFgSendToDepot = true;
+    if ( mPowerPack->getBatteryLevel() < 0.6 ) {
+      mState = GOTO_CHARGER;
+    }
+    else
+      if ( mState != UNALLOCATED )
+        mState = GOTO_DEPOT;
+  }
+  else {
+    mFgSendToDepot = false;
+    mState = GOTO_SOURCE;
+  }
+  mCurrentTask = mTaskVector[mTaskIndex];
+}
+//-----------------------------------------------------------------------------
+void CWaitProbPolicyRobotCtrl::waitingAtPickupPolicy( float dt )
 {
   float waitTime;
 
-  waitTime = MAX ( 0.5 * mCurrentWorkTask->getExperiencedTaskDuration(),
-                   MIN_PICKUP_WAIT_DURATION );
+  waitTime = MAX( mTaskCompletionTime,
+                  MIN_PICKUP_WAIT_DURATION );
 
-  if ( mPickupDuration > waitTime )
+  if ( mElapsedStateTime > waitTime )
     selectNewTask();
 }
 //-----------------------------------------------------------------------------
-
-

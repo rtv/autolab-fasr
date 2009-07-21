@@ -42,7 +42,7 @@ git clone git@github.com:jwawerla/autolab-rapi.git
 cd ${DEPENDENS_SRC_DIR}/autolab-rapi
 
 echo -e ${RED}Reverting autolab-rapi to the correct commit version ${EC}
-#git reset --hard 14cf4e2c570ac5ff15bd487f67357583505c51b8
+#git reset --hard c9d96ffcb9d6e65b4aed643493e7530bdc0125be 
 
 
 

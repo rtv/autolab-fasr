@@ -6,10 +6,6 @@ cmake_minimum_required(VERSION 2.6)
 #if you don't want the full compiler output, remove the following line
 SET(CMAKE_VERBOSE_MAKEFILE OFF)
 
-
-# generate git version number
-EXECUTE_PROCESS(COMMAND ./GIT-VERSION-GEN OUTPUT_FILE GIT-VERSION-FILE)
-
 INCLUDE(FindPkgConfig)
 
 #add definitions, compiler switches, etc.
@@ -43,10 +39,11 @@ ELSE (RAPI_FOUND)
   MESSAGE(STATUS "autolab-rapi-stage not detected")
 ENDIF (RAPI_FOUND)
 
-PKG_SEARCH_MODULE( RAPI_GUI REQUIRED autolab-rapi-gui )
+PKG_SEARCH_MODULE( RAPI_GUI autolab-rapi-gui )
 
 IF (RAPI_GUI_FOUND)
   MESSAGE(STATUS "autolab-rapi-gui version ${RAPI_GUI_VERSION} detected at ${RAPI_GUI_PREFIX}" )
+  MESSAGE(STATUS "cflags ${RAPI_GUI_CFLAGS_OTHER}")
 ELSE (RAPI_GUI_FOUND)
   MESSAGE(STATUS "autolab-rapi-gui not detected")
 ENDIF (RAPI_GUI_FOUND)
@@ -76,6 +73,7 @@ ELSEIF(QT_FOUND)
 ENDIF(QT_FOUND)
 
 INCLUDE_DIRECTORIES( ./src
+                     ./src/gui
                      ./fasrSource
                      ./taskManager
                      ${RAPI_INCLUDE_DIRS}

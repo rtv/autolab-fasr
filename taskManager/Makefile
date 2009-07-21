@@ -177,29 +177,29 @@ __/src/destination.cpp.s:
 	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/destination.cpp.s
 .PHONY : __/src/destination.cpp.s
 
-__/src/worktask.o: __/src/worktask.cpp.o
-.PHONY : __/src/worktask.o
+__/src/transportationtask.o: __/src/transportationtask.cpp.o
+.PHONY : __/src/transportationtask.o
 
 # target to build an object file
-__/src/worktask.cpp.o:
-	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.o
-.PHONY : __/src/worktask.cpp.o
+__/src/transportationtask.cpp.o:
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.o
+.PHONY : __/src/transportationtask.cpp.o
 
-__/src/worktask.i: __/src/worktask.cpp.i
-.PHONY : __/src/worktask.i
+__/src/transportationtask.i: __/src/transportationtask.cpp.i
+.PHONY : __/src/transportationtask.i
 
 # target to preprocess a source file
-__/src/worktask.cpp.i:
-	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.i
-.PHONY : __/src/worktask.cpp.i
+__/src/transportationtask.cpp.i:
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.i
+.PHONY : __/src/transportationtask.cpp.i
 
-__/src/worktask.s: __/src/worktask.cpp.s
-.PHONY : __/src/worktask.s
+__/src/transportationtask.s: __/src/transportationtask.cpp.s
+.PHONY : __/src/transportationtask.s
 
 # target to generate assembly for a file
-__/src/worktask.cpp.s:
-	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/worktask.cpp.s
-.PHONY : __/src/worktask.cpp.s
+__/src/transportationtask.cpp.s:
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f taskManager/CMakeFiles/taskmanager.dir/build.make taskManager/CMakeFiles/taskmanager.dir/__/src/transportationtask.cpp.s
+.PHONY : __/src/transportationtask.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -265,9 +265,9 @@ help:
 	@echo "... __/src/destination.o"
 	@echo "... __/src/destination.i"
 	@echo "... __/src/destination.s"
-	@echo "... __/src/worktask.o"
-	@echo "... __/src/worktask.i"
-	@echo "... __/src/worktask.s"
+	@echo "... __/src/transportationtask.o"
+	@echo "... __/src/transportationtask.i"
+	@echo "... __/src/transportationtask.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

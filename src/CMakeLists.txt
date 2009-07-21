@@ -1,5 +1,5 @@
 
-link_directories( ${STAGE_LIBRARY_DIRS} )
+LINK_DIRECTORIES( ${STAGE_LIBRARY_DIRS} )
 
 set_source_files_properties( fasrrobot.cpp PROPERTIES COMPILE_FLAGS "${FLTK_CFLAGS}" )
 
@@ -18,18 +18,29 @@ MESSAGE( STATUS "    OPENGL_glu_LIBRARY = ${OPENGL_glu_LIBRARY}")
 ADD_LIBRARY(autolab-fasr MODULE
   main.cpp
   baserobotctrl.cpp
-  staticpolicyrobotctrl.cpp
-  looppolicyrobotctrl.cpp
-  waitprobpolicyrobotctrl.cpp
-  replanpolicyrobotctrl.cpp
   robotscheduler.cpp
-  logwriter.cpp
+  looppolicyrobotctrl.cpp
+  transportationtask.cpp
   destination.cpp
-  worktask.cpp
   charger.cpp
   broadcast.cpp
+  analyst.cpp
+  staticpolicyrobotctrl.cpp
+  replanpolicyrobotctrl.cpp
+  waitprobpolicyrobotctrl.cpp
+  fixedratiopolicyrobotctrl.cpp
   ../taskManager/taskmanager.cpp
+
 )
+
+IF (QT_FOUND)
+  ADD_SUBDIRECTORY(gui)
+  ADD_DEFINITIONS(-DGUI)
+  SET( FASRGUI_LIBRARIES
+    ${RAPI_GUI_LIBRARIES}
+    autolab-fasr-gui
+  )
+ENDIF (QT_FOUND)
 
 # delete the "lib" prefix from the plugin libraries
 SET_TARGET_PROPERTIES( autolab-fasr PROPERTIES PREFIX "" )
@@ -39,7 +50,7 @@ TARGET_LINK_LIBRARIES( autolab-fasr
   ${STAGE_LIBRARIES}
   ${OPENGL_LIBRARIES}
   ${RAPI_LIBRARIES}
-  ${RAPI_GUI_LIBRARIES}
+  ${FASRGUI_LIBRARIES}
   ${QT_LIBRARIES}
   ${ND_LIBRARIES}
   ${WP_LIBRARIES}

@@ -177,6 +177,30 @@ __/taskManager/taskmanager.cpp.s:
 	cd /home/jwawerla/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/__/taskManager/taskmanager.cpp.s
 .PHONY : __/taskManager/taskmanager.cpp.s
 
+analyst.o: analyst.cpp.o
+.PHONY : analyst.o
+
+# target to build an object file
+analyst.cpp.o:
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/analyst.cpp.o
+.PHONY : analyst.cpp.o
+
+analyst.i: analyst.cpp.i
+.PHONY : analyst.i
+
+# target to preprocess a source file
+analyst.cpp.i:
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/analyst.cpp.i
+.PHONY : analyst.cpp.i
+
+analyst.s: analyst.cpp.s
+.PHONY : analyst.s
+
+# target to generate assembly for a file
+analyst.cpp.s:
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/analyst.cpp.s
+.PHONY : analyst.cpp.s
+
 baserobotctrl.o: baserobotctrl.cpp.o
 .PHONY : baserobotctrl.o
 
@@ -273,29 +297,29 @@ destination.cpp.s:
 	cd /home/jwawerla/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/destination.cpp.s
 .PHONY : destination.cpp.s
 
-logwriter.o: logwriter.cpp.o
-.PHONY : logwriter.o
+fixedratiopolicyrobotctrl.o: fixedratiopolicyrobotctrl.cpp.o
+.PHONY : fixedratiopolicyrobotctrl.o
 
 # target to build an object file
-logwriter.cpp.o:
-	cd /home/jwawerla/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/logwriter.cpp.o
-.PHONY : logwriter.cpp.o
+fixedratiopolicyrobotctrl.cpp.o:
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/fixedratiopolicyrobotctrl.cpp.o
+.PHONY : fixedratiopolicyrobotctrl.cpp.o
 
-logwriter.i: logwriter.cpp.i
-.PHONY : logwriter.i
+fixedratiopolicyrobotctrl.i: fixedratiopolicyrobotctrl.cpp.i
+.PHONY : fixedratiopolicyrobotctrl.i
 
 # target to preprocess a source file
-logwriter.cpp.i:
-	cd /home/jwawerla/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/logwriter.cpp.i
-.PHONY : logwriter.cpp.i
+fixedratiopolicyrobotctrl.cpp.i:
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/fixedratiopolicyrobotctrl.cpp.i
+.PHONY : fixedratiopolicyrobotctrl.cpp.i
 
-logwriter.s: logwriter.cpp.s
-.PHONY : logwriter.s
+fixedratiopolicyrobotctrl.s: fixedratiopolicyrobotctrl.cpp.s
+.PHONY : fixedratiopolicyrobotctrl.s
 
 # target to generate assembly for a file
-logwriter.cpp.s:
-	cd /home/jwawerla/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/logwriter.cpp.s
-.PHONY : logwriter.cpp.s
+fixedratiopolicyrobotctrl.cpp.s:
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/fixedratiopolicyrobotctrl.cpp.s
+.PHONY : fixedratiopolicyrobotctrl.cpp.s
 
 looppolicyrobotctrl.o: looppolicyrobotctrl.cpp.o
 .PHONY : looppolicyrobotctrl.o
@@ -417,6 +441,30 @@ staticpolicyrobotctrl.cpp.s:
 	cd /home/jwawerla/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/staticpolicyrobotctrl.cpp.s
 .PHONY : staticpolicyrobotctrl.cpp.s
 
+transportationtask.o: transportationtask.cpp.o
+.PHONY : transportationtask.o
+
+# target to build an object file
+transportationtask.cpp.o:
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/transportationtask.cpp.o
+.PHONY : transportationtask.cpp.o
+
+transportationtask.i: transportationtask.cpp.i
+.PHONY : transportationtask.i
+
+# target to preprocess a source file
+transportationtask.cpp.i:
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/transportationtask.cpp.i
+.PHONY : transportationtask.cpp.i
+
+transportationtask.s: transportationtask.cpp.s
+.PHONY : transportationtask.s
+
+# target to generate assembly for a file
+transportationtask.cpp.s:
+	cd /home/jwawerla/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/transportationtask.cpp.s
+.PHONY : transportationtask.cpp.s
+
 waitprobpolicyrobotctrl.o: waitprobpolicyrobotctrl.cpp.o
 .PHONY : waitprobpolicyrobotctrl.o
 
@@ -441,30 +489,6 @@ waitprobpolicyrobotctrl.cpp.s:
 	cd /home/jwawerla/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/waitprobpolicyrobotctrl.cpp.s
 .PHONY : waitprobpolicyrobotctrl.cpp.s
 
-worktask.o: worktask.cpp.o
-.PHONY : worktask.o
-
-# target to build an object file
-worktask.cpp.o:
-	cd /home/jwawerla/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/worktask.cpp.o
-.PHONY : worktask.cpp.o
-
-worktask.i: worktask.cpp.i
-.PHONY : worktask.i
-
-# target to preprocess a source file
-worktask.cpp.i:
-	cd /home/jwawerla/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/worktask.cpp.i
-.PHONY : worktask.cpp.i
-
-worktask.s: worktask.cpp.s
-.PHONY : worktask.s
-
-# target to generate assembly for a file
-worktask.cpp.s:
-	cd /home/jwawerla/autolab-fasr && $(MAKE) -f src/CMakeFiles/autolab-fasr.dir/build.make src/CMakeFiles/autolab-fasr.dir/worktask.cpp.s
-.PHONY : worktask.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -481,6 +505,9 @@ help:
 	@echo "... __/taskManager/taskmanager.o"
 	@echo "... __/taskManager/taskmanager.i"
 	@echo "... __/taskManager/taskmanager.s"
+	@echo "... analyst.o"
+	@echo "... analyst.i"
+	@echo "... analyst.s"
 	@echo "... baserobotctrl.o"
 	@echo "... baserobotctrl.i"
 	@echo "... baserobotctrl.s"
@@ -493,9 +520,9 @@ help:
 	@echo "... destination.o"
 	@echo "... destination.i"
 	@echo "... destination.s"
-	@echo "... logwriter.o"
-	@echo "... logwriter.i"
-	@echo "... logwriter.s"
+	@echo "... fixedratiopolicyrobotctrl.o"
+	@echo "... fixedratiopolicyrobotctrl.i"
+	@echo "... fixedratiopolicyrobotctrl.s"
 	@echo "... looppolicyrobotctrl.o"
 	@echo "... looppolicyrobotctrl.i"
 	@echo "... looppolicyrobotctrl.s"
@@ -511,12 +538,12 @@ help:
 	@echo "... staticpolicyrobotctrl.o"
 	@echo "... staticpolicyrobotctrl.i"
 	@echo "... staticpolicyrobotctrl.s"
+	@echo "... transportationtask.o"
+	@echo "... transportationtask.i"
+	@echo "... transportationtask.s"
 	@echo "... waitprobpolicyrobotctrl.o"
 	@echo "... waitprobpolicyrobotctrl.i"
 	@echo "... waitprobpolicyrobotctrl.s"
-	@echo "... worktask.o"
-	@echo "... worktask.i"
-	@echo "... worktask.s"
 .PHONY : help
 
 
