@@ -18,31 +18,31 @@ mkdir -p ${DEPENDENS_SRC_DIR}
 # get ND
 echo -e ${RED}Fetching autolab-nd ${EC}
 cd ${DEPENDENS_SRC_DIR}
-git clone git://github.com/rtv/autolab-nd.git
+git clone git@github.com:rtv/autolab-nd.git
 cd ${DEPENDENS_SRC_DIR}/autolab-nd
 
-echo -e ${RED}Reverting autolab-nd to the correct commit version ${EC}
-#git reset --hard a80def672b1cf887ba797bd5f43b3abd8ae600af
+echo -e ${RED}Reverting autolab-nd to the correct version ${EC}
+git reset --hard e603ecadda99c8ee6de4cd34c1afd17c406312cb
 
 ######################################
 # get WP
 echo -e ${RED}Fetching autolab-wp ${EC}
 cd ${DEPENDENS_SRC_DIR}
-git clone git://github.com/rtv/autolab-wp.git
+git clone git@github.com:rtv/autolab-wp.git
 cd ${DEPENDENS_SRC_DIR}/autolab-wp
 
-echo -e ${RED}Reverting autolab-wp to the correct commit version ${EC}
-#git reset --hard 14cf4e2c570ac5ff15bd487f67357583505c51b8
+echo -e ${RED}Reverting autolab-wp to the correct version ${EC}
+git reset --hard 14cf4e2c570ac5ff15bd487f67357583505c51b8
 
 ######################################
 # get RAPI
 echo -e ${RED}Fetching autolab-rapi ${EC}
 cd ${DEPENDENS_SRC_DIR}
-git clone git://github.com/jwawerla/autolab-rapi.git
+git clone git@github.com:jwawerla/autolab-rapi.git
 cd ${DEPENDENS_SRC_DIR}/autolab-rapi
 
-echo -e ${RED}Reverting autolab-rapi to the correct commit version ${EC}
-#git reset --hard 14cf4e2c570ac5ff15bd487f67357583505c51b8
+echo -e ${RED}Reverting autolab-rapi to the correct version ${EC}
+git reset --hard 4b5038ae10003b6231cb8d7d186df8c229689ab4
 
 
 
