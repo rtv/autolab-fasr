@@ -1,7 +1,7 @@
 /***************************************************************************
  * Project: FASR                                                           *
  * Author:  Jens Wawerla (jwawerla@sfu.ca)                                 *
- * $Id: $
+ * $Id:  $
  ***************************************************************************
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
