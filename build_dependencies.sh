@@ -32,7 +32,7 @@ git clone git@github.com:rtv/autolab-wp.git
 cd ${DEPENDENS_SRC_DIR}/autolab-wp
 
 echo -e ${RED}Reverting autolab-wp to the correct version ${EC}
-git reset --hard 14cf4e2c570ac5ff15bd487f67357583505c51b8
+git reset --hard 4b5038ae10003b6231cb8d7d186df8c229689ab4 
 
 ######################################
 # get RAPI
@@ -42,7 +42,7 @@ git clone git@github.com:jwawerla/autolab-rapi.git
 cd ${DEPENDENS_SRC_DIR}/autolab-rapi
 
 echo -e ${RED}Reverting autolab-rapi to the correct version ${EC}
-git reset --hard 4b5038ae10003b6231cb8d7d186df8c229689ab4
+git reset --hard 6ffa03ac2f49df279f2526b9715fe2d047c0ec8e
 
 
 
