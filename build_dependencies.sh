@@ -22,7 +22,7 @@ git clone git@github.com:rtv/autolab-nd.git
 cd ${DEPENDENS_SRC_DIR}/autolab-nd
 
 echo -e ${RED}Reverting autolab-nd to the correct version ${EC}
-git reset --hard e603ecadda99c8ee6de4cd34c1afd17c406312cb
+git reset --hard 2091ff8f016bf05d2ad43c1ef492820711983d32
 
 ######################################
 # get WP
