@@ -23,7 +23,6 @@
 #include <math.h>
 #include "baserobotctrl.h"
 #include "stagegridmap.h"
-#include "oavis.h"
 
 
 /** Distance to the loading bay at which we wait for it to be clear of robot [m] */
