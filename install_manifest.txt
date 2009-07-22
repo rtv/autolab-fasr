@@ -1,3 +1,0 @@
-/Users/vaughan/arp/lib/fasrrobot.so
-/Users/vaughan/arp/lib/fasrsource.so
-/Users/vaughan/arp/lib/taskmanager.so

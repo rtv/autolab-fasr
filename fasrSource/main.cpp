@@ -1,7 +1,8 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Jens
- *   jwawerla@sfu.ca
- *                                                                         *
+ * Project: FASR                                                           *
+ * Author:  Jens Wawerla (jwawerla@sfu.ca)                                 *
+ * $Id: $
+ ***************************************************************************
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
  *   the Free Software Foundation; either version 2 of the License, or     *
@@ -16,10 +17,27 @@
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
- ***************************************************************************
- * $Log: cpp,v $
- * Revision 1.1.1.1  2009-03-15 03:52:02  jwawerla
- * First commit
- *
- *
- ***************************************************************************/
+ **************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "stage.hh"
+#include "printerror.h"
+#include "fasrsource.h"
+
+
+using namespace Stg;
+
+extern "C" int Init( Model* mod )
+{
+
+  ErrorInit(5, false);
+
+  CFasrSource* source = new CFasrSource( mod ) ;
+
+  // shut up compiler
+  source = source;
+
+  return 0; // ok
+}
