@@ -95,7 +95,7 @@ void CAnalystDialog::update()
     mTaskDataWidgetList[i]->updateData();
   }
 
-  //mReassignmentLine->setData(mScheduler->mNumReassignments);
+  mReassignmentLine->setData( mAnalyst->mTotalNumTaskSwitches );
   mNumChargingLine->setData( mAnalyst->mNumRobotCharging );
   mNumDepotLine->setData( mAnalyst->mNumRobotsInDepot );
   mTotalRewardLine->setData( mAnalyst->mTotalReward );

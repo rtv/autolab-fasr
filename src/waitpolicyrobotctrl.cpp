@@ -18,15 +18,15 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  **************************************************************************/
-#include "waitprobpolicyrobotctrl.h"
+#include "waitpolicyrobotctrl.h"
 
 /** Minimum time we wait at a pickup for a flag [s] */
 const float MIN_PICKUP_WAIT_DURATION = 50.0;
 
 //-----------------------------------------------------------------------------
-CWaitProbPolicyRobotCtrl::CWaitProbPolicyRobotCtrl ( ARobot* robot,
+CWaitPolicyRobotCtrl::CWaitPolicyRobotCtrl( ARobot* robot,
     float probBroadcast )
-    : ABaseRobotCtrl ( robot )
+    : ABaseRobotCtrl( robot )
 {
   mProbBroadcast = probBroadcast;
   mPickupDurationThreshold = 0.5;
@@ -35,24 +35,24 @@ CWaitProbPolicyRobotCtrl::CWaitProbPolicyRobotCtrl ( ARobot* robot,
   mBroadCast = CBroadCast::getInstance();
 }
 //-----------------------------------------------------------------------------
-CWaitProbPolicyRobotCtrl::~CWaitProbPolicyRobotCtrl()
+CWaitPolicyRobotCtrl::~CWaitPolicyRobotCtrl()
 {
 }
 //-----------------------------------------------------------------------------
-void CWaitProbPolicyRobotCtrl::startPolicy()
+void CWaitPolicyRobotCtrl::startPolicy()
 {
   if ( mTaskVector.empty() ) {
-    rprintf ( "No tasks available\n" );
+    rprintf( "No tasks available\n" );
     return;
   }
 
   // assign first task at random
-  mTaskIndex = ( int ) round ( drand48() * ( mTaskVector.size() - 1 ) );
+  mTaskIndex = ( int )round( drand48() * ( mTaskVector.size() -1 ) );
   mCurrentTask = mTaskVector[mTaskIndex];
 
   if ( mCurrentTask ) {
-    rprintf ( "CWaitProbPolicyRobotCtrl: Selected task: %s \n",
-              mCurrentTask->getName().c_str() );
+    rprintf( "CWaitPolicyRobotCtrl: Selected task: %s \n",
+             mCurrentTask->getName().c_str() );
     mState = GOTO_SOURCE;
   }
   else {
@@ -60,7 +60,7 @@ void CWaitProbPolicyRobotCtrl::startPolicy()
   }
 }
 //-----------------------------------------------------------------------------
-void CWaitProbPolicyRobotCtrl::leaveChargerPolicy ( float dt )
+void CWaitPolicyRobotCtrl::leaveChargerPolicy( float dt )
 {
   if ( mFgSendToDepot )
     mState = GOTO_DEPOT;
@@ -68,10 +68,10 @@ void CWaitProbPolicyRobotCtrl::leaveChargerPolicy ( float dt )
     mState = GOTO_SOURCE;
 }
 //-----------------------------------------------------------------------------
-void CWaitProbPolicyRobotCtrl::deliveryCompletedPolicy ( float dt )
+void CWaitPolicyRobotCtrl::deliveryCompletedPolicy( float dt )
 {
   // should we charge or work
-  if ( chargingPolicy ( dt ) ) {
+  if ( chargingPolicy( dt ) ) {
     mState = GOTO_CHARGER;
   }
   else {
@@ -79,15 +79,15 @@ void CWaitProbPolicyRobotCtrl::deliveryCompletedPolicy ( float dt )
   }
 }
 //-----------------------------------------------------------------------------
-void CWaitProbPolicyRobotCtrl::unallocatedPolicy ( float dt )
+void CWaitPolicyRobotCtrl::unallocatedPolicy( float dt )
 {
-  if ( mBroadCast->hasMessage ( mRobot->getCurrentTime() ) ) {
+  if ( mBroadCast->hasMessage( mRobot->getCurrentTime() ) ) {
     mCurrentTask = mBroadCast->popMessage();
     mState = GOTO_SOURCE;
   }
 }
 //-----------------------------------------------------------------------------
-void CWaitProbPolicyRobotCtrl::waitingAtSourcePolicy ( float dt )
+void CWaitPolicyRobotCtrl::waitingAtSourcePolicy( float dt )
 {
   float r;
   float time;
@@ -99,7 +99,7 @@ void CWaitProbPolicyRobotCtrl::waitingAtSourcePolicy ( float dt )
     //mWaitDurationThreshold = r * mTaskCompletionTime / ( 1.0 - r );
     mWaitDurationThreshold = r * time;
     // wait at least 10 sec
-    mWaitDurationThreshold = max ( mWaitDurationThreshold, 10.0 );
+    mWaitDurationThreshold = max( mWaitDurationThreshold, 10.0 );
     //rprintf( "mWaitDurationThreshold %f \n", mWaitDurationThreshold );
   }
 
@@ -110,20 +110,16 @@ void CWaitProbPolicyRobotCtrl::waitingAtSourcePolicy ( float dt )
       selectNewTask();
 
 
-    snprintf ( mStatusStr, 20, "wait %0.1f %01.f", mElapsedStateTime,
-               mWaitDurationThreshold );
+    snprintf( mStatusStr, 20, "wait %0.1f %01.f", mElapsedStateTime,
+              mWaitDurationThreshold );
   }
 }
 //-----------------------------------------------------------------------------
-void CWaitProbPolicyRobotCtrl::pickupCompletedPolicy ( float dt )
+void CWaitPolicyRobotCtrl::pickupCompletedPolicy( float dt )
 {
   if ( mPickupTime < mPickupDurationThreshold ) {
-    printf ( " %f %f = %f \n",mSlowedDownTime+mSourceWaitingTime , mTaskCompletionTime, mProbBroadcast *
-             ( 1.0 - (mSlowedDownTime + mSourceWaitingTime) / mTaskCompletionTime ) );
-    if ( drand48() < ( mProbBroadcast *
-                       ( 1.0 - ( mSlowedDownTime + mSourceWaitingTime )
-                         / mTaskCompletionTime ) ) )
-      mBroadCast->addMessage ( mCurrentTask, mRobot->getCurrentTime() );
+    if (drand48() < mProbBroadcast )
+      mBroadCast->addMessage( mCurrentTask, mRobot->getCurrentTime() );
     /*
     rprintf( "requesting more workers %f for task %s \n", mPickupTime,
              mCurrentTask->getName().c_str() );
@@ -131,13 +127,16 @@ void CWaitProbPolicyRobotCtrl::pickupCompletedPolicy ( float dt )
   }
 }
 //-----------------------------------------------------------------------------
-void CWaitProbPolicyRobotCtrl::selectNewTask()
+void CWaitPolicyRobotCtrl::selectNewTask()
 {
 
   if ( mCurrentTask )
-    mCurrentTask->getSource()->leaveQueue ( this );
+    mCurrentTask->getSource()->leaveQueue( this );
 
   mTaskIndex = mTaskIndex + 1;
+
+  // CAVE: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  mTaskIndex = 1 + mTaskVector.size();
 
   if ( mTaskIndex >= mTaskVector.size() ) {
     mTaskIndex = 0;
@@ -146,24 +145,23 @@ void CWaitProbPolicyRobotCtrl::selectNewTask()
     if ( mPowerPack->getBatteryLevel() < 0.6 ) {
       mState = GOTO_CHARGER;
     }
-    else {
+    else
       if ( mState != UNALLOCATED )
         mState = GOTO_DEPOT;
-    }
   }
   else {
     mFgSendToDepot = false;
     mState = GOTO_SOURCE;
-    mCurrentTask = mTaskVector[mTaskIndex];
   }
+  mCurrentTask = mTaskVector[mTaskIndex];
 }
 //-----------------------------------------------------------------------------
-void CWaitProbPolicyRobotCtrl::waitingAtPickupPolicy ( float dt )
+void CWaitPolicyRobotCtrl::waitingAtPickupPolicy( float dt )
 {
   float waitTime;
 
-  waitTime = MAX ( mTaskCompletionTime,
-                   MIN_PICKUP_WAIT_DURATION );
+  waitTime = MAX( mTaskCompletionTime,
+                  MIN_PICKUP_WAIT_DURATION );
 
   if ( mElapsedStateTime > waitTime )
     selectNewTask();

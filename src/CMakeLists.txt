@@ -28,7 +28,9 @@ ADD_LIBRARY(autolab-fasr MODULE
   staticpolicyrobotctrl.cpp
   replanpolicyrobotctrl.cpp
   waitprobpolicyrobotctrl.cpp
+  waitpolicyrobotctrl.cpp
   fixedratiopolicyrobotctrl.cpp
+  epsilonsamplerrobotctrl.cpp
   ../taskManager/taskmanager.cpp
 
 )

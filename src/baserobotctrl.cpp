@@ -62,7 +62,7 @@ ABaseRobotCtrl::ABaseRobotCtrl( ARobot* robot )
   mFgStateChanged = false;
   mCurrentCharger = NULL;
   mCurrentTask = NULL;
-  mCurrentTask = NULL;
+  mPrevTask = NULL;
   mAngle = 0.0f;
   mElapsedStateTime = 0.0;
   mAccumulatedReward = 0.0;
@@ -75,6 +75,7 @@ ABaseRobotCtrl::ABaseRobotCtrl( ARobot* robot )
   mSourceWaitingTime = 0.0;
   mSinkWaitingTime = 0.0;
   mRewardRate = 0.0;
+  mNumTaskSwitches = 0;
   mCountStageCollisionDisabled = 0;
 
   //*************************************
@@ -93,6 +94,7 @@ ABaseRobotCtrl::ABaseRobotCtrl( ARobot* robot )
   mRobot->mVariableMonitor.addVar( &mPickupTime, "mPickupTime" );
   mRobot->mVariableMonitor.addVar( &mRewardRate, "mRewardRate" );
   mRobot->mVariableMonitor.addVar( &mSlowedDownTime, "mSlowedDownTime" );
+  mRobot->mVariableMonitor.addVar( &mNumTaskSwitches, "mNumTaskSwitches" );
   mRobot->mVariableMonitor.addVar( &mCountStageCollisionDisabled, "mCountStageCollisionDisabled" );
 
   // just debug stuff
@@ -143,7 +145,7 @@ ABaseRobotCtrl::ABaseRobotCtrl( ARobot* robot )
   // enable logging
   mDataLogger = CDataLogger::getInstance( LOGFILENAME, OVERWRITE );
   mDataLogger->setInterval( 0.1 );
-  mDrivetrain->startLogging( LOGFILENAME );
+  //mDrivetrain->startLogging( LOGFILENAME );
   mDataLogger->addVar(( int* )&mState, "state" );
   mDataLogger->addVar( &mNumTrips, "numTrips" );
   mDataLogger->addVar( &mAccumulatedReward, "accumulatedReward", 1 );
@@ -152,9 +154,10 @@ ABaseRobotCtrl::ABaseRobotCtrl( ARobot* robot )
   mDataLogger->addVar( &mSinkWaitingTime, "sinkWaitingTime", 1 );
   mDataLogger->addVar( &mPickupTime, "pickupTime", 1 );
   mDataLogger->addVar( &mRewardRate, "rewardRate", 3 );
+  mDataLogger->addVar( &mTaskCompletionTime, "taskComletionTime", 1 );
   mDataLogger->addVar( &mSlowedDownTime, "slowedDownTime", 1 );
+  mDataLogger->addVar( &mNumTaskSwitches, "numTaskSwitches" );
   mDataLogger->addVar( &mCountStageCollisionDisabled, "countStageCollisionDisabled" );
-
 
   // get robot pose
   mRobotPose = mDrivetrain->getOdometry()->getPose();
@@ -965,7 +968,7 @@ void ABaseRobotCtrl::updateData( float dt )
     else if ( not mNd->mLeftAvoidBox.fgObstacle )
       mDrivetrain->setVelocityCmd( 0.0, -0.02 );
     else {
-      rprintf( "I am stuck\n" );
+      //rprintf( "I am stuck\n" );
       mDrivetrain->setVelocityCmd( 0.0, 0.0 );
     }
 
@@ -1021,6 +1024,10 @@ void ABaseRobotCtrl::updateData( float dt )
       mSlowedDownTimer += dt;
   }
 
+  if (mCurrentTask != mPrevTask) {
+    mNumTaskSwitches++;
+    mPrevTask = mCurrentTask;
+  }
   mNumWaypoints = mWaypointList.size();
   mDataLogger->write( mRobot->getCurrentTime() );
 }

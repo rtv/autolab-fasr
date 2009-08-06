@@ -38,6 +38,7 @@ CAnalyst::CAnalyst( Stg::Model* mod )
   mTotalNumFlags = 0;
   mTotalEnergy = 0.0;
   mTotalReward = 0.0;
+  mTotalNumTaskSwitches = 0;
 
   mFpLog = fopen( "fasr_analyst.log", "w" );
   if ( mFpLog == NULL )
@@ -62,10 +63,11 @@ void CAnalyst::update()
   mTotalNumFlags = 0;
   mTotalEnergy = 0.0;
   mTotalReward = 0.0;
+  mTotalNumTaskSwitches = 0;
 
   for ( unsigned int r = 0; r < mRobotList.size(); r++ ) {
     fgWorking = false;
-
+    mTotalNumTaskSwitches += mRobotList[r]->mNumTaskSwitches;
     mTotalNumFlags += mRobotList[r]->mNumTrips;
     mTotalEnergy += mRobotList[r]->mPowerPack->getTotalEnergyDissipated();
     mTotalReward += mRobotList[r]->mAccumulatedReward;
@@ -102,9 +104,9 @@ void CAnalyst::update()
     } // for tasks
   } // for robots
 
-  fprintf( mFpLog, "%d, %d, %0.1f, %d, %f",
-           mNumRobotsInDepot, mNumRobotCharging, mTotalReward, mTotalNumFlags,
-           mTotalEnergy );
+  fprintf( mFpLog, "%d, %d, %d, %0.1f, %d, %f",
+           mNumRobotsInDepot, mNumRobotCharging, mTotalNumTaskSwitches,
+           mTotalReward, mTotalNumFlags, mTotalEnergy );
 
   for ( unsigned int t = 0; t < mTaskList.size(); t++ ) {
     fprintf( mFpLog, ", %d, %d, %f, %f, %f, %d",

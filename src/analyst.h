@@ -92,6 +92,8 @@ class CAnalyst
     float mTotalReward;
     /** Overall number of flags delivered */
     unsigned int mTotalNumFlags;
+    /** Total number of task switches */
+    unsigned int mTotalNumTaskSwitches;
     /** Overall energy expended */
     float mTotalEnergy;
     /** File pointer for log file */

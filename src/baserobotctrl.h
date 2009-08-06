@@ -131,6 +131,8 @@ class ABaseRobotCtrl : public ARobotCtrl
     std::vector<ITransportTaskInterface*> mTaskVector;
     /** Current transportation task */
     ITransportTaskInterface* mCurrentTask;
+    /** Previous task */
+    ITransportTaskInterface* mPrevTask;
     /** List of charger location */
     std::list<CCharger*> mChargerList;
     /** Current charger destination */
@@ -183,6 +185,8 @@ class ABaseRobotCtrl : public ARobotCtrl
     int mCargoBayCapacity;
     /** String for status messages */
     char mStatusStr[20];
+    /** Data logger */
+    CDataLogger* mDataLogger;
 
   private:
     /**
@@ -290,8 +294,9 @@ class ABaseRobotCtrl : public ARobotCtrl
     int mCountStageCollisionDisabled;
     /** Timer to measure the time we are slowed down */
     float mSlowedDownTimer;
-    /** Data logger */
-    CDataLogger* mDataLogger;
+    /** Number of task switches */
+    unsigned int mNumTaskSwitches;
+
 
 // ALL THESE VARIABLES ARE DEBUG ONLY
     bool mFgRobotInFront;

@@ -28,6 +28,7 @@
 #include "replanpolicyrobotctrl.h"
 #include "waitprobpolicyrobotctrl.h"
 #include "fixedratiopolicyrobotctrl.h"
+#include "epsilonsamplerrobotctrl.h"
 
 #ifdef GUI
 #include "fasrgui.h"
@@ -92,6 +93,8 @@ extern "C" int Init( Stg::Model* mod )
       robotCtrl = new CStaticPolicyRobotCtrl( robot );
     else if ( strcmp( policy, "loop" ) == 0 )
       robotCtrl = new CLoopPolicyRobotCtrl( robot );
+    else if ( strcmp ( policy, "epsilon" ) == 0 )
+      robotCtrl = new CEpsilonSamplerRobotCtrl( robot );
     else if ( strcmp( policy, "wait" ) == 0 ) {
       for( unsigned int i=0; i< Stg::World::args.size(); i++ ) {
          if (Stg::World::args[i].compare(0, 3, "-pb") == 0) {

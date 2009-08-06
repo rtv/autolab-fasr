@@ -44,9 +44,6 @@ cd ${DEPENDENS_SRC_DIR}/autolab-rapi
 echo -e ${RED}Reverting autolab-rapi to the correct version ${EC}
 #git reset --hard 4b5038ae10003b6231cb8d7d186df8c229689ab4
 
-
-
-
 ######################################
 # Install rapi
 echo -e ${RED}Installing autolab-rapi ${EC}
