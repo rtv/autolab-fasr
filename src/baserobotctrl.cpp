@@ -257,7 +257,7 @@ void ABaseRobotCtrl::transferWaypointToStage()
   wpList[i].pose.x = pose.mX;
   wpList[i].pose.y = pose.mY;
   wpList[i].pose.a = pose.mYaw;
-  wpList[i].color = Stg::Color( 0, 1, 0, 0 ); // green
+  wpList[i].color = Stg::Color( 0, 1, 0 ); // green
   i++;
 
   for ( it = mWaypointList.begin(); it != mWaypointList.end(); it++ ) {
@@ -269,7 +269,7 @@ void ABaseRobotCtrl::transferWaypointToStage()
 
     wpList[i].color = Stg::Color( color.mRed / 255.0,
                                   color.mBlue / 255.0,
-                                  color.mGreen / 255.0, 0 );
+                                  color.mGreen / 255.0 );
     i ++;
   }
 
