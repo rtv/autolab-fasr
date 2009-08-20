@@ -35,6 +35,8 @@ CFasrSource::CFasrSource( Stg::Model* mod )
   mTaskTimeline.clear();
 
   mStgModel->AddUpdateCallback(( Stg::stg_model_callback_t ) stgUpdate, this );
+  mStgModel->Subscribe(); // starts the update callback running
+
   strcpy( mName, mStgModel->Token() );
 
   // get params from Stage model as specified in worldfile

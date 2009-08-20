@@ -6,19 +6,16 @@ include "pioneer.inc"
 include "map.inc"
 include "sick.inc"
 
-interval_sim 100  # simulation timestep in milliseconds
-interval_real 0 # real-time interval between simulation updates in milliseconds
-paused 0
-
-# stop Stage after x seconds, 0 = run for ever
+speedup 10
+paused 0			 
+		 
+# stop Stage after x seconds, 0 = run forever
 quit_time 7200.0
 
 # resolution of items in the world [m]
 resolution 0.02
 
-# threads may speed things up here depending on available CPU cores & workload
-# threadpool 0
- threadpool 0
+#threads 8
 
 # configure the GUI window
 window
@@ -66,10 +63,7 @@ model
   name "depot"
   pose [-14.000 0 0 0]
   size [0 0 0]
-  gui_nose 0
-  gui_grid 0
-  gui_movemask 1
-  gui_outline 0
+  gui_move 1
 
   # insensible to collision and range sensors
   obstacle_return 0
@@ -85,10 +79,6 @@ model
   name "charger"
   pose [13.000 -6.000 0 0]
   size [0 0 0]
-  gui_nose 0
-  gui_grid 0
-  gui_movemask 1
-  gui_outline 0
 
   # insensible to collision and range sensors
   obstacle_return 0
@@ -206,6 +196,8 @@ define charge_station model
 (
   size [ 0.100 0.300 0.100 ]
   color "purple"
+
+  gui_move 0
 
   # side blocks to restrict view angle
   model( color "purple" size [0.100 0.050 0.250] pose [ 0 0.100 0 0 ] )

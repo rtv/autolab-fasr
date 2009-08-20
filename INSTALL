@@ -1,12 +1,16 @@
+
+# WARNING - instruvtiona out of date *
+# TODO - fix me
+
 Installation
 Preliminaries
 
-Before you start building and installing this project, make sure you have the following packages are installed and configured:
+Before you start building and installing this project, make sure you have the following packages installed and configured:
 
     * git
     * cmake
     * Qt Framework (libraries)
-    * Stage 3.1
+    * Stage SVN trunk
       Make sure that Stage is configured properly and $PKG_CONFIG_PATH variable contains the path to the Stage directory.
     * OpenGL 
 

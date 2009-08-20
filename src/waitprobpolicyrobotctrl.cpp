@@ -99,7 +99,7 @@ void CWaitProbPolicyRobotCtrl::waitingAtSourcePolicy ( float dt )
     //mWaitDurationThreshold = r * mTaskCompletionTime / ( 1.0 - r );
     mWaitDurationThreshold = r * time;
     // wait at least 10 sec
-    mWaitDurationThreshold = max ( mWaitDurationThreshold, 10.0 );
+    mWaitDurationThreshold = std::max ( mWaitDurationThreshold, (float)10.0 );
     //rprintf( "mWaitDurationThreshold %f \n", mWaitDurationThreshold );
   }
 
@@ -162,7 +162,7 @@ void CWaitProbPolicyRobotCtrl::waitingAtPickupPolicy ( float dt )
 {
   float waitTime;
 
-  waitTime = MAX ( mTaskCompletionTime,
+  waitTime = std::max ( mTaskCompletionTime,
                    MIN_PICKUP_WAIT_DURATION );
 
   if ( mElapsedStateTime > waitTime )

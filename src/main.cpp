@@ -30,6 +30,8 @@
 #include "fixedratiopolicyrobotctrl.h"
 #include "epsilonsamplerrobotctrl.h"
 
+#undef GUI
+
 #ifdef GUI
 #include "fasrgui.h"
 #endif
@@ -42,8 +44,10 @@ CFasrGui* gui = NULL;
 static int shutDownCallback( Stg::Model* model, void* ptr )
 {
   printf( "shutDownCallback\n" );
+#ifdef GUI
   if ( gui )
     delete gui;
+#endif
   return 0; // ok
 }
 //-----------------------------------------------------------------------------

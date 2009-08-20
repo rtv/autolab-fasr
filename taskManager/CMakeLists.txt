@@ -1,7 +1,7 @@
 
 link_directories( ${STAGE_LIBRARY_DIRS} )
 
-set_source_files_properties( taskmanager.cpp PROPERTIES COMPILE_FLAGS "${FLTK_CFLAGS}" )
+# set_source_files_properties( taskmanager.cpp PROPERTIES COMPILE_FLAGS "${FLTK_CFLAGS}" )
 
 #build a shared library
 ADD_LIBRARY(taskmanager MODULE
@@ -13,7 +13,10 @@ ADD_LIBRARY(taskmanager MODULE
 )
 
 # delete the "lib" prefix from the plugin libraries
-SET_TARGET_PROPERTIES( taskmanager PROPERTIES PREFIX "" )
+SET_TARGET_PROPERTIES( taskmanager PROPERTIES 
+							  PREFIX ""
+							  LINK_FLAGS "${STAGE_LDFLAGS_MORE}"
+ )
 
 #need to link to some other libraries ? just add them here
 TARGET_LINK_LIBRARIES(taskmanager

@@ -61,7 +61,7 @@ void CTaskDataWidget::updateData()
 {
   mOptNumWorkerLine->setData( mTaskData->optNumWorkers );
   mRTTLine->setData( mTaskData->roundTripTime );
-  mNumAssignedRobotLine->setData( mTaskData->assignedRobotList.size() );
+  mNumAssignedRobotLine->setData( (int)mTaskData->assignedRobotList.size() );
   mProductioRateLine->setData( mTaskData->task->getProductionRate() );
   mRewardLine->setData( mTaskData->task->getReward() );
   mCompletedLine->setData( mTaskData->task->getTaskCompletedCount() );

@@ -30,10 +30,7 @@ using namespace Stg;
 //-----------------------------------------------------------------------------
 extern "C" int Init ( Model* mod )
 {
-  CTaskManager* taskManager = CTaskManager::getInstance (
-                                mod->GetWorld()->GetModel ( "taskmanager" ) );
-   // shut up compiler
-  taskManager = taskManager;
+  CTaskManager::getInstance ( mod->GetWorld()->GetModel ( "taskmanager" ) );
   return 0; // ok
 }
 //-----------------------------------------------------------------------------

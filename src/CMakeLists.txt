@@ -3,17 +3,6 @@ LINK_DIRECTORIES( ${STAGE_LIBRARY_DIRS} )
 
 set_source_files_properties( fasrrobot.cpp PROPERTIES COMPILE_FLAGS "${FLTK_CFLAGS}" )
 
-
-MESSAGE( ${INDENT} "Checking for OpenGL" )
-find_package( OpenGL REQUIRED )
-IF( NOT OPENGL_GLU_FOUND )
-  MESSAGE( FATAL_ERROR "OpenGL GLU not found, aborting" )
-ENDIF( NOT OPENGL_GLU_FOUND )
-MESSAGE( STATUS ${INDENT} "OpenGL GLU found at ${OPENGL_INCLUDE_DIR}" )
-MESSAGE( STATUS "    OPENGL_INCLUDE_DIR = ${OPENGL_INCLUDE_DIR}")
-MESSAGE( STATUS "    OPENGL_glu_LIBRARY = ${OPENGL_glu_LIBRARY}")
-
-
 #build a shared library
 ADD_LIBRARY(autolab-fasr MODULE
   main.cpp
@@ -45,7 +34,10 @@ IF (QT_FOUND)
 ENDIF (QT_FOUND)
 
 # delete the "lib" prefix from the plugin libraries
-SET_TARGET_PROPERTIES( autolab-fasr PROPERTIES PREFIX "" )
+SET_TARGET_PROPERTIES( autolab-fasr 
+							  PROPERTIES PREFIX "" 
+							  LINK_FLAGS "${STAGE_LDFLAGS_MORE}"
+)
 
 #need to link to some other libraries ? just add them here
 TARGET_LINK_LIBRARIES( autolab-fasr
