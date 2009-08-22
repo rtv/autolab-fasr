@@ -5,6 +5,6 @@ Copyright 2009 Jens Wawerla, Richard Vaughan
 
 Dependencies
 ============
-Stage SVN trunk
+Stage SVN revision 8214
 autolab-nd [git://github.com/rtv/autolab-nd.git]
 autolab-wp [git://github.com/rtv/autolab-wp.git]

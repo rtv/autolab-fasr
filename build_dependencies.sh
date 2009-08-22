@@ -22,7 +22,7 @@ git clone git://github.com/rtv/autolab-nd.git
 cd ${DEPENDENS_SRC_DIR}/autolab-nd
 
 echo -e ${RED}Reverting autolab-nd to the correct version ${EC}
-git reset --hard 9553ec65269d1cf644799c8ac2ed054ace98a1bc
+git reset --hard 743b0627fce1119b6e42b2789f8b619c254926d5
 
 ######################################
 # get WP
@@ -32,7 +32,7 @@ git clone git://github.com/rtv/autolab-wp.git
 cd ${DEPENDENS_SRC_DIR}/autolab-wp
 
 echo -e ${RED}Reverting autolab-wp to the correct version ${EC}
-git reset --hard 4b5038ae10003b6231cb8d7d186df8c229689ab4
+git reset --hard 283d5691c8ec80557cbf56c3e2c04ce6b854221d
 
 ######################################
 # get RAPI
@@ -42,7 +42,7 @@ git clone git://github.com/jwawerla/autolab-rapi.git
 cd ${DEPENDENS_SRC_DIR}/autolab-rapi
 
 echo -e ${RED}Reverting autolab-rapi to the correct version ${EC}
-git reset --hard 9acac899e3299b0e0c0ce52a4eb04029abfae0ba
+git reset --hard 8a7cc6d083beff79cf79edf9ffa253f4c14dfe66
 
 ######################################
 # Install rapi
