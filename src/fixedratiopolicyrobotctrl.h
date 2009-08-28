@@ -38,7 +38,7 @@ class CFixedRatioPolicyRobotCtrl :
      * Default constructor
      * @param robot to control
      */
-    CFixedRatioPolicyRobotCtrl( ARobot* robot );
+    CFixedRatioPolicyRobotCtrl( ARobot* robot);
     /** Default destructor */
     virtual ~CFixedRatioPolicyRobotCtrl();
     /** Start up policy */
@@ -98,6 +98,8 @@ class CFixedRatioPolicyRobotCtrl :
   protected:
     /** Id of robot */
     unsigned int mRobotId;
+    /** Ratio filename */
+    std::string mRatioFilename;
 };
 
 #endif

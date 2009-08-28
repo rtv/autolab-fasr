@@ -5,6 +5,14 @@ Copyright 2009 Jens Wawerla, Richard Vaughan
 
 Dependencies
 ============
-Stage SVN revision 8214
+Stage SVN revision 8216
 autolab-nd [git://github.com/rtv/autolab-nd.git]
 autolab-wp [git://github.com/rtv/autolab-wp.git]
+
+
+Command Line Options
+====================
+-rf=filename set name of ratio file for fixed policy
+-td=filename set name of task description file
+-pb=float    set broadcast probability for wait policy
+-lf=filename set name of logfile

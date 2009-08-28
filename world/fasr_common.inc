@@ -157,7 +157,7 @@ define fasr_pioneer2dx pioneer2dx
  localization_origin [ 0 0 0 0 ]
  sicklaser( samples 64 range_max 5 laser_return 2 watts 30 fov 360 orgin [0.0 0 0 0] color "red" )
  ctrl "autolab-fasr"
- joules 100000
+ joules -1
  joules_capacity 400000
  fiducial_return 0
  charging_bump(  )

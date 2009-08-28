@@ -118,8 +118,8 @@ void CWaitProbPolicyRobotCtrl::waitingAtSourcePolicy ( float dt )
 void CWaitProbPolicyRobotCtrl::pickupCompletedPolicy ( float dt )
 {
   if ( mPickupTime < mPickupDurationThreshold ) {
-    printf ( " %f %f = %f \n",mSlowedDownTime+mSourceWaitingTime , mTaskCompletionTime, mProbBroadcast *
-             ( 1.0 - (mSlowedDownTime + mSourceWaitingTime) / mTaskCompletionTime ) );
+    //printf ( " %f %f = %f \n",mSlowedDownTime+mSourceWaitingTime , mTaskCompletionTime, mProbBroadcast *
+     //        ( 1.0 - (mSlowedDownTime + mSourceWaitingTime) / mTaskCompletionTime ) );
     if ( drand48() < ( mProbBroadcast *
                        ( 1.0 - ( mSlowedDownTime + mSourceWaitingTime )
                          / mTaskCompletionTime ) ) )

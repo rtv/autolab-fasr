@@ -75,7 +75,7 @@ class CFasrSource
 
   private:
     /** File name and path of script */
-    char* mScriptName;
+    std::string mScriptName;
     /** Model name */
     char mName[20];
     /** Stage model */

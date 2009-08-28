@@ -34,9 +34,9 @@ IF (QT_FOUND)
 ENDIF (QT_FOUND)
 
 # delete the "lib" prefix from the plugin libraries
-SET_TARGET_PROPERTIES( autolab-fasr 
-							  PROPERTIES PREFIX "" 
-							  LINK_FLAGS "${STAGE_LDFLAGS_MORE}"
+SET_TARGET_PROPERTIES( autolab-fasr
+  PROPERTIES PREFIX ""
+  LINK_FLAGS "${STAGE_LDFLAGS_MORE}"
 )
 
 #need to link to some other libraries ? just add them here

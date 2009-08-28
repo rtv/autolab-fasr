@@ -20,12 +20,14 @@
  **************************************************************************/
 
 #include "fasrsource.h"
+#include <assert.h>
 
 const double FLAGSZ = 0.4;
 
 //-----------------------------------------------------------------------------
-CFasrSource::CFasrSource( Stg::Model* mod )
+CFasrSource::CFasrSource ( Stg::Model* mod )
 {
+  char* script;
   mNextModicificationTime = 0.1;
   mSimTime = 0.0;
   mStgModel = mod;
@@ -34,27 +36,40 @@ CFasrSource::CFasrSource( Stg::Model* mod )
   mUpdateInterval = 10;
   mTaskTimeline.clear();
 
-  mStgModel->AddUpdateCallback(( Stg::stg_model_callback_t ) stgUpdate, this );
+
+  assert ( mod );
+
+  mStgModel->AddUpdateCallback ( ( Stg::stg_model_callback_t ) stgUpdate, this );
   mStgModel->Subscribe(); // starts the update callback running
 
-  strcpy( mName, mStgModel->Token() );
+  strcpy ( mName, mStgModel->Token() );
 
-  // get params from Stage model as specified in worldfile
-
-  if ( ! mStgModel->GetPropertyStr( "scriptname", &mScriptName,  NULL ) )
-    PRT_WARN0( "No script specified " );
-  else {
-    PRT_MSG1( 4, "Loading script %s", mScriptName );
-    loadScript();
+  // check if we got a task description file passed in on the command line
+  for ( unsigned int i=0; i< Stg::World::args.size(); i++ ) {
+    if ( Stg::World::args[i].compare ( 0, 3, "-td" ) == 0 ) {
+      mScriptName = Stg::World::args[i].substr ( 4, Stg::World::args[i].size()-4 ).c_str();
+      PRT_MSG1 ( 3, "World file task description file overruled by user, new file: %s",
+                 mScriptName.c_str() );
+      break;
+    }
   }
-}
 
+  if ( mScriptName.empty() ) {
+    // get params from Stage model as specified in worldfile
+    if ( ! mStgModel->GetPropertyStr ( "scriptname", &script,  NULL ) )
+      PRT_WARN0 ( "No script specified " );
+    mScriptName = script;
+  }
+
+  PRT_MSG1 ( 4, "Loading script %s", mScriptName.c_str() );
+  loadScript();
+}
 //-----------------------------------------------------------------------------
 CFasrSource::~CFasrSource()
 {
 }
 //-----------------------------------------------------------------------------
-int CFasrSource::stgUpdate( Stg::Model* mod, CFasrSource* source )
+int CFasrSource::stgUpdate ( Stg::Model* mod, CFasrSource* source )
 {
   source->update();
   return 0; // run again
@@ -70,12 +85,12 @@ void CFasrSource::update()
   }
 
   // produce flag if necessary
-  if (( mStgModel->GetFlagCount() < mStorageCapacity ) ||
-      ( mStorageCapacity == -1 ) ) {
+  if ( ( mStgModel->GetFlagCount() < mStorageCapacity ) ||
+       ( mStorageCapacity == -1 ) ) {
     if ( mFgProductionStarted ) {
-      if (( mSimTime - mProductionStartedTimestamp ) >= mUpdateInterval ) {
+      if ( ( mSimTime - mProductionStartedTimestamp ) >= mUpdateInterval ) {
         mFgProductionStarted = false;
-        mStgModel->PushFlag( new Stg::Flag( Stg::Color( 1, 1, 0), FLAGSZ ) );
+        mStgModel->PushFlag ( new Stg::Flag ( Stg::Color ( 1, 1, 0 ), FLAGSZ ) );
       }
     }
     else {
@@ -96,51 +111,51 @@ int CFasrSource::loadScript()
   char* sink = new char[20];
   FILE* fp = NULL;
 
-  fp = fopen( mScriptName, "r" );
+  fp = fopen ( mScriptName.c_str(), "r" );
   if ( fp == NULL ) {
-    PRT_ERR1( "Failed to open script file %s", mScriptName );
+    PRT_ERR1 ( "Failed to open script file %s", mScriptName.c_str() );
     return 0; // error
   }
 
-  while ( feof( fp ) == false ) {
+  while ( feof ( fp ) == false ) {
     line++;
-    if ( fscanf( fp, "TASK: %f %s %s %s %d %f %f\n", &taskData.timestamp, name,
-                 source, sink, &taskData.capacity, &taskData.productionRate,
-                 &taskData.reward ) != 7 ) {
-      PRT_ERR2( "While reading script file %s line %d", mScriptName, line );
+    if ( fscanf ( fp, "TASK: %f %s %s %s %d %f %f\n", &taskData.timestamp, name,
+                  source, sink, &taskData.capacity, &taskData.productionRate,
+                  &taskData.reward ) != 7 ) {
+      PRT_ERR2 ( "While reading script file %s line %d", mScriptName.c_str(), line );
     }
     else {
-      if ( strcmp( mName, source ) == 0 ) {
-        addTaskData( taskData );
+      if ( strcmp ( mName, source ) == 0 ) {
+        addTaskData ( taskData );
       }
     }
   } // while
 
-  fclose( fp );
+  fclose ( fp );
 
   return 1; // success
 }
 //-----------------------------------------------------------------------------
-void CFasrSource::addTaskData( tTaskData newTaskData )
+void CFasrSource::addTaskData ( tTaskData newTaskData )
 {
   tTaskData taskData;
 
   std::list<tTaskData>::iterator it;
 
   if ( mTaskTimeline.size() == 0 ) {
-    mTaskTimeline.push_back( newTaskData );
+    mTaskTimeline.push_back ( newTaskData );
     return;
   }
 
   for ( it = mTaskTimeline.begin(); it != mTaskTimeline.end(); it++ ) {
     taskData = *it;
     if ( newTaskData.timestamp < taskData.timestamp )  {
-      it = mTaskTimeline.insert( it, newTaskData );
+      it = mTaskTimeline.insert ( it, newTaskData );
       return;
     }
   }
 
-  mTaskTimeline.push_back( newTaskData );
+  mTaskTimeline.push_back ( newTaskData );
 }
 //-----------------------------------------------------------------------------
 void CFasrSource::nextTaskConfiguration()
@@ -155,15 +170,15 @@ void CFasrSource::nextTaskConfiguration()
     mProductionRate = taskData.productionRate;
     mReward = taskData.reward;
     mStorageCapacity = taskData.capacity;
-    mUpdateInterval = ( int ) round( 1.0 / mProductionRate );
+    mUpdateInterval = ( int ) round ( 1.0 / mProductionRate );
 
     if ( mTaskTimeline.size() > 0 )
       mNextModicificationTime = mTaskTimeline.front().timestamp;
   }
 
-  snprintf( buf, 255, "Rate: %.3f Reward %.1f Capacity: %d", mProductionRate,
-            mReward, mStorageCapacity );
-  mStgModel->Say( buf );
+  snprintf ( buf, 255, "Rate: %.3f Reward %.1f Capacity: %d", mProductionRate,
+             mReward, mStorageCapacity );
+  mStgModel->Say ( buf );
 }
 //-----------------------------------------------------------------------------
 

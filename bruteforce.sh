@@ -16,8 +16,8 @@ do
     echo "TASK: green =" ${green}  > ratio.dat
     echo "TASK: blue =" ${blue}  >> ratio.dat
     
-    stage -g world/fasr_fixed.world
+    stage -g -c world/fasr_fixed.world
     mv fasr.log data/bruteforce2_${logSuffix}_${green}_${blue}.log
-    mv fasr_analyst.log data/bruteforce2_analyst_${logSuffix}_${green}_${blue}.log
+    mv fasr_analyst.log data/bruteforce_analyst_${logSuffix}_${green}_${blue}.log
   done
 done

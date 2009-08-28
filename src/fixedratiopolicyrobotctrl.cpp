@@ -21,25 +21,42 @@
 #include "fixedratiopolicyrobotctrl.h"
 
 //-----------------------------------------------------------------------------
-CFixedRatioPolicyRobotCtrl::CFixedRatioPolicyRobotCtrl( ARobot* robot )
-    : ABaseRobotCtrl( robot )
+CFixedRatioPolicyRobotCtrl::CFixedRatioPolicyRobotCtrl ( ARobot* robot )
+    : ABaseRobotCtrl ( robot )
 {
+  Stg::Model* mod;
   static unsigned int id = 0;
 
   // generate a unique ID
   id ++;
   mRobotId = id;
   mCurrentTask = NULL;
+
+  mod = mDrivetrain->getStageModel();
+
+  mRatioFilename = "ratio.dat";
+
+  // check if we got a task description file passed in on the command line
+  for ( unsigned int i=0; i< Stg::World::args.size(); i++ ) {
+    if ( Stg::World::args[i].compare ( 0, 3, "-rf" ) == 0 ) {
+      mRatioFilename = Stg::World::args[i].substr ( 4, Stg::World::args[i].size()-4 ).c_str();
+      PRT_MSG1 ( 3, "Ratio file overruled by user, new file: %s",
+                 mRatioFilename.c_str() );
+      break;
+    }
+  }
+
+
 }
 //-----------------------------------------------------------------------------
 CFixedRatioPolicyRobotCtrl::~CFixedRatioPolicyRobotCtrl()
 {
 }
 //-----------------------------------------------------------------------------
-void CFixedRatioPolicyRobotCtrl::addTransportationTask(
+void CFixedRatioPolicyRobotCtrl::addTransportationTask (
   ITransportTaskInterface* task )
 {
-  ABaseRobotCtrl::addTransportationTask( task );
+  ABaseRobotCtrl::addTransportationTask ( task );
 }
 //-----------------------------------------------------------------------------
 void CFixedRatioPolicyRobotCtrl::startPolicy()
@@ -49,22 +66,22 @@ void CFixedRatioPolicyRobotCtrl::startPolicy()
   unsigned int id = 0;
   FILE* fp;
 
-  fp = fopen( "ratio.dat", "r" );
+  fp = fopen ( mRatioFilename.c_str(), "r" );
   if ( fp == NULL ) {
-    PRT_WARN0( "No ratio.dat file found" );
-    exit( -1 );
+    PRT_WARN1 ( "No ratio file found: %s", mRatioFilename.c_str() );
+    exit ( -1 );
   }
 
   for ( unsigned int i = 0; i < mTaskVector.size(); i++ ) {
-    if ( fscanf( fp, "TASK: %s = %d\n", name, &num ) != 2 ) {
-      PRT_WARN0( "Failure while reading ratio.dat" );
-      exit(-1);
+    if ( fscanf ( fp, "TASK: %s = %d\n", name, &num ) != 2 ) {
+      PRT_WARN1 ( "Failure while reading ratio file %s",mRatioFilename.c_str() );
+      exit ( -1 );
     }
 
-    if ( strcmp( name, mTaskVector[i]->getName().c_str() ) != 0 ) {
-      PRT_WARN2( "Task name mismatch, got %s but expected %s", name,
-                 mTaskVector[i]->getName().c_str() );
-      exit(-1);
+    if ( strcmp ( name, mTaskVector[i]->getName().c_str() ) != 0 ) {
+      PRT_WARN2 ( "Task name mismatch, got %s but expected %s", name,
+                  mTaskVector[i]->getName().c_str() );
+      exit ( -1 );
     }
     id += num;
     if ( mRobotId <= id ) {
@@ -80,29 +97,29 @@ void CFixedRatioPolicyRobotCtrl::startPolicy()
   delete name;
 }
 //-----------------------------------------------------------------------------
-void CFixedRatioPolicyRobotCtrl::leaveChargerPolicy( float dt )
+void CFixedRatioPolicyRobotCtrl::leaveChargerPolicy ( float dt )
 {
   mState = GOTO_SOURCE;
 }
 //-----------------------------------------------------------------------------
-void CFixedRatioPolicyRobotCtrl::deliveryCompletedPolicy( float dt )
+void CFixedRatioPolicyRobotCtrl::deliveryCompletedPolicy ( float dt )
 {
   mState = GOTO_SOURCE;
 }
 //-----------------------------------------------------------------------------
-void CFixedRatioPolicyRobotCtrl::unallocatedPolicy( float dt )
+void CFixedRatioPolicyRobotCtrl::unallocatedPolicy ( float dt )
 {
 }
 //-----------------------------------------------------------------------------
-void CFixedRatioPolicyRobotCtrl::waitingAtSourcePolicy( float dt )
+void CFixedRatioPolicyRobotCtrl::waitingAtSourcePolicy ( float dt )
 {
 }
 //-----------------------------------------------------------------------------
-void CFixedRatioPolicyRobotCtrl::pickupCompletedPolicy( float dt )
+void CFixedRatioPolicyRobotCtrl::pickupCompletedPolicy ( float dt )
 {
 }
 //-----------------------------------------------------------------------------
-void CFixedRatioPolicyRobotCtrl::waitingAtPickupPolicy( float dt )
+void CFixedRatioPolicyRobotCtrl::waitingAtPickupPolicy ( float dt )
 {
 }
 //-----------------------------------------------------------------------------

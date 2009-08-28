@@ -67,7 +67,7 @@ class CTaskManager
     /** Stage model for this controller */
     Stg::Model* mStgModel;
     /** File name and path of script */
-    char* mScriptName;
+    std::string mScriptName;
     /** Current simulation time [s] */
     float mSimTime;
     /** Time of next task modification [s] */

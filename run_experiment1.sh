@@ -2,18 +2,23 @@
 
 N=10
 
-log_suffix=$1
+# name of configuration, e.g.1:1
+CONF="1:1"
+TASK="task1.txt"
+
+echo "TASK: 0 green sourceA sinkA 1 0.03 10.0" > ${TASK}
+echo "TASK: 0 blue sourceB sinkB 1 0.03 10.0" >> ${TASK}
 
 for ((i=1;i<=N;i++))
 do
-  stage -g world/fasr_wait.world
-  mv fasr.log data/wait_${log_suffix}_${i}.log
-  mv fasr_analyst.log data/wait_analyst_${log_suffix}_${i}.log
+  LOG="./data/wait_"${CONF}"_"${i}".dat"
+  stage -g -c -td=$TASK -lf=$LOG world/fasr_wait.world
+  rm fasr.log
 done
 
 for ((i=1;i<=N;i++))
 do
-  stage -g world/fasr_replan.world
-  mv fasr.log data/replan_${log_suffix}_${i}.log
-  mv fasr_analyst.log data/replan_analyst_${log_suffix}_${i}.log
+  LOG="./data/replan_"${CONF}"_"${i}".dat"
+  stage -g -c -td=$TASK -lf=$LOG world/fasr_replan.world
+  rm fasr.log
 done

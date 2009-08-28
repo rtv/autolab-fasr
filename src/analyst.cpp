@@ -24,7 +24,7 @@
 #include <stdio.h>
 
 //-----------------------------------------------------------------------------
-CAnalyst::CAnalyst( Stg::Model* mod )
+CAnalyst::CAnalyst( Stg::Model* mod, std::string filename )
 {
   if ( mod == NULL ) {
     PRT_ERR0( "No Stage model given " );
@@ -33,6 +33,7 @@ CAnalyst::CAnalyst( Stg::Model* mod )
   else {
     mStgModel = mod;
     mStgModel->AddUpdateCallback(( Stg::stg_model_callback_t ) stgUpdate, this );
+    mStgModel->Subscribe();
   }
 
   mTotalNumFlags = 0;
@@ -40,9 +41,9 @@ CAnalyst::CAnalyst( Stg::Model* mod )
   mTotalReward = 0.0;
   mTotalNumTaskSwitches = 0;
 
-  mFpLog = fopen( "fasr_analyst.log", "w" );
+  mFpLog = fopen( filename.c_str(), "w" );
   if ( mFpLog == NULL )
-    PRT_WARN0( "CAnalyst: failed to open log file\n" );
+    PRT_WARN1( "CAnalyst: failed to open log file %s\n", filename.c_str() );
 }
 //-----------------------------------------------------------------------------
 CAnalyst::~CAnalyst()
@@ -127,12 +128,12 @@ int CAnalyst::stgUpdate( Stg::Model* mod, CAnalyst* analyst )
   return 0; // ok
 }
 //-----------------------------------------------------------------------------
-CAnalyst* CAnalyst::getInstance( Stg::Model* mod )
+CAnalyst* CAnalyst::getInstance( Stg::Model* mod, std::string filename )
 {
   static CAnalyst* instance = NULL;
 
   if ( instance == NULL )
-    instance = new CAnalyst( mod );
+    instance = new CAnalyst( mod, filename );
 
   return instance;
 }

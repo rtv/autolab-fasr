@@ -35,9 +35,10 @@ typedef struct {
 } tAnalystTaskData;
 
 /**
- * This class keeps simple statistics for a fasr experiment
+ * This class keeps simple statistics for a fasr experiment and log it to a
+ * file. Update is handled by attaching this class to a stage model.
  * @author Jens Wawerla
-*/
+ */
 class CAnalyst
 {
   friend class CAnalystDialog;
@@ -47,10 +48,11 @@ class CAnalyst
     ~CAnalyst();
     /**
      * Singleton pattern, gets the only instance of this class
-     * @param mod stage model for update callback
+     * @param mod stage model for update callback, note this can only be set by the very first call
+     * @param filename of log file, note this can only be set by the very first call
      * @return instance of this class
      */
-    static CAnalyst* getInstance( Stg::Model* mod = NULL );
+    static CAnalyst* getInstance( Stg::Model* mod = NULL, std::string filename = "fasr_analyst.log" );
     /** Update method for stage */
     static int stgUpdate( Stg::Model* mod, CAnalyst* analyst );
     /**
@@ -74,8 +76,9 @@ class CAnalyst
     /**
      * Default constructor
      * @param mod stage model for update callback
+     * @param filename of log file
      */
-    CAnalyst( Stg::Model* mod );
+    CAnalyst( Stg::Model* mod, std::string filename );
     /** List of robots */
     std::vector<ABaseRobotCtrl*> mRobotList;
     /** List of tasks */
