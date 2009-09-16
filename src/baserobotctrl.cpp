@@ -270,6 +270,7 @@ void ABaseRobotCtrl::transferWaypointToStage()
     wpList[i].color = Stg::Color( color.mRed / 255.0,
                                   color.mBlue / 255.0,
                                   color.mGreen / 255.0 );
+    wpList[i].color = Stg::Color( 0, 1, 0);
     i ++;
   }
 

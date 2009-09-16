@@ -68,6 +68,12 @@ class CRobotScheduler
      */
     ITransportTaskInterface* getTask( IRobotSchedulerInterface* robot );
     /**
+     * Gets the initial task randomly
+     * @param robot requesting a task
+     * @return task to be performed, or NULL if no task available
+     */
+    ITransportTaskInterface* getFirstTaskAtRandom (  IRobotSchedulerInterface* robot );
+    /**
      * Register a robot with the scheduler
      * @param robot to register
      */

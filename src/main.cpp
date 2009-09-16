@@ -39,17 +39,18 @@
 #ifdef GUI
 CFasrGui* gui = NULL;
 #endif
-
+/*
 //-----------------------------------------------------------------------------
 static int shutDownCallback ( Stg::Model* model, void* ptr )
 {
-  printf ( "shutDownCallback\n" );
+ // printf ( "shutDownCallback\n" );
 #ifdef GUI
   if ( gui )
     delete gui;
 #endif
   return 0; // ok
 }
+*/
 //-----------------------------------------------------------------------------
 extern "C" int Init ( Stg::Model* mod )
 {
@@ -69,19 +70,19 @@ extern "C" int Init ( Stg::Model* mod )
 
   if ( not init ) {
     init = true;
-    mod->AddShutdownCallback ( ( Stg::stg_model_callback_t ) shutDownCallback, NULL );
+    //mod->AddShutdownCallback ( ( Stg::stg_model_callback_t ) shutDownCallback, NULL );
     printf ( "-----------------------------------\n" );
     printf ( "FASR \n" );
     printf ( "  build %s %s \n", __DATE__, __TIME__ );
     printf ( "  compiled against RAPI version %s (%s) build %s\n", RAPI_VERSION(),
              RAPI_GIT_VERSION(), RAPI_BUILD() );
     printf ( "\n" );
-  }
-  //************************************
-  // init general stuff
-  ErrorInit ( 2, false );
-  initRandomNumberGenerator();
 
+    //************************************
+    // init general stuff
+    ErrorInit ( 2, false );
+    initRandomNumberGenerator();
+  }
   //************************************
   // create robot and its controller
   robot = new Rapi::CLooseStageRobot ( mod );

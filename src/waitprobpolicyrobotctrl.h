@@ -91,6 +91,8 @@ class CWaitProbPolicyRobotCtrl : public ABaseRobotCtrl
     float mProbBroadcast;
     /** Broadcast system */
     CBroadCast* mBroadCast;
+    /** Time we are willing to spend at the depot before returning to work */
+    float mDepotWaitingTimeTheshold;
 };
 
 #endif

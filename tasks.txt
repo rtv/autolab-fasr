@@ -1,2 +1,4 @@
-TASK: 0 green sourceA sinkA 1 0.0545 10.0
-TASK: 0 blue sourceB sinkB 1 0.0055 10.0
+TASK: 0 green sourceA sinkA 1 0.045 10.0
+TASK: 3600 green sourceA sinkA 1 0.015 10.0
+TASK: 0 blue sourceB sinkB 1 0.015 10.0
+TASK: 3600 blue sourceB sinkB 1 0.045 10.0

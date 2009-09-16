@@ -47,7 +47,7 @@ void CStaticPolicyRobotCtrl::addTransportationTask(
 //-----------------------------------------------------------------------------
 void CStaticPolicyRobotCtrl::startPolicy()
 {
-  mCurrentTask = mScheduler->getTask( this );
+  mCurrentTask = mScheduler->getFirstTaskAtRandom( this );
   if (mCurrentTask)
     mState = GOTO_SOURCE;
   else

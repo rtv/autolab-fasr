@@ -105,7 +105,7 @@ void CAnalyst::update()
     } // for tasks
   } // for robots
 
-  fprintf( mFpLog, "%d, %d, %d, %0.1f, %d, %f",
+  fprintf( mFpLog, "%d, %d, %d, %0.1f, %d, %.14f",
            mNumRobotsInDepot, mNumRobotCharging, mTotalNumTaskSwitches,
            mTotalReward, mTotalNumFlags, mTotalEnergy );
 

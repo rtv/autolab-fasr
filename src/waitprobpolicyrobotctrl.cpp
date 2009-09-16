@@ -22,6 +22,8 @@
 
 /** Minimum time we wait at a pickup for a flag [s] */
 const float MIN_PICKUP_WAIT_DURATION = 50.0;
+/** Average time to spend at depot in first position [s] */
+const double AVG_DEPOTTIME = 1200.0;
 
 //-----------------------------------------------------------------------------
 CWaitProbPolicyRobotCtrl::CWaitProbPolicyRobotCtrl ( ARobot* robot,
@@ -85,6 +87,14 @@ void CWaitProbPolicyRobotCtrl::unallocatedPolicy ( float dt )
     mCurrentTask = mBroadCast->popMessage();
     mState = GOTO_SOURCE;
   }
+
+  if ( drand48() <= (0.1 / AVG_DEPOTTIME) ) {
+    // assign first task at random
+    mTaskIndex = ( int ) round ( drand48() * ( mTaskVector.size() - 1 ) );
+    mCurrentTask = mTaskVector[mTaskIndex];
+    rprintf ( "Randomly decided to leave depot after %f s\n", mElapsedStateTime);
+    mState = GOTO_SOURCE;
+  }
 }
 //-----------------------------------------------------------------------------
 void CWaitProbPolicyRobotCtrl::waitingAtSourcePolicy ( float dt )
@@ -98,8 +108,8 @@ void CWaitProbPolicyRobotCtrl::waitingAtSourcePolicy ( float dt )
            mSinkWaitingTime;
     //mWaitDurationThreshold = r * mTaskCompletionTime / ( 1.0 - r );
     mWaitDurationThreshold = r * time;
-    // wait at least 10 sec
-    mWaitDurationThreshold = std::max ( mWaitDurationThreshold, (float)10.0 );
+    // wait at least 30 sec
+    mWaitDurationThreshold = std::max ( mWaitDurationThreshold, ( float ) 30.0 );
     //rprintf( "mWaitDurationThreshold %f \n", mWaitDurationThreshold );
   }
 
@@ -119,7 +129,7 @@ void CWaitProbPolicyRobotCtrl::pickupCompletedPolicy ( float dt )
 {
   if ( mPickupTime < mPickupDurationThreshold ) {
     //printf ( " %f %f = %f \n",mSlowedDownTime+mSourceWaitingTime , mTaskCompletionTime, mProbBroadcast *
-     //        ( 1.0 - (mSlowedDownTime + mSourceWaitingTime) / mTaskCompletionTime ) );
+    //        ( 1.0 - (mSlowedDownTime + mSourceWaitingTime) / mTaskCompletionTime ) );
     if ( drand48() < ( mProbBroadcast *
                        ( 1.0 - ( mSlowedDownTime + mSourceWaitingTime )
                          / mTaskCompletionTime ) ) )
@@ -138,6 +148,8 @@ void CWaitProbPolicyRobotCtrl::selectNewTask()
     mCurrentTask->getSource()->leaveQueue ( this );
 
   mTaskIndex = mTaskIndex + 1;
+  // CAVE: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  mTaskIndex = 1 + mTaskVector.size();
 
   if ( mTaskIndex >= mTaskVector.size() ) {
     mTaskIndex = 0;
@@ -163,7 +175,7 @@ void CWaitProbPolicyRobotCtrl::waitingAtPickupPolicy ( float dt )
   float waitTime;
 
   waitTime = std::max ( mTaskCompletionTime,
-                   MIN_PICKUP_WAIT_DURATION );
+                        MIN_PICKUP_WAIT_DURATION );
 
   if ( mElapsedStateTime > waitTime )
     selectNewTask();

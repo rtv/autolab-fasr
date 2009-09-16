@@ -7,8 +7,8 @@ include "map.inc"
 include "sick.inc"
 
 speedup 100
-paused 0			 
-		 
+paused 0
+
 # stop Stage after x seconds, 0 = run forever
 quit_time 7200.0
 
